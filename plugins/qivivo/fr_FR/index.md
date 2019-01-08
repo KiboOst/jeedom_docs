@@ -31,12 +31,12 @@ Après installation, activez le plugin. Il apparaitra alors dans le menu *Plugin
 - Renseignez vos Login, password Qivivo, et vos Client ID et Secret ID.
 - Cliquez sur *Synchroniser mes équipements*.
 
-{% include lightbox.html src="qivivo/images/config.jpg" data="qivivo" title="Configuration" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/config.jpg" data="qivivo" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Ceci aura pour effet d'installer votre thermostat, la passerelle (qui n'a ici aucune fonction), et vos modules fil-pilote, nommés par zone.
 Il ne vous reste qu'à rafraichir la page du plugin (F5) !
 
-{% include lightbox.html src="qivivo/images/plugin.jpg" data="qivivo" title="Plugin" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/plugin.jpg" data="qivivo" title="Plugin" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ## Utilisation
 
@@ -45,7 +45,7 @@ Renseignez pour chaque module, son nom et son Objet parent si nécessaire. Ils a
 ### Dashboard
 Voici un exemple sur le dashboard:
 
-{% include lightbox.html src="qivivo/images/dashboard.jpg" data="qivivo" title="Dashboard" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/dashboard.jpg" data="qivivo" title="Dashboard" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Vous pouvez ainsi visualiser:
 
@@ -74,7 +74,7 @@ Vous pouvez bien sûr intégrer ces informations et actions dans des scénarios 
 
 Le thermostat dispose de plusieurs actions que vous pouvez intégrer normalement dans Jeedom, dans les scénarios par exemple.
 
-{% include lightbox.html src="qivivo/images/thermostat_actions.jpg" data="qivivo" title="Actions du thermostat" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/thermostat_actions.jpg" data="qivivo" title="Actions du thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 >La commande SetTempérature permet de lancer un programme temporaire, de la même manière que par le site Qivivo ou physiquement sur le thermostat. Le thermostat dispose dans Jeedom d'une info *DuréeOrdre* qui sera la durée du programme temporaire. Celle-ci se remet à 120mins (comme pour le thermostat physique) toutes les 15mins (ou 5mins si vous activez le cron5). Toutefois, si vous souhaitez spécifier une autre durée, lancer une commande *SetDuréeOrdre* avant la commande *SetTempérature*.
 Vous pouvez également annuler un programme temporaire avec la commande *Annule_Ordre_Temp*.
@@ -84,7 +84,7 @@ Les modules de zone disposent également de leurs actions *SetMode* pour changer
 
 ## Programmes
 
-{% include lightbox.html src="qivivo/images/programmes_2.jpg" data="qivivo" title="Programmes" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/programmes_2.jpg" data="qivivo" title="Programmes" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Sur chaque module, y compris celui de la zone thermostat, vous trouverez un onglet *Programmes*. Vous pourrez y créer plusieurs programmes, pour pouvoir en changer, depuis le dashboard ou depuis un scénario.
 
@@ -98,13 +98,13 @@ Vous pouvez également exporter chaque programme (un fichier json correspondant 
 
 ### Thermostat
 
-{% include lightbox.html src="qivivo/images/thermostat.jpg" data="qivivo" title="Thermostat" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/thermostat.jpg" data="qivivo" title="Thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Certaines informations sont visibles ici, notamment les réglages de température. Ce sont les mêmes que dans les réglages sur le site de Qivivo.
 
 ### Module fil-pilote
 
-{% include lightbox.html src="qivivo/images/modulechauffage2.jpg" data="qivivo" title="Module chauffage" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/modulechauffage2.jpg" data="qivivo" title="Module chauffage" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Le module fil-pilote possède une info *Ordre* affichant l'ordre courant sous forme lisible (*string*). Cette info n'est pas historisée, mais une autre info *OrdreNum* représente l'ordre sous forme de numéro de 1 à 6, et est historisée :
 
@@ -119,7 +119,7 @@ Le module fil-pilote possède une info *Ordre* affichant l'ordre courant sous fo
 
 Comme pour toutes les commandes dans Jeedom, vous pouvez bien sûr consulter l'historique de celles-ci et ainsi avoir une synthèse quotidienne, que Qivivo ne propose plus aux nouveaux clients depuis plus d'un an.
 
-{% include lightbox.html src="qivivo/images/design_synthese.jpg" data="qivivo" title="Historique" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/design_synthese.jpg" data="qivivo" title="Historique" imgstyle="width:250px;display: block;margin: 0 auto;" %}
 
 >Les commandes suivantes sont créees par défaut sans mode de lissage, en conservant les valeurs pendant 1an:
 >- Thermostat Consigne
@@ -132,7 +132,7 @@ Comme pour toutes les commandes dans Jeedom, vous pouvez bien sûr consulter l'h
 Vous pouvez également ajouter un *Graphique* sur un Design pour avoir la synthèse pré-configurée. Une fois le graphique créé sur le design, faites un clic droit dessus puis *Configuration avancée* pour choisir vos courbes et paramètres.
 
 Exemple:
-{% include lightbox.html src="qivivo/images/synthese.jpg" data="qivivo" title="Paramètres historique" imgstyle="max-width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/synthese.jpg" data="qivivo" title="Paramètres historique" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 > Vous pouvez bien sûr y ajouter d'autres courbes d'autres capteurs de températures, etc.
 
