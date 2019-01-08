@@ -3,7 +3,7 @@ title: Jeedom | Plugin Qivivo
 description: Intégration du Thermostat Qivivo.
 ---
 
-<img align="right" src="../images/qivivo_icon.png" width="150">
+<img align="right" src="../images/qivivo_icon.png" width="100">
 
 # Qivivo - Plugin pour Jeedom
 
