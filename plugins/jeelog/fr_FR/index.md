@@ -1,3 +1,7 @@
+---
+title: Jeedom | Plugin JeeLog
+description: Génération de journal d'activité.
+---
 
 <img align="right" src="../images/jeelog_icon.png" width="150">
 
