@@ -35,7 +35,7 @@ Après installation, activez le plugin. Il apparaitra alors dans le menu *Plugin
   <img src="../images/config.jpg" width="550">
 </p>
 
-{% include lightbox.html src="../images/config.jpg" data="" title="Configuration" --img-style="max-width:550px" %}
+{% include lightbox.html src="qivivo/images/config.jpg" data="" title="Configuration" --img-style="max-width:550px" %}
 
 Ceci aura pour effet d'installer votre thermostat, la passerelle (qui n'a ici aucune fonction), et vos modules fil-pilote, nommés par zone.
 Il ne vous reste qu'à rafraichir la page du plugin (F5) !
