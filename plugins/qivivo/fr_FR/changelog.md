@@ -1,7 +1,8 @@
+<img align="right" src="../images/qivivo_icon.png" width="150">
 
+# Qivivo - Plugin pour Jeedom
 
-
-# Changelog
+## Changelog
 
 *[Documentation](index.md)*
 
