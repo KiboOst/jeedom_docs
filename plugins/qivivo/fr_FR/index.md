@@ -1,3 +1,7 @@
+---
+title: Jeedom | Plugin Qivivo
+description: Intégration du Thermostat Qivivo.
+---
 
 <img align="right" src="../images/qivivo_icon.png" width="150">
 
