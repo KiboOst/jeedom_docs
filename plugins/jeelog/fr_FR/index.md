@@ -13,6 +13,8 @@ Après avoir renseigné les commandes info et scénarios souhaités, vous dispos
 
 Vous visualisez ainsi, rapidement, ce qu’il c’est passé sur votre Jeedom ces dernières heures: ouverture de porte/volet, allumage de lumière, présence, changement de mode, etc.
 
+[Changelog](changelog.md)<br />
+
 ## Configuration du plugin JeeLog
 
 Après installation du plugin, il vous suffit de l’activer.
