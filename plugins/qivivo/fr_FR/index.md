@@ -16,7 +16,7 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 [Programmes](#programmes)<br />
 [Historique](#historique)<br />
 [Remarques](#remarques)<br />
-[Changelog](#changelog)<br />
+[Changelog](changelog.md)<br />
 
 
 ## Pré-requis
