@@ -9,3 +9,6 @@ defaultLang: fr
 languageNames:
   fr: Français
   en: English
+
+plugins:
+   - lightbox
