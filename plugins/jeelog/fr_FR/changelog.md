@@ -1,4 +1,4 @@
-<img align="right" src="../../plugin_info/jeelog_icon.png" width="150">
+<img align="right" src="../images/jeelog_icon.png" width="150">
 
 # Changelog
 
