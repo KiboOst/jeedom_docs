@@ -58,7 +58,7 @@ Vous pouvez monter/descendre les éléments de cette liste pour plus de clarté 
 - Pour que ces commandes apparaissent dans votre journal, il faut qu'elles soient historisées sur la période. De la même manière que pour les voir dans *Analyse > Historique*.
 - L'affichage des scénarios se fait par le log de chaque scénario demandé. Si le log est vidé, il n'apparaitra plus.
 
-{% include lightbox.html src="jeelog/images/equipement_03.jpg" data="jeelog_screenshot1" title="Infos et scénarios" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeelog/images/jeelog_screenshot1.jpg" data="jeelog_screenshot1" title="Infos et scénarios" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Vous pouvez également afficher un fichier log de Jeedom.
 
