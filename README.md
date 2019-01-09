@@ -1,5 +1,5 @@
 # jeedom_docs
 
-[Jeelog](plugins/jeelog/fr_FR)
+[Jeelog](https://kiboost.github.io/jeedom_docs/plugins/jeelog/fr_FR/)
 
-[Qivivo](plugins/qivivo/fr_FR)
+[Qivivo](https://kiboost.github.io/jeedom_docs/plugins/qivivo/fr_FR/)
