@@ -26,7 +26,7 @@ Ce plugin repose en partie sur l'API officielle Qivivo, vous devez donc créer u
 
 ## Configuration
 
-Après installation, activez le plugin. Il apparaitra alors dans le menu *Plugins > Confort*.
+Après installation, activez le plugin. Il apparaîtra alors dans le menu *Plugins > Confort*.
 - Ouvrez la page du plugin, puis cliquez sur *Configuration*.
 - Renseignez vos Login, password Qivivo, et vos Client ID et Secret ID.
 - Cliquez sur *Synchroniser mes équipements*.
@@ -34,13 +34,13 @@ Après installation, activez le plugin. Il apparaitra alors dans le menu *Plugin
 {% include lightbox.html src="qivivo/images/config.jpg" data="qivivo" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Ceci aura pour effet d'installer votre thermostat, la passerelle (qui n'a ici aucune fonction), et vos modules fil-pilote, nommés par zone.
-Il ne vous reste qu'à rafraichir la page du plugin (F5) !
+Il ne vous reste qu'à rafraîchir la page du plugin (F5) !
 
 {% include lightbox.html src="qivivo/images/plugin.jpg" data="qivivo" title="Plugin" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ## Utilisation
 
-Renseignez pour chaque module, son nom et son Objet parent si nécessaire. Ils apparaitront ainsi au bon endroit sur votre dashboard.
+Renseignez pour chaque module, son nom et son Objet parent si nécessaire. Ils apparaîtront ainsi au bon endroit sur votre dashboard.
 
 ### Dashboard
 Voici un exemple sur le dashboard:
@@ -121,7 +121,7 @@ Comme pour toutes les commandes dans Jeedom, vous pouvez bien sûr consulter l'h
 
 {% include lightbox.html src="qivivo/images/design_synthese.jpg" data="qivivo" title="Historique" imgstyle="width:250px;display: block;margin: 0 auto;" %}
 
->Les commandes suivantes sont créees par défaut sans mode de lissage, en conservant les valeurs pendant 1an:
+>Les commandes suivantes sont créées par défaut sans mode de lissage, en conservant les valeurs pendant 1an:
 >- Thermostat Consigne
 >- Thermostat Temperature
 >- Thermostat Humidité
@@ -148,7 +148,7 @@ Exemple:
 ### Gestion des erreurs
 Il peux arriver que les serveurs de Qivivo ne répondent pas:
 
-Lors d'un rafraichissement des informations, si l'appel à l'API Qivivo échoue trois fois de suite, un log d'erreur sera créé.
+Lors d'un rafraîchissement des informations, si l'appel à l'API Qivivo échoue trois fois de suite, un log d'erreur sera créé.
 
 Lorsque vous passez une commande (une action), par le dashboard ou un scénario, un échec peut-être très embêtant. Si vous quittez la maison pendant une semaine et qu'un scénario passe votre Qivivo en programme absence, le risque est que le chauffage reste allumé toute la semaine.
 
