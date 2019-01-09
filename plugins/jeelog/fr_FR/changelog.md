@@ -11,7 +11,7 @@ description: Génération de journal d'activité.
 
 *[Documentation](index.md)*
 
-Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.
+>*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
 ### 27/11/2018
   - Nouvelle option pour limiter le nombre de lignes pour les fichiers de log Jeedom.
