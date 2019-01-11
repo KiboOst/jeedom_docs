@@ -27,12 +27,12 @@ Cliquez simplement sur *Ajouter*, puis nommez votre équipement.
 
 Vous pouvez également paramétrer:
 - Un cron d’auto-actualisation.
-- Afficher Mise à jour : Ajoute une ligne en haut du log avec l'heure de mise à jour.
+- Afficher Mise à jour : Ajoute une ligne en haut du journal avec l'heure de mise à jour.
 - Détails des scénarios : Affiche, en plus du déclenchement du scénario, les actions lancées par celui-ci.
-- Le nombre d'heures à afficher. Par défaut, le log affichera l'activité sur les 8 dernières heures.
-- Le format de date en début de chaque ligne du log (au format php):
+- Le nombre d'heures à afficher. Par défaut, le journal affichera l'activité sur les 8 dernières heures.
+- Le format de date en début de chaque ligne du journal (au format php):
     - [Doc php](http://php.net/manual/fr/function.date.php)
-    - Si vous voulez seulement l'heure en début de ligne de log : H:i:s
+    - Si vous voulez seulement l'heure en début de ligne : H:i:s
     - Pour seulement jour-mois heure : d-m H:i:s
 - Les hauteur/largeur des tuiles Dashboard et Vue. Ce qui permet d'avoir une tuile plus grande sur une vue, afin de ne pas prendre trop de place sur le Dashboard.
 - Les couleurs de fond et de texte au format css pour la tuile Design. Par ex, pour un fond transparent, indiquez rgba(0,0,0,0) !
@@ -72,7 +72,7 @@ Créer un équipement jeeLog avec un fichier de log permet d'afficher ce fichier
 
 ## Affichage
 
->App Mobile: Si vous souhaitez afficher un journal dans l'app mobile, créez un *design* au bon format, ajoutez l'équipement JeeLog sur toute la surface. Vous pouvez également ajouter un bouton avec la commande Rafraichir, si l’icône rafraichir est trop petite. Vous aurez ainsi accès au log/journal en plein écran directement dans l'app mobile.
+>App Mobile: Si vous souhaitez afficher un journal dans l'app mobile, créez un *design* au bon format, ajoutez l'équipement JeeLog sur toute la surface. Vous pouvez également ajouter un bouton avec la commande Rafraichir, si l’icône rafraichir est trop petite. Vous aurez ainsi accès au journal en plein écran directement dans l'app mobile.
 
 Voici quelques illustrations du résultat, avec les paramètres par défaut.
 
