@@ -15,6 +15,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 11/01/2019 Version Stable !
+- Amélioration des tuiles d'affichage des modules sur le dashboard et les design
+
 ### 05/01/2019 Version Stable !
 - Amélioration des tuiles d'affichage
 - Tuiles *flat-design* sur les design sous iOS
