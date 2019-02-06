@@ -23,7 +23,7 @@ Il apparaitra alors dans le menu *Plugins > Monitoring*
 ## Ajouter un journal
 Cliquez simplement sur *Ajouter*, puis nommez votre équipement.
 
-{% include lightbox.html src="jeelog/images/equipement_03.jpg" data="jeelog" title="Equipement" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeelog/images/eq_settings.jpg" data="jeelog" title="Equipement" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Vous pouvez également paramétrer:
 - Un cron d’auto-actualisation.
@@ -34,7 +34,6 @@ Vous pouvez également paramétrer:
     - [Doc php](http://php.net/manual/fr/function.date.php)
     - Si vous voulez seulement l'heure en début de ligne : H:i:s
     - Pour seulement jour-mois heure : d-m H:i:s
-- Les hauteur/largeur des tuiles Dashboard et Vue. Ce qui permet d'avoir une tuile plus grande sur une vue, afin de ne pas prendre trop de place sur le Dashboard.
 - Les couleurs de fond et de texte au format css pour la tuile Design. Par ex, pour un fond transparent, indiquez rgba(0,0,0,0) !
 
 ### Onglet *Logs*
