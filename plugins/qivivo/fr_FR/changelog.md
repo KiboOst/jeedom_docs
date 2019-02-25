@@ -15,6 +15,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 25/02/2019
+- Ajout d'un bouton *Appliquer* dans les programmes.
+
 ### 05/02/2019
 - Ajout des types génériques Consigne, Température mesurée, Chauffe.
 
