@@ -17,7 +17,7 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 ### 07/03/2019
 - Remontée du pourcentage de batterie (thermostat), et info Batterie dans analyse/équipements
-*Pour ceux qui ont déjà le plugin installé, il faut sauvegarder l'équipement thermostat pour créer la commande info).*
+*Le niveau de batterie serat renseigné au prochain refresh du thermostat, cron ou manuel.*
 
 ### 25/02/2019
 - Ajout d'un bouton *Appliquer* dans les programmes.
