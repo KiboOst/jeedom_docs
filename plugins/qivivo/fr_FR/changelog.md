@@ -15,8 +15,11 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 15/03/2019
+- Configuration du type de batteries (3x1.5V AAA).
+
 ### 07/03/2019
-- Remontée du pourcentage de batterie (thermostat), et info Batterie dans analyse/équipements
+- Remontée du pourcentage de batterie (thermostat), et info Batterie dans analyse/équipements.
 *Le niveau de batterie serat renseigné au prochain refresh du thermostat, cron ou manuel.*
 
 ### 25/02/2019
