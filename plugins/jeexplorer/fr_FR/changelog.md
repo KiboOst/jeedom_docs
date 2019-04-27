@@ -3,7 +3,7 @@ title: Jeedom | Plugin JeeXplorer
 description: Explorateur / éditeur de fichiers pour Jeedom
 ---
 
-<img align="right" src="../images/jeelog_icon.png" width="100">
+<img align="right" src="../images/jeexplorer_icon.png" width="100">
 
 # JeeXplorer - Plugin pour Jeedom
 
