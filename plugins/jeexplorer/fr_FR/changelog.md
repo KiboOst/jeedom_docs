@@ -19,6 +19,7 @@ Explorateur / éditeur de fichiers pour Jeedom.
 - Edition de fichier au double-click.
 - Configuration : Nouveau paramètre pour choisir d'ouvrir l'explorateur sur le dernier répertoire consulté.
 - Configuration : Visualisation des versions de librairies utilisées.
+- Ajout de la recherche dans l'édition d'un fichier. Ctrl+F , Enter. Suivant: Ctrl+G Précédent: Ctrl+Shift+G
 
 ### 27/04/2019
 - Première version (Beta).
