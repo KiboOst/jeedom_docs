@@ -11,7 +11,7 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 [Changelog](changelog.md)<br />
 
-## Configuration du plugin JeeLog
+## Configuration du plugin JeeXplorer
 
 Après installation du plugin, il vous suffit de l’activer.
 Il apparaitra alors dans le menu *Plugins > Programmation*
