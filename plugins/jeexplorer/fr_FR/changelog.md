@@ -17,7 +17,7 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 ### 27/04/2019
 - Edition de fichier au double-click.
-- Configuration : Nouveau paramètres pour choisir d'ouvrir l'explorateur sur le dernier répertoire consulté.
+- Configuration : Nouveau paramètre pour choisir d'ouvrir l'explorateur sur le dernier répertoire consulté.
 - Configuration : Visualisation des versions de librairies utilisées.
 
 ### 27/04/2019
