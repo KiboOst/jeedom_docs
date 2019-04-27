@@ -16,9 +16,12 @@ Explorateur / éditeur de fichiers pour Jeedom.
 Après installation du plugin, il vous suffit de l’activer.
 Il apparaitra alors dans le menu *Plugins > Programmation*
 
-Vous pouvez également changer la langue de l'explorateur de fichiers
+Vous pouvez également:
+- Changer la langue de l'explorateur de fichiers.
+- Ouvrir l'explorateur sur le dernier répertoire consulté.
+- Vérifier les versions des librairies utilisées.
 
-{% include lightbox.html src="jeexplorer/images/config.jpg" data="jeexplorer" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeexplorer/images/config2.jpg" data="jeexplorer" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ## Explorateur de fichiers
 
