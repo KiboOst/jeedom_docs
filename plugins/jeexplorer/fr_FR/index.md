@@ -36,6 +36,14 @@ Vous pouvez créer, supprimer, renommer, éditer etc des dossiers et fichiers gr
 
 {% include lightbox.html src="jeexplorer/images/explorer.jpg" data="jeexplorer" title="Explorateur" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
+Sur l'édition d'un fichier, vous pouvez rechercher dans son contenu:
+
+{% include lightbox.html src="jeexplorer/images/search.jpg" data="jeexplorer" title="Search" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+- Rechercher : Ctrl + F puis Enter
+- Résultat suivant : Ctrl + G
+- Résultat précédent : Ctrl + Shift + G
+
 *Nous ne voyons pas d'autres explications ...*
 
 
