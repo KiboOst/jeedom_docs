@@ -21,7 +21,7 @@ Vous pouvez également:
 - Ouvrir l'explorateur sur le dernier répertoire consulté.
 - Vérifier les versions des librairies utilisées.
 
-{% include lightbox.html src="jeexplorer/images/config2.jpg" data="jeexplorer" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeexplorer/images/config_02.jpg" data="jeexplorer" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ## Explorateur de fichiers
 
