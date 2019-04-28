@@ -35,7 +35,7 @@ Dans la fenêtre de droite, les sous-dossiers et les fichiers.
 
 Vous pouvez créer, supprimer, renommer, éditer etc des dossiers et fichiers grâce aux options dans la barre du haut, et au clic droit sur les dossiers/fichiers.
 
-{% include lightbox.html src="jeexplorer/images/jeexplorer_screenshot2.jpg" data="jeexplorer" title="Explorateur" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeexplorer/images/jeexplorer_screenshot4.jpg" data="jeexplorer" title="Explorateur" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 #### Sur l'édition d'un fichier, vous pouvez rechercher dans son contenu:
 
