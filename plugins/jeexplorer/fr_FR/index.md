@@ -37,13 +37,18 @@ Vous pouvez créer, supprimer, renommer, éditer etc des dossiers et fichiers gr
 
 {% include lightbox.html src="jeexplorer/images/jeexplorer_screenshot2.jpg" data="jeexplorer" title="Explorateur" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Sur l'édition d'un fichier, vous pouvez rechercher dans son contenu:
+#### Sur l'édition d'un fichier, vous pouvez rechercher dans son contenu:
 
 {% include lightbox.html src="jeexplorer/images/jeexplorer_screenshot3.jpg" data="jeexplorer" title="Search" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 - Rechercher : Ctrl + F puis Enter
 - Résultat suivant : Ctrl + G
 - Résultat précédent : Ctrl + Shift + G
+
+#### Code Folding:
+
+- Ctrl + Y : fermer tout les blocs collapsables
+- Ctrl + I : ouvrir tout les blocs collapsables
 
 *Nous ne voyons pas d'autres explications ...*
 
