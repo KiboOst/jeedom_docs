@@ -15,7 +15,13 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
-### 27/04/2019
+### 28/04/2019 (Beta)
+- Editeur de fichiers:
+  - Theme Monokai
+  - Code folding
+- Configuration : option pour collapser le code à l'ouverture d'un fichier.
+
+### 27/04/2019 (Beta)
 - Edition de fichier au double-click.
 - Configuration : Nouveau paramètre pour choisir d'ouvrir l'explorateur sur le dernier répertoire consulté.
 - Configuration : Visualisation des versions de librairies utilisées.
