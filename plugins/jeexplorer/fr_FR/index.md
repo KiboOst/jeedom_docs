@@ -19,9 +19,10 @@ Il apparaitra alors dans le menu *Plugins > Programmation*
 Vous pouvez également:
 - Changer la langue de l'explorateur de fichiers.
 - Ouvrir l'explorateur sur le dernier répertoire consulté.
+- Collapser le code à l'ouverture des fichiers.
 - Vérifier les versions des librairies utilisées.
 
-{% include lightbox.html src="jeexplorer/images/config_02.jpg" data="jeexplorer" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeexplorer/images/config_03.jpg" data="jeexplorer" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ## Explorateur de fichiers
 
@@ -34,11 +35,11 @@ Dans la fenêtre de droite, les sous-dossiers et les fichiers.
 
 Vous pouvez créer, supprimer, renommer, éditer etc des dossiers et fichiers grâce aux options dans la barre du haut, et au clic droit sur les dossiers/fichiers.
 
-{% include lightbox.html src="jeexplorer/images/explorer.jpg" data="jeexplorer" title="Explorateur" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeexplorer/images/jeexplorer_screenshot2.jpg" data="jeexplorer" title="Explorateur" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Sur l'édition d'un fichier, vous pouvez rechercher dans son contenu:
 
-{% include lightbox.html src="jeexplorer/images/search.jpg" data="jeexplorer" title="Search" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeexplorer/images/jeexplorer_screenshot3.jpg" data="jeexplorer" title="Search" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 - Rechercher : Ctrl + F puis Enter
 - Résultat suivant : Ctrl + G
