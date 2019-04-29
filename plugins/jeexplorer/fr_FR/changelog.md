@@ -15,6 +15,9 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 29/04/2019
+- Parutation version Stable. Identique à la dernière Beta.
+
 ### 28/04/2019 (Beta)
 - Editeur de fichiers:
   - Theme Monokai
