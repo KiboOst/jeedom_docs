@@ -15,6 +15,9 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 30/04/2019
+- Bugfix: Nom de la commande 'Editer le fichier' dans le menu contextuel.
+
 ### 29/04/2019
 - Parutation version Stable. Identique à la dernière Beta.
 
