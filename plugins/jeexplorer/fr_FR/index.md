@@ -10,8 +10,9 @@ description: Explorateur / éditeur de fichiers pour Jeedom
 Explorateur / éditeur de fichiers pour Jeedom.
 
 <div class="alert">
-Comme tout explorateur de fichiers, celui-ci vous permet d'accéder et d'éditer tous les fichiers présent dans le répertoire racine de Jeedom.
-Attention donc aux mauvaises manipulations qui pourraient rendre votre Jeedom complètement inopérant !
+Attention :
+  Comme tout explorateur de fichiers, celui-ci vous permet d'accéder et d'éditer tous les fichiers présent dans le répertoire racine de Jeedom.
+  Attention donc aux mauvaises manipulations qui pourraient rendre votre Jeedom complètement inopérant !
 </div>
 
 
