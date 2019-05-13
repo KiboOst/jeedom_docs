@@ -9,6 +9,12 @@ description: Explorateur / éditeur de fichiers pour Jeedom
 
 Explorateur / éditeur de fichiers pour Jeedom.
 
+<div class="alert">
+Comme tout explorateur de fichiers, celui-ci vous permet d'accéder et d'éditer tous les fichiers présent dans le répertoire racine de Jeedom.
+Attention donc aux mauvaises manipulations qui pourraient rendre votre Jeedom complètement inopérant !
+</div>
+
+
 [Changelog](changelog.md)<br />
 
 ## Configuration du plugin JeeXplorer
@@ -52,11 +58,6 @@ Vous pouvez créer, supprimer, renommer, éditer etc des dossiers et fichiers gr
 
 *Nous ne voyons pas d'autres explications ...*
 
-
-## Attention
-
-Comme tout explorateur de fichiers, celui-ci vous permet d'accéder et d'éditer tous les fichiers présent dans le répertoire racine de Jeedom.
-Attention donc aux mauvaises manipulations qui pourraient rendre votre Jeedom complètement inopérant !
 
 ### Pour rappel, voici la structure des dossiers:
 
