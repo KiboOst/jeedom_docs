@@ -1,0 +1,11 @@
+theme: jekyll-theme-slate
+
+title: Astuces Jeedom v4
+name: Astuces Jeedom v4
+description: Astuces Jeedom v4
+
+languages: ["en", "fr"]
+defaultLang: fr
+languageNames:
+  fr: Français
+  en: English
