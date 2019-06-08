@@ -35,16 +35,16 @@ Si vous souhaitez appliquer une image de fond aux différentes pages de Jeedom, 
 Ajoutez cette règle:
 ```css
 .backgroundforJeedom {
-  background-image: url("/data/img/monimage.jpg") !important;
-  background-size: 100% 100% !important;
-  background-repeat: repeat;
-  position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  opacity:.35;
-  z-index:-1;
+    background-image: url("/data/img/monimage.jpg") !important;
+    background-size: 100% 100% !important;
+    background-repeat: repeat;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:.35;
+    z-index:-1;
 }
 ```
 Ajustez les paramètres comme bon vous semble, le nom de l'image bien sûr mais aussi éventuellement sa taille (100% ou en px) et sa transparence (opacity).
