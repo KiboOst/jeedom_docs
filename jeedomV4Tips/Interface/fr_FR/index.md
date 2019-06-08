@@ -3,7 +3,7 @@ title: Jeedom v4 | Astuces
 description: Astuces pour la personnalisation de l'interface de Jeedom v4
 ---
 
-<img align="right" src="../images/logo-jeedom.png" width="100">
+<img align="right" src="../../images/logo-jeedom.png" width="100">
 
 # Jeedom v4 | Astuces pour la personnalisation de l'interface
 
@@ -24,7 +24,7 @@ Concernant les règles css, vous aurez probablement besoin de connaitre les bons
 
 Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis en pointant le curseur sur l'élément de la page que vous souhaitez, vous accédez directement à son code html, où vous pouvez voir ses classes css, id, sa structure, etc.
 
-{% include lightbox.html src="images/devTools.jpg" data="dev tools" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../images/devTools.jpg" data="dev tools" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ### Image de fond générale
 
@@ -50,7 +50,7 @@ Ajoutez cette règle:
 Ajustez les paramètres comme bon vous semble, le nom de l'image bien sûr mais aussi éventuellement sa taille (100% ou en px) et sa transparence (opacity).
 Si vous utilisez cette règle, autant cocher dans ***Réglages / Système / Configuration, Interface*** l'option ***Masquer les images de fond***.
 
-<img align="right" src="images/mode_01.jpg" width="346">
+<img align="right" src="../images/mode_01.jpg" width="346">
 
 ### Plugin Mode coloré
 
