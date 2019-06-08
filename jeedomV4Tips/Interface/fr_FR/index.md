@@ -9,7 +9,7 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***
 
-{% include lightbox.html src="interface/images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Référez vous à la documentation, ou aux points d'interrogations sur chaque paramètre.
 
