@@ -7,16 +7,14 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 # Jeedom v4 | Astuces pour la personnalisation de l'interface
 
+#### Introduction
+
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***
 
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+Référez vous à la documentation, ou à laide sur chaque paramètre.
 
-Référez vous à la documentation, ou aux points d'interrogations sur chaque paramètre.
-
-Vous pouvez, en cliquant sur le bouton 'Personnalisation avancée', paramétrer vos propres fonctions javascripts et/ou règles css, pour le desktop ou la webapp (mobile). Vous pouvez également y accéder directement par le menu, ***Réglages / Système / Personnalisation avancée***
-
-#### Introduction
-Jeedom est nativement paramétrable, mais propose aussi d'inclure des ***Personnalisation avancée***.
+Jeedom propose aussi d'inclure des ***Personnalisation avancée***.
 Vous pouvez ainsi paramétrer vos propres fonctions javascripts et/ou règles css, pour le desktop ou la webapp (mobile).
 Pour y accéder : ***Réglages / Système / Personnalisation avancée***
 
@@ -48,13 +46,16 @@ Ajoutez cette règle:
 }
 ```
 Ajustez les paramètres comme bon vous semble, le nom de l'image bien sûr mais aussi éventuellement sa taille (100% ou en px) et sa transparence (opacity).
+
+Si vous souhaitez l'avoir uniquement sur le dashboard, changez ```.backgroundforJeedom``` par ```[data-page="dashboard"] .backgroundforJeedom```
+
 Si vous utilisez cette règle, autant cocher dans ***Réglages / Système / Configuration, Interface*** l'option ***Masquer les images de fond***.
 
-<img align="right" src="../images/mode_01.jpg" width="346">
+<img align="right" src="../images/mode_01.jpg" width="220">
 
 ### Plugin Mode coloré
 
-Si vous souhaitez ne pas avoir toutes les icônes de l'interface colorées, il vous suffit de décocher l'option 'icônes widgets colorées' dans les réglages.
+Si vous souhaitez ne pas avoir toutes les icônes de l'interface colorées, il vous suffit de décocher l'option *icônes widgets colorées* dans les réglages.
 Avec ce paramètre, aucun widget, ni objet, ni plugin n'aura d'icône colorée.
 Si toutefois vous souhaitez disposer quand même des modes colorés du plugin Mode, voici ce qu'il suffit d'ajouter en ***Personnalisation avancée***, css desktop et/ou mobile:
 
