@@ -1,8 +1,8 @@
 theme: jekyll-theme-slate
 
-title: Plugins Jeedom
+title: 
 name: Documentations
-description: Documentations plugins Jeedom
+description: Documentations Jeedom
 
 languages: ["en", "fr"]
 defaultLang: fr
