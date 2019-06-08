@@ -9,7 +9,7 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***
 
-{% include lightbox.html src="Interface/images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/Interface/images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Référez vous à la documentation, ou aux points d'interrogations sur chaque paramètre.
 
@@ -24,7 +24,7 @@ Concernant les règles css, vous aurez probablement besoin de connaitre les bons
 
 Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis en pointant le curseur sur l'élément de la page que vous souhaitez, vous accédez directement à son code html, où vous pouvez voir ses classes css, id, sa structure, etc.
 
-{% include lightbox.html src="Interface/images/devTools.jpg" data="dev tools" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/Interface/images/devTools.jpg" data="dev tools" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ### Image de fond générale
 
