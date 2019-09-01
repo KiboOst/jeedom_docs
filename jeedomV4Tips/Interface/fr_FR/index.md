@@ -24,35 +24,6 @@ Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis 
 
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/devTools.jpg" data="dev tools" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-### Image de fond générale
-
-Si vous souhaitez appliquer une image de fond aux différentes pages de Jeedom, et non pas à un objet:
-- Installez le plugin [JeeXplorer](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&&name=jeexplorer)
-- Copiez votre image dans /data/img/monimage.jpg
-- Dans ***Personnalisation avancée***, css desktop et/ou mobile:
-Ajoutez cette règle:
-```css
-.backgroundforJeedom {
-    background-image: url("/data/img/monimage.jpg") !important;
-    background-size: 100% 100% !important;
-    background-repeat: repeat;
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    opacity:.35;
-    z-index:-1;
-}
-```
-Ajustez les paramètres comme bon vous semble, le nom de l'image bien sûr mais aussi éventuellement sa taille (100% ou en px) et sa transparence (opacity).
-
-Si vous souhaitez l'avoir uniquement sur le dashboard, changez ```.backgroundforJeedom``` par ```[data-page="dashboard"] .backgroundforJeedom```
-
-Si vous utilisez cette règle, autant cocher dans ***Réglages / Système / Configuration, Interface*** l'option ***Masquer les images de fond***.
-
-<img align="right" src="../images/mode_01.jpg" width="220">
-
 ### Plugin Mode coloré
 
 Si vous souhaitez ne pas avoir toutes les icônes de l'interface colorées, il vous suffit de décocher l'option *icônes widgets colorées* dans les réglages.
@@ -109,6 +80,18 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
   --scBlocFOR-sep: rgb(91, 76, 13);
 }
 ```
+
+##### Affichage des logs
+- Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs
+```css
+#pre_globallog {
+  font-family: "verdana";
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 14px;
+}
+```
+
 ##### Autre exemples
 
 - Changement du background des tuiles sur le *dashboard* (ici couleur v4 thème dark) :
