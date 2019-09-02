@@ -94,6 +94,13 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 
 ##### Autre exemples
 
+- Aligner les noms des objets à gauche sur le dashboard:
+```css
+[data-page="dashboard"]	legend {
+  text-align: left !important;
+}
+```
+
 - Changement du background des tuiles sur le *dashboard* (ici couleur v4 thème dark) :
 ```css
 :root {
