@@ -1,4 +1,3 @@
-
 ---
 title: Jeedom v4 | Astuces
 description: Astuces pour la personnalisation de l'interface de Jeedom v4
@@ -13,7 +12,7 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***
 
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
-Référez vous à la documentation, ou à laide sur chaque paramètre.
+Référez vous à la documentation, ou à l'aide sur chaque paramètre.
 
 Jeedom propose aussi d'inclure des ***Personnalisation avancée***.
 Vous pouvez ainsi paramétrer vos propres fonctions javascripts et/ou règles css, pour le desktop ou la webapp (mobile).
