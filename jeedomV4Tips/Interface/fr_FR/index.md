@@ -1,3 +1,4 @@
+
 ---
 title: Jeedom v4 | Astuces
 description: Astuces pour la personnalisation de l'interface de Jeedom v4
@@ -80,18 +81,6 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
   --scBlocFOR-sep: rgb(91, 76, 13);
 }
 ```
-
-##### Affichage des logs
-- Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs
-```css
-#pre_globallog {
-  font-family: "verdana";
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  line-height: 14px;
-}
-```
-
 ##### Autre exemples
 
 - Aligner les noms des objets à gauche sur le dashboard:
@@ -121,7 +110,54 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 }
 ```
 
-etc.
+### Affichage des logs
+Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs:
+```css
+#pre_globallog {
+  font-family: "verdana";
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 14px;
+}
+```
+
+### Affichage des scénarios sur un design
+Les scénarios sont affichés sur les *designs* de la même façon que sur le dashboard, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
+{% include lightbox.html src="../jeedomV4Tips/Interface/images/scenario_design.jpg" data="interface" title="Scénario compact" imgstyle="width:552px;display: block;margin: 0 auto;" %}
+```css
+/* scenario display design */
+[data-page="plan"] .scenario-widget.scenario {
+  min-width: 75px;
+  height: 25px!important;
+  min-height 25px!important;
+  max-height 25px!important;
+  background-color: rgba(var(--cat-scenario-color), var(--opacity)) !important;
+}
+[data-page="plan"] .scenario-widget.scenario a[class~="changeScenarioState"] {
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  height: 22px;
+}
+[data-page="plan"] .scenario-widget.scenario a[class~="changeScenarioState"] { padding: 3px }
+[data-page="plan"] .scenario-widget.scenario a[data-state="start"] { left: 40px; }
+[data-page="plan"] .scenario-widget.scenario .widget-name {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  background: transparent !important;
+}
+[data-page="plan"] .scenario-widget.scenario .iconCmd i {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 16px !important;
+  color: var(--sc-lightTxt-color) !important;
+}
+```
+
+
+*To be continued...*
 
 Vous pouvez jeter un œil au fichier css du core comportant, pour chaque thème, les variables définies :
 [colors.css thème Dark](https://github.com/jeedom/core/blob/alpha/core/themes/core2019_Dark/desktop/colors.css)
