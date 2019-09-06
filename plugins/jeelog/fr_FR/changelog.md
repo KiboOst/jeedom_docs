@@ -13,6 +13,11 @@ description: Plugin de journalisation d’activité
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 06/09/2019
+- Création de la version Stable Jeedom V4
+- Passage de la beta sur Jeedom V4
+>   *Pour Jeedom V3, rester dorénavant en version Stable*
+
 ### 05/02/2019
 - Tuile redimensionnable depuis le dashboard.
 - L'importation de commandes n'importe plus les commandes déjà présentes, pour éviter les doublons.
