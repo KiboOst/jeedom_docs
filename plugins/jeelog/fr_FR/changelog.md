@@ -16,7 +16,7 @@ description: Plugin de journalisation d’activité
 ### 06/09/2019
 - Création de la version Stable Jeedom V4
 - Passage de la beta sur Jeedom V4
->   *Pour Jeedom V3, rester dorénavant en version Stable*
+>   *Pour Jeedom V3, rester dorénavant en version Stable. Le market sélectionne automatique la stable V3 ou V4 en fonction de votre version de Jeedom.*
 
 ### 05/02/2019
 - Tuile redimensionnable depuis le dashboard.
