@@ -18,7 +18,7 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 ### 06/09/2019
 - Création de la version Stable Jeedom V4
 - Passage de la beta sur Jeedom V4
->   *Pour Jeedom V3, rester dorénavant en version Stable*
+>   *Pour Jeedom V3, rester dorénavant en version Stable. Le market sélectionne automatique la stable V3 ou V4 en fonction de votre version de Jeedom.*
 
 ### 15/03/2019
 - Configuration du type de batteries (3x1.5V AAA).
