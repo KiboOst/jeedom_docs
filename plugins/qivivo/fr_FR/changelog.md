@@ -15,6 +15,11 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 06/09/2019
+- Création de la version Stable Jeedom V4
+- Passage de la beta sur Jeedom V4
+>   *Pour Jeedom V3, rester dorénavant en version Stable*
+
 ### 15/03/2019
 - Configuration du type de batteries (3x1.5V AAA).
 
