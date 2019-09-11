@@ -120,6 +120,13 @@ Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse
 }
 ```
 
+Et pour inclure les logs de scénarios:
+```css
+#pre_globallog,
+#pre_scenariolog {
+    ...
+```
+
 ### Affichage des scénarios sur un design
 Les scénarios sont affichés sur les *designs* de la même façon que sur le dashboard, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/scenario_design.jpg" data="interface" title="Scénario compact" imgstyle="width:508px;display: block;margin: 0 auto;" %}
