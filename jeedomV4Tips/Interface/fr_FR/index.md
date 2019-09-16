@@ -108,6 +108,13 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
   --linkHoverLight-color: rgb(230, 230, 230);
 }
 ```
+- Changement de la taille de police des résumés (barre de menu):
+```css
+
+.objectSummaryParent {
+    font-size: 14px;
+}
+```
 
 ### Affichage des logs
 Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs:
