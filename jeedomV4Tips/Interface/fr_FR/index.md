@@ -110,7 +110,6 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 ```
 - Changement de la taille de police des résumés (barre de menu):
 ```css
-
 .objectSummaryParent {
     font-size: 14px;
 }
