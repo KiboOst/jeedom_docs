@@ -141,8 +141,6 @@ Les scénarios sont affichés sur les *designs* de la même façon que sur le da
 [data-page="plan"] .scenario-widget.scenario {
   min-width: 75px;
   height: 25px!important;
-  min-height 25px!important;
-  max-height 25px!important;
   background-color: rgba(var(--cat-scenario-color), var(--opacity)) !important;
 }
 [data-page="plan"] .scenario-widget.scenario a[class~="changeScenarioState"] {
