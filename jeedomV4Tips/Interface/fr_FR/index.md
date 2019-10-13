@@ -114,7 +114,16 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
     font-size: 14px;
 }
 ```
-
+- Changement de la couleur du bandeau d'un équipement en particulier:
+```css
+[data-eqlogic_id="670"] .widget-name {
+    background-color: rgb(50,60,80);
+}
+/* for dark theme only*/
+[data-theme="core2019_Dark"] [data-eqlogic_id="3"] .widget-name {
+    background-color: rgb(50,60,80);
+}
+```
 ### Affichage des logs
 Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs:
 ```css
