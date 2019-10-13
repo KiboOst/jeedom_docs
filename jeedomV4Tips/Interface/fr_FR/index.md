@@ -174,6 +174,22 @@ Les scénarios sont affichés sur les *designs* de la même façon que sur le da
   color: var(--sc-lightTxt-color) !important;
 }
 ```
+### Couleur d'arrière plan des designs
+Si vous affichez les images de fonds, celles-ci peuvent pertuber la lisibilité des designs sur fond transparent. Mais si vous spécifiez une couleur, celle-ci est la même quel que soit le thème.
+Vous pouvez ou spécifier la variable de couleur de fond du thème, ou une couleur définie par thème:
+```css
+[data-page="plan"] .div_displayObject {
+  background-color: rgb(var(--bg-color)) !important;
+}
+
+/* by theme color */
+[data-page="plan"][data-theme="core2019_Light"] .div_displayObject {
+  background-color: rgb(235,235,235) !important;
+}
+[data-page="plan"][data-theme="core2019_Dark"] .div_displayObject {
+  background-color: rgb(35,35,35) !important;
+}
+```
 
 
 *To be continued...*
