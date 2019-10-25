@@ -89,6 +89,16 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 }
 ```
 
+- Conserver la barre de recherche en haut du dashboard:
+```css
+#dashTopBar {
+  position: fixed;
+  top: 55px;
+  z-index: 5000;
+  width: calc(100% - 36.93px);
+}
+```
+
 - Changement du background des tuiles sur le *dashboard* (ici couleur v4 thème dark) :
 ```css
 :root {
