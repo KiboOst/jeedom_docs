@@ -9,7 +9,7 @@ description: Scénarios : Petits codes entre amis
 
 • [Astuces pour la personnalisation de l'interface](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface/fr_FR/)
 
-#### Introduction
+### Introduction
 
 Vous le savez, un scénario est constitué de différents blocs (SI, A, DANS, etc), utilisés en fonction de ce que l'on désire faire.
 L'un d'entre eux est le bloc CODE, peu engageant à première vue, mais pourtant bien pratique.
@@ -43,6 +43,35 @@ $scenario->setData('maVariable', '1');
 cmd::byString('#[Maison][Planning][Mode]#')->event('Vacances');
 ```
 
+#### Remarques
+
+Concernant php, je ne pourrai que conseiller de s'y familiariser un minimum. Pour çà il existe plein de sites, blogs et la doc sur Internet. En dehors des fonctions propres à Jeedom, l'étendu de php est extremement large, et vous familiariser avec les opérations les plus courante (manipulation de chaines, boucles, conditions, dates etc) est un plus si vous vous engagez sur ce chemin ;-)
+
+Quelques remarques
+```php
+$message = 'message';
+message::add("Titre", 'Message: '.$message);
+```
+Deux lignes qui illustrent plusieurs choses.
+- $message est une variable php que vous définissez ($xx)
+- message tout court (message::add) est une classe php, ici une classe définit par Jeedom (html/core/class/message.class.php)
+- "string" ou 'string' sont des chaines de caractères. Toutefois, notez la différence entre les double-quote et simple-quote. Dans une "string", php va rechercher des variables pour les traduire, ce sera donc plus lent qu'une 'string'. Donc utilisez toujours des simple-quote dans ce cas, sauf si vous savez pourquoi.
+ex:
+```php
+$var = 'bibi';
+$msg1 = 'message de $var';
+$msg2 = "message de $var";
+```
+$msg1 sera égal à : message de $var
+$msg2 sera égal à : message de bibi
+
+Et enfin, la concaténation de chaine étant différente d'un language à l'autre, vous pouvez aussi faire:
+```php
+$var = 'bibi';
+$msg = 'message de '.$var;
+```
+
+*Si vous n'avez pas encore laché, vous pouvez continuer avec quelques exemples !*
 
 ### Quelques exemples
 
