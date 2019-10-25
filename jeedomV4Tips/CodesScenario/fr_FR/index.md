@@ -34,7 +34,7 @@ Pour communiquer entre ce bloc CODE et le reste de votre scénarios, vous avez d
 
 - Renseigner une variable de scénario, que vous pourrez ensuite tester / utiliser plus tard dans le scénario
 ```php
-$scenario->setData(maVariable', '1');
+$scenario->setData('maVariable', '1');
 ```
 - Mettre à jour la valeur d'une info d'un équipement, virtuel ou autre.
 ```php
@@ -51,6 +51,11 @@ $message = 'small message';
 message::add($title, $message);
 ```
 
+- Récupérer la valeur d'une variable
+```php
+$myVar = $scenario->getData('maVariable');
+```
+
 - Changer le cron d'un plugin. Je m'en sert pour passer le plugin Qivivo en cron15 hors période de chauffe
 ```php
 config::save('functionality::cron5::enable', 0, 'qivivo');
@@ -64,7 +69,10 @@ $result = exec($cmd);
 $scenario->setLog($result);
 ```
 
-
+- Masquer un objet
+```php
+object::byName('Cuisine')->setIsVisible(0)->save();
+```
 
 *To be continued...*
 
