@@ -7,6 +7,8 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 # Jeedom v4 | Astuces pour la personnalisation de l'interface
 
+• [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)
+
 #### Introduction
 
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***

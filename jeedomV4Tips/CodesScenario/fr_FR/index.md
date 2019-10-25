@@ -1,18 +1,20 @@
 ---
 title: Jeedom v4 | Astuces
-description: Petits codes entre amis
+description: Scénarios : Petits codes entre amis
 ---
 
 <img align="right" src="../../images/logo-jeedom.png" width="100">
 
 # Jeedom v4 | Scénarios : Petits codes entre amis
 
+• [Astuces pour la personnalisation de l'interface](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface/fr_FR/)
+
 #### Introduction
 
 Vous le savez, un scénario est constitué de différents blocs (SI, A, DANS, etc), utilisés en fonction de ce que l'on désire faire.
 L'un d'entre eux est le bloc CODE, peu engageant à première vue, mais pourtant bien pratique.
 
-{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/code_example.jpg" data="dev tools" title="Bloc CODE" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/code_example.jpg" data="dev tools" title="Bloc CODE" imgstyle="width:60 0px;display: block;margin: 0 auto;" %}
 
 Ce type de bloc permet d'écrire du code php que le scénario va interpreter. par exemple :
 
@@ -38,7 +40,7 @@ $scenario->setData('maVariable', '1');
 ```
 - Mettre à jour la valeur d'une info d'un équipement, virtuel ou autre.
 ```php
-cmd::byString('#[maison][Planning][Mode]#')->event('Vacances');
+cmd::byString('#[Maison][Planning][Mode]#')->event('Vacances');
 ```
 
 
@@ -54,6 +56,50 @@ message::add($title, $message);
 - Récupérer la valeur d'une variable
 ```php
 $myVar = $scenario->getData('maVariable');
+```
+
+- Mettre à jour une commande info
+```php
+cmd::byString('#[Maison][infos][test]#')->event(100);
+```
+
+- Récupérer la valeur d'une commande info
+```php
+$value = cmd::byString('#[Maison][infos][test]#')->execCmd();
+```
+
+- Exécuter une commande action (même chose que pour une info)
+```php
+cmd::byString('#[Maison][actions][actionOn]#')->execCmd();
+```
+
+- Exécuter une commande action de type slider
+```php
+$options = array('slider'=>100);
+cmd::byString('#[Salon][Lumière Salon][Intensité]#')->execCmd($options, $cache=0));
+```
+
+- Exécuter une commande action de type message
+```php
+$options = array('title'=>'pièce', 'message'=> 'Hello, how is it today ?');
+cmd::byString('#[Maison][TTS][Speak]#')->execCmd($options, $cache=0));
+```
+
+- Récupérer la date de dernière mise à jour d'une info
+```php
+$cmd = cmd::byString('#[Maison][infos][test]#');
+$collectDate = $cmd->getCollectDate();
+```
+
+- Ecrire dans un log
+*Le niveau de log doit correspondre*
+```php
+log::add('maison', 'error', $value.'  : '.$collectDate);
+```
+
+- Ecrire dans le log du scénario
+```php
+$scenario->setLog('__'.$collectDate.' -> '.$value);
 ```
 
 - Changer le cron d'un plugin. Je m'en sert pour passer le plugin Qivivo en cron15 hors période de chauffe
