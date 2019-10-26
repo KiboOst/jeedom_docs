@@ -1,7 +1,7 @@
 
 
 ---
-title: Jeedom v4 | Astuces
+title: Jeedom v4 | Petits codes entre amis
 description: Scénarios : Petits codes entre amis
 ---
 

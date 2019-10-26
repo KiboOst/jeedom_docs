@@ -1,5 +1,6 @@
+
 ---
-title: Jeedom v4 | Astuces
+title: Jeedom v4 | Interface V4
 description: Astuces pour la personnalisation de l'interface de Jeedom v4
 ---
 
@@ -9,7 +10,7 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 • [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)
 
-#### Introduction
+## Introduction
 
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***
 
@@ -26,7 +27,7 @@ Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis 
 
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/devTools.jpg" data="interface" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-### Plugin Mode coloré
+## Plugin Mode coloré
 
 Si vous souhaitez ne pas avoir toutes les icônes de l'interface colorées, il vous suffit de décocher l'option *icônes widgets colorées* dans les réglages.
 Avec ce paramètre, aucun widget, ni objet, ni plugin n'aura d'icône colorée.
@@ -41,10 +42,10 @@ Si toutefois vous souhaitez disposer quand même des modes colorés du plugin Mo
 ```
 Vous pouvez adapter ce code à n'importe quel plugin supportant les icônes colorées en modifiant le sélecteur ```[data-eqtype="mode"]``` (voir introduction ci dessus).
 
-### Changer certaines couleurs de l'interface
+## Changer certaines couleurs de l'interface
 La v4 de Jeedom est une réécriture complète de son design et de la façon dont il est appliqué. Les versions précédentes s'appuyaient énormément sur du code css sur les éléments (*inline style*), alors que la v4 possède un système de design et de thème global, plus efficace (et moderne). Ce système s'appuie notamment sur l'utilisation de variables css, utilisées par les différents thèmes pour changer les couleurs. Ce qui va nous permettre de jouer aussi sur ces couleurs, toujours dans la partie css des ***Personnalisation avancée***
 
-##### Les couleurs de catégories d'équipement
+#### Les couleurs de catégories d'équipement
 Voici les couleurs de catégories de la v3. Ce n'est qu'un exemple, puisque bien sûr les couleurs de catégories des thèmes Light et Dark sont différentes, pour s'intégrer au mieux à chaque thème dans son ensemble.
 ```css
 :root {
@@ -58,7 +59,7 @@ Voici les couleurs de catégories de la v3. Ce n'est qu'un exemple, puisque bien
   --cat-scenario-color: 127, 140, 141;
 }
 ```
-##### Les couleurs de blocs de scénarios
+#### Les couleurs de blocs de scénarios
 Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléatoirement mais par type de bloc. La correspondances avec la v3 n'est donc pas possible, et je suis plus pour s'adapter que pour l'immobilisme dans le passé, mais voici par exemple celle du thème v4 Dark.
 
 > Vous verrez dans les exemples suivant que les couleurs sont parfois
@@ -82,16 +83,16 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
   --scBlocFOR-sep: rgb(91, 76, 13);
 }
 ```
-##### Autre exemples
+## Autre exemples
 
-- Aligner les noms des objets à gauche sur le dashboard:
+<br/>• Aligner les noms des objets à gauche sur le *dashboard*:
 ```css
-[data-page="dashboard"]	legend {
+[data-page="dashboard"] legend {
   text-align: left !important;
 }
 ```
 
-- Conserver la barre de recherche en haut du dashboard:
+<br/>• Conserver la barre de recherche en haut du *dashboard*:
 ```css
 #dashTopBar {
   position: fixed;
@@ -101,32 +102,36 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 }
 ```
 
-- Changement du background des tuiles sur le *dashboard* (ici couleur v4 thème dark) :
+<br/>• Changement du background des tuiles sur le *dashboard* (ici couleur v4 thème dark) :
 ```css
 :root {
   --eq-bg-color: 38, 38, 38;
 }
 ```
-- Changement du background des pages (ici couleur v4 thème dark) :
+
+<br/>• Changement du background des pages (ici couleur v4 thème dark) :
 ```css
 :root {
   --bg-color: 25, 25, 25;
 }
 ```
-- Changement des couleurs de texte et de lien (ici couleur v4 thème dark) :
+
+<br/>• Changement des couleurs de texte et de lien (ici couleur v4 thème dark) :
 ```css
 :root {
   --linkHover-color: rgb(228, 228, 228);
   --linkHoverLight-color: rgb(230, 230, 230);
 }
 ```
-- Changement de la taille de police des résumés (barre de menu):
+
+<br/>• Changement de la taille de police des résumés (barre de menu):
 ```css
 .objectSummaryParent {
     font-size: 14px;
 }
 ```
-- Changement de la couleur du bandeau d'un équipement en particulier:
+
+<br/>• Changement de la couleur du bandeau d'un équipement en particulier:
 ```css
 [data-eqlogic_id="670"] .widget-name {
     background-color: rgb(50,60,80);
@@ -137,6 +142,7 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 }
 ```
 ### Affichage des logs
+
 Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs:
 ```css
 #pre_globallog {
@@ -154,8 +160,9 @@ Et pour inclure les logs de scénarios:
     ...
 ```
 
-### Affichage des scénarios sur un design
-Les scénarios sont affichés sur les *designs* de la même façon que sur le dashboard, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
+## Affichage des scénarios sur un design
+
+Les scénarios sont affichés sur les *designs* de la même façon que sur le *dashboard*, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/scenario_design.jpg" data="interface" title="Scénario compact" imgstyle="width:508px;display: block;margin: 0 auto;" %}
 ```css
 /* scenario display design */
@@ -186,8 +193,8 @@ Les scénarios sont affichés sur les *designs* de la même façon que sur le da
   color: var(--sc-lightTxt-color) !important;
 }
 ```
-### Couleur d'arrière plan des designs
-Si vous affichez les images de fonds, celles-ci peuvent pertuber la lisibilité des designs sur fond transparent. Mais si vous spécifiez une couleur, celle-ci est la même quel que soit le thème.
+## Couleur d'arrière plan des designs
+Si vous affichez les images de fonds, celles-ci peuvent perturber la lisibilité des designs sur fond transparent. Mais si vous spécifiez une couleur, celle-ci est la même quel que soit le thème.
 Vous pouvez ou spécifier la variable de couleur de fond du thème, ou une couleur définie par thème:
 ```css
 [data-page="plan"] .div_displayObject {
