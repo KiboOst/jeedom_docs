@@ -24,7 +24,7 @@ Concernant les règles css, vous aurez probablement besoin de connaitre les bons
 
 Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis en pointant le curseur sur l'élément de la page que vous souhaitez, vous accédez directement à son code html, où vous pouvez voir ses classes css, id, sa structure, etc.
 
-{% include lightbox.html src="../jeedomV4Tips/Interface/images/devTools.jpg" data="dev tools" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/Interface/images/devTools.jpg" data="interface" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ### Plugin Mode coloré
 

@@ -1,3 +1,4 @@
+
 ---
 title: Jeedom v4 | Astuces
 description: Scénarios : Petits codes entre amis
@@ -14,9 +15,9 @@ description: Scénarios : Petits codes entre amis
 Vous le savez, un scénario est constitué de différents blocs (SI, A, DANS, etc), utilisés en fonction de ce que l'on désire faire.
 L'un d'entre eux est le bloc CODE, peu engageant à première vue, mais pourtant bien pratique.
 
-{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/code_example.jpg" data="dev tools" title="Bloc CODE" imgstyle="width:600px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/code_example.jpg" data="codes" title="Bloc CODE" imgstyle="width:600px;display: block;margin: 0 auto;" %}
 
-Ce type de bloc permet d'écrire du code php que le scénario va interpreter. par exemple :
+Ce type de bloc permet d'écrire du code php que le scénario va interpréter. par exemple :
 
 ```php
 $trigger = $scenario->getTrigger();
@@ -25,18 +26,24 @@ $eq = cmd::byId($cmdID)->getEqLogic();
 $eq->setIsEnable(0)->save()
 ```
 
-C'est bien jolie, mais qu'est-ce qu'on peux faire avec ? Tout simplement accéder à toutes les fonctions php, mais aussi à la plupart des fonctions du core de Jeedom lui même, et donc aux équipements et à leurs commanders notamment.
+C'est bien jolie, mais qu'est-ce qu'on peux faire avec ? Tout simplement accéder à toutes les fonctions php, mais aussi à la plupart des fonctions du core de Jeedom lui même, et donc aux équipements et à leurs commandes notamment.
 
 Voici un lien vers la [doc de l'API Jeedom](https://jeedom.github.io/documentation/phpdoc/), qui permet de retrouver facilement les fonctions souhaitées. Vous pouvez également regarder directement dans le code source du core.
 
 
-Il faut considérer un bloc Code comme un script php que vous éxécuter sur un serveur. Vous pouvez ainsi facilement récupérer des données de votre Jeedom, mais aussi des données sur Internet, dans un fichier sur un site ou autre. Même si pour des cas complexes, je préfère créer un Script avec le plugin Script.
+Il faut considérer un bloc Code comme un script php que vous exécuter sur un serveur. Vous pouvez ainsi facilement récupérer des données de votre Jeedom, mais aussi des données sur Internet, dans un fichier sur un site ou autre. Même si pour des cas complexes, je préfère créer un Script avec le plugin Script.
 
 Pour communiquer entre ce bloc CODE et le reste de votre scénarios, vous avez différentes options:
 
 - Renseigner une variable de scénario, que vous pourrez ensuite tester / utiliser plus tard dans le scénario
 ```php
 $scenario->setData('maVariable', '1');
+```
+- Renseigner un tag du scénario
+```php
+$tags = $scenario->getTags();
+$tags['#monTag#'] = 'Hello';
+$scenario->setTags($tags);
 ```
 - Mettre à jour la valeur d'une info d'un équipement, virtuel ou autre.
 ```php
@@ -45,7 +52,7 @@ cmd::byString('#[Maison][Planning][Mode]#')->event('Vacances');
 
 #### Remarques
 
-Concernant php, je ne pourrai que conseiller de s'y familiariser un minimum. Pour çà il existe plein de sites, blogs et la doc sur Internet. En dehors des fonctions propres à Jeedom, l'étendu de php est extremement large, et vous familiariser avec les opérations les plus courante (manipulation de chaines, boucles, conditions, dates etc) est un plus si vous vous engagez sur ce chemin ;-)
+Concernant php, je ne pourrai que conseiller de s'y familiariser un minimum. Pour çà il existe plein de sites, blogs et la doc sur Internet. En dehors des fonctions propres à Jeedom, l'étendu de php est extrêmement large, et vous familiariser avec les opérations les plus courante (manipulation de chaines, boucles, conditions, dates etc) est un plus si vous vous engagez sur ce chemin ;-)
 
 Quelques remarques
 ```php
@@ -65,13 +72,16 @@ $msg2 = "message de $var";
 $msg1 sera égal à : message de $var<br/><br/>
 $msg2 sera égal à : message de bibi
 
-Et enfin, la concaténation de chaine étant différente d'un language à l'autre, vous pouvez aussi faire:
+Et enfin, la concaténation de chaine étant différente d'un langage à l'autre, vous pouvez aussi faire:
 ```php
 $var = 'bibi';
 $msg = 'message de '.$var;
 ```
 
-*Si vous n'avez pas encore laché, vous pouvez continuer avec quelques exemples !*
+Un autre exemple, que j'ai publié il y a 2ans déjà, avec des virtuels, un script php, et un gros bloc CODE en scénario pour récupérer les levé/couché du soleil, date, azimuth, élévation, ensoleillement de façades etc: [php-sunPos - Jeedom](https://github.com/KiboOst/php-sunPos/tree/master/Jeedom). Vous y trouverez notamment des manipulations de dates qui pourront vous intéresser.
+
+
+*Si vous n'avez pas encore lâché, vous pouvez continuer avec quelques exemples !*
 
 ### Quelques exemples
 
@@ -120,13 +130,13 @@ $cmd = cmd::byString('#[Maison][infos][test]#');
 $collectDate = $cmd->getCollectDate();
 ```
 
-- Ecrire dans un log
+- Écrire dans un log
 *Le niveau de log doit correspondre*
 ```php
 log::add('maison', 'error', $value.'  : '.$collectDate);
 ```
 
-- Ecrire dans le log du scénario
+- Écrire dans le log du scénario
 ```php
 $scenario->setLog('__'.$collectDate.' -> '.$value);
 ```
@@ -152,7 +162,7 @@ object::byName('Cuisine')->setIsVisible(0)->save();
 - Récupérer le dernier message d'update
 *Avec un scénario en action sur message, vous pouvez vous envoyer un mail ou une notification quand il y a une update*
 
-{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/msgFilter.jpg" data="Notification d'update" title="Bloc CODE" imgstyle="width:800px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/msgFilter.jpg" data="codes" title="Notification d'update" imgstyle="width:800px;display: block;margin: 0 auto;" %}
 
 ```php
 $msgs = message::byPlugin('update');
@@ -160,6 +170,24 @@ $msg = $msgs[0];
 $text = $msg->getDate() . ': ' . $msg->getPlugin() . ': ' . $msg->getMessage();
 scenario::setData('MsgFilter', $text);
 ```
+
+- Récupérer un tag
+```php
+$tags = $scenario->getTags();
+$montag = $tags['#monTag#'];
+```
+
+- Attribuer un tag au scénario
+*Les tags n'existent que lors de l’exécution du scénario, vous n'avez donc pas besoin de le supprimer ensuite, comme pour une variable*
+```php
+$tags = $scenario->getTags();
+$tags['#monTag#'] = 'Hello';
+$scenario->setTags($tags);
+```
+*C'est, je pense, la meilleure solution pour passer le résultat d'un bloc CODE au scénario et faire ensuite des tests en fonction*
+
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/tags.jpg" data="codes" title="Tags" imgstyle="width:800px;display: block;margin: 0 auto;" %}
+
 
 *To be continued...*
 
