@@ -126,18 +126,18 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 <br/>• Changement de la taille de police des résumés (barre de menu):
 ```css
 .objectSummaryParent {
-    font-size: 14px;
+	font-size: 14px;
 }
 ```
 
 <br/>• Changement de la couleur du bandeau d'un équipement en particulier:
 ```css
 [data-eqlogic_id="670"] .widget-name {
-    background-color: rgb(50,60,80);
+	background-color: rgb(50,60,80);
 }
 /* for dark theme only*/
 [data-theme="core2019_Dark"] [data-eqlogic_id="3"] .widget-name {
-    background-color: rgb(50,60,80);
+	background-color: rgb(50,60,80);
 }
 ```
 ### Affichage des logs
@@ -156,7 +156,7 @@ Et pour inclure les logs de scénarios:
 ```css
 #pre_globallog,
 #pre_scenariolog {
-    ...
+	...
 ```
 
 ## Affichage des scénarios sur un design
