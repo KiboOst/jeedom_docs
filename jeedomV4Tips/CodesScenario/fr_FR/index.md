@@ -114,13 +114,13 @@ cmd::byString('#[Maison][actions][actionOn]#')->execCmd();
 <br/>• Exécuter une commande action de type slider
 ```php
 $options = array('slider'=>100);
-cmd::byString('#[Salon][Lumière Salon][Intensité]#')->execCmd($options, $cache=0));
+cmd::byString('#[Salon][Lumière Salon][Intensité]#')->execCmd($options, $cache=0);
 ```
 
 <br/>• Exécuter une commande action de type message
 ```php
 $options = array('title'=>'pièce', 'message'=> 'Hello, how is it today ?');
-cmd::byString('#[Maison][TTS][Speak]#')->execCmd($options, $cache=0));
+cmd::byString('#[Maison][TTS][Speak]#')->execCmd($options, $cache=0);
 ```
 
 <br/>• Récupérer la date de dernière mise à jour d'une info
@@ -129,7 +129,7 @@ $cmd = cmd::byString('#[Maison][infos][test]#');
 $collectDate = $cmd->getCollectDate();
 ```
 
-<br/>• Écrire dans un log
+<br/>• Écrire dans un log<br/>
 *Le niveau de log doit correspondre*
 ```php
 log::add('maison', 'error', $value.'  : '.$collectDate);
@@ -158,7 +158,7 @@ $scenario->setLog($result);
 object::byName('Cuisine')->setIsVisible(0)->save();
 ```
 
-<br/>• Récupérer le dernier message d'update
+<br/>• Récupérer le dernier message d'update<br/>
 *Avec un scénario en action sur message, vous pouvez vous envoyer un mail ou une notification quand il y a une update*
 
 {% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/msgFilter.jpg" data="codes" title="Notification d'update" imgstyle="width:800px;display: block;margin: 0 auto;" %}
@@ -176,7 +176,7 @@ $tags = $scenario->getTags();
 $montag = $tags['#monTag#'];
 ```
 
-<br/>• Attribuer un tag au scénario
+<br/>• Attribuer un tag au scénario<br/>
 *Les tags n'existent que lors de l’exécution du scénario, vous n'avez donc pas besoin de le supprimer ensuite, comme pour une variable*
 ```php
 $tags = $scenario->getTags();
