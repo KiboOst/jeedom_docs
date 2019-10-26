@@ -14,7 +14,7 @@ description: Scénarios : Petits codes entre amis
 Vous le savez, un scénario est constitué de différents blocs (SI, A, DANS, etc), utilisés en fonction de ce que l'on désire faire.
 L'un d'entre eux est le bloc CODE, peu engageant à première vue, mais pourtant bien pratique.
 
-{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/code_example.jpg" data="dev tools" title="Bloc CODE" imgstyle="width:60 0px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/code_example.jpg" data="dev tools" title="Bloc CODE" imgstyle="width:600px;display: block;margin: 0 auto;" %}
 
 Ce type de bloc permet d'écrire du code php que le scénario va interpreter. par exemple :
 
@@ -62,7 +62,7 @@ $var = 'bibi';
 $msg1 = 'message de $var';
 $msg2 = "message de $var";
 ```
-$msg1 sera égal à : message de $var
+$msg1 sera égal à : message de $var<br/><br/>
 $msg2 sera égal à : message de bibi
 
 Et enfin, la concaténation de chaine étant différente d'un language à l'autre, vous pouvez aussi faire:
@@ -147,6 +147,18 @@ $scenario->setLog($result);
 - Masquer un objet
 ```php
 object::byName('Cuisine')->setIsVisible(0)->save();
+```
+
+- Récupérer le dernier message d'update
+*Avec un scénario en action sur message, vous pouvez vous envoyer un mail ou une notification quand il y a une update*
+
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/msgFilter.jpg" data="Notification d'update" title="Bloc CODE" imgstyle="width:800px;display: block;margin: 0 auto;" %}
+
+```php
+$msgs = message::byPlugin('update');
+$msg = $msgs[0];
+$text = $msg->getDate() . ': ' . $msg->getPlugin() . ': ' . $msg->getMessage();
+scenario::setData('MsgFilter', $text);
 ```
 
 *To be continued...*
