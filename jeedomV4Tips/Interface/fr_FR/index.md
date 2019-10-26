@@ -1,5 +1,5 @@
 ---
-title: Jeedom v4 | Interface V4
+title: Jeedom v4 | Interface
 description: Astuces pour la personnalisation de l'interface de Jeedom v4
 ---
 
