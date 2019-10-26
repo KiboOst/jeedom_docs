@@ -1,4 +1,5 @@
 
+
 ---
 title: Jeedom v4 | Astuces
 description: Scénarios : Petits codes entre amis
@@ -10,7 +11,7 @@ description: Scénarios : Petits codes entre amis
 
 • [Astuces pour la personnalisation de l'interface](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface/fr_FR/)
 
-### Introduction
+## Introduction
 
 Vous le savez, un scénario est constitué de différents blocs (SI, A, DANS, etc), utilisés en fonction de ce que l'on désire faire.
 L'un d'entre eux est le bloc CODE, peu engageant à première vue, mais pourtant bien pratique.
@@ -69,7 +70,7 @@ $var = 'bibi';
 $msg1 = 'message de $var';
 $msg2 = "message de $var";
 ```
-$msg1 sera égal à : message de $var<br/><br/>
+$msg1 sera égal à : message de $var<br/>
 $msg2 sera égal à : message de bibi
 
 Et enfin, la concaténation de chaine étant différente d'un langage à l'autre, vous pouvez aussi faire:
@@ -83,83 +84,83 @@ Un autre exemple, que j'ai publié il y a 2ans déjà, avec des virtuels, un scr
 
 *Si vous n'avez pas encore lâché, vous pouvez continuer avec quelques exemples !*
 
-### Quelques exemples
+## Quelques exemples
 
-- Créer un message dans le centre de message
+<br/>• Créer un message dans le centre de message
 ```php
 $title = 'php testing';
 $message = 'small message';
 message::add($title, $message);
 ```
 
-- Récupérer la valeur d'une variable
+<br/>• Récupérer la valeur d'une variable
 ```php
 $myVar = $scenario->getData('maVariable');
 ```
 
-- Mettre à jour une commande info
+<br/>• Mettre à jour une commande info
 ```php
 cmd::byString('#[Maison][infos][test]#')->event(100);
 ```
 
-- Récupérer la valeur d'une commande info
+<br/>• Récupérer la valeur d'une commande info
 ```php
 $value = cmd::byString('#[Maison][infos][test]#')->execCmd();
 ```
 
-- Exécuter une commande action (même chose que pour une info)
+<br/>• Exécuter une commande action (même chose que pour une info)
 ```php
 cmd::byString('#[Maison][actions][actionOn]#')->execCmd();
 ```
 
-- Exécuter une commande action de type slider
+<br/>• Exécuter une commande action de type slider
 ```php
 $options = array('slider'=>100);
 cmd::byString('#[Salon][Lumière Salon][Intensité]#')->execCmd($options, $cache=0));
 ```
 
-- Exécuter une commande action de type message
+<br/>• Exécuter une commande action de type message
 ```php
 $options = array('title'=>'pièce', 'message'=> 'Hello, how is it today ?');
 cmd::byString('#[Maison][TTS][Speak]#')->execCmd($options, $cache=0));
 ```
 
-- Récupérer la date de dernière mise à jour d'une info
+<br/>• Récupérer la date de dernière mise à jour d'une info
 ```php
 $cmd = cmd::byString('#[Maison][infos][test]#');
 $collectDate = $cmd->getCollectDate();
 ```
 
-- Écrire dans un log
+<br/>• Écrire dans un log
 *Le niveau de log doit correspondre*
 ```php
 log::add('maison', 'error', $value.'  : '.$collectDate);
 ```
 
-- Écrire dans le log du scénario
+<br/>• Écrire dans le log du scénario
 ```php
 $scenario->setLog('__'.$collectDate.' -> '.$value);
 ```
 
-- Changer le cron d'un plugin. Je m'en sert pour passer le plugin Qivivo en cron15 hors période de chauffe
+<br/>• Changer le cron d'un plugin. Je m'en sert pour passer le plugin Qivivo en cron15 hors période de chauffe
 ```php
 config::save('functionality::cron5::enable', 0, 'qivivo');
 config::save('functionality::cron15::enable', 1, 'qivivo');
 ```
 
-- Faire un reset du swap de votre Jeedom
+<br/>• Faire un reset du swap de votre Jeedom
 ```php
 $cmd = 'sudo swapoff -a && sudo swapon -a';
 $result = exec($cmd);
 $scenario->setLog($result);
 ```
 
-- Masquer un objet
+<br/>• Masquer un objet
 ```php
 object::byName('Cuisine')->setIsVisible(0)->save();
 ```
 
-- Récupérer le dernier message d'update
+<br/>• Récupérer le dernier message d'update
 *Avec un scénario en action sur message, vous pouvez vous envoyer un mail ou une notification quand il y a une update*
 
 {% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/msgFilter.jpg" data="codes" title="Notification d'update" imgstyle="width:800px;display: block;margin: 0 auto;" %}
@@ -171,13 +172,13 @@ $text = $msg->getDate() . ': ' . $msg->getPlugin() . ': ' . $msg->getMessage();
 scenario::setData('MsgFilter', $text);
 ```
 
-- Récupérer un tag
+<br/>• Récupérer un tag
 ```php
 $tags = $scenario->getTags();
 $montag = $tags['#monTag#'];
 ```
 
-- Attribuer un tag au scénario
+<br/>• Attribuer un tag au scénario
 *Les tags n'existent que lors de l’exécution du scénario, vous n'avez donc pas besoin de le supprimer ensuite, comme pour une variable*
 ```php
 $tags = $scenario->getTags();
@@ -188,6 +189,6 @@ $scenario->setTags($tags);
 
 {% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/tags.jpg" data="codes" title="Tags" imgstyle="width:800px;display: block;margin: 0 auto;" %}
 
-
+<br/><br/>
 *To be continued...*
 
