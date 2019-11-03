@@ -25,7 +25,7 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 ### 07/03/2019
 - Remontée du pourcentage de batterie (thermostat), et info Batterie dans analyse/équipements.
-*Le niveau de batterie serat renseigné au prochain refresh du thermostat, cron ou manuel.*
+*Le niveau de batterie sera renseigné au prochain refresh du thermostat, cron ou manuel.*
 
 ### 25/02/2019
 - Ajout d'un bouton *Appliquer* dans les programmes.
@@ -71,7 +71,7 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 ### 23/12/2018 (beta)
 - Création de tuiles dédiées dashboard et mobile
-- Commandes Thermostat -1, +1 degré pendant 2h, et annulation du programme temporaire 
+- Commandes Thermostat -1, +1 degré pendant 2h, et annulation du programme temporaire
 - Ordre des module en français (plus court et lisible)
 - Passerelle : Firmware et LastMsg (commandes info)
 - cron15 (défaut) ou cron5 au choix

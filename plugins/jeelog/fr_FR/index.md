@@ -18,7 +18,7 @@ Vous visualisez ainsi, rapidement, ce qu’il c’est passé sur votre Jeedom ce
 ## Configuration du plugin JeeLog
 
 Après installation du plugin, il vous suffit de l’activer.
-Il apparaitra alors dans le menu *Plugins > Monitoring*
+Il apparaîtra alors dans le menu *Plugins > Monitoring*
 
 ## Ajouter un journal
 Cliquez simplement sur *Ajouter*, puis nommez votre équipement.
@@ -46,7 +46,7 @@ Vous retrouvez donc:
 - Import infos : Ouvre une fenêtre listant toutes vos commandes infos avec option de recherche, pour en importer plusieurs à la volée.
 - Une option pour activer ou non cette info/scénario.
 - L'info/scénario à afficher.
-- Le nom sous lequel cela apparaitra dans le journal.
+- Le nom sous lequel cela apparaîtra dans le journal.
 - Pour les commandes info:
   - Le type d'info (Eteint/Allumé, Fermeture/Ouverture, Presence, Valeur). Pour des volets, ou le plugin Mode, utilisez Valeur.
   - Une option pour inverser ce type.
@@ -55,7 +55,7 @@ Vous retrouvez donc:
 Vous pouvez monter/descendre les éléments de cette liste pour plus de clarté (drag/drop).
 
 - Pour que ces commandes apparaissent dans votre journal, il faut qu'elles soient historisées sur la période. De la même manière que pour les voir dans *Analyse > Historique*.
-- L'affichage des scénarios se fait par le log de chaque scénario demandé. Si le log est vidé, il n'apparaitra plus.
+- L'affichage des scénarios se fait par le log de chaque scénario demandé. Si le log est vidé, il n’apparaîtra plus.
 
 {% include lightbox.html src="jeelog/images/jeelog_screenshot1.png" data="jeelog_screenshot1" title="Infos et scénarios" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
@@ -65,13 +65,13 @@ Vous pouvez également afficher un fichier log de Jeedom.
 
 Cliquez sur *Ajouter Log*, une élément log apparait alors avec la liste des fichiers log de Jeedom présents. Ce sont les logs de Jeedom dans /html/log.
 
->Si vous ajoutez un fichier de log, toutes les autre commandes et scenarios seront supprimés du journal quand vous sauvegarderez celui-ci. En effet, le fonctionnement n'est pas le même, puisque dans ce cas il n'y a pas d'évènement triés par date etc., mais simplement le continu du fichier. Il n'est donc pas possible de mixer des commandes ou scénarios avec des fichiers de log dans le même équipement jeeLog.
+>Si vous ajoutez un fichier de log, toutes les autre commandes et scénarios seront supprimés du journal quand vous sauvegarderez celui-ci. En effet, le fonctionnement n'est pas le même, puisque dans ce cas il n'y a pas d’évènement triés par date etc., mais simplement le continu du fichier. Il n'est donc pas possible de mixer des commandes ou scénarios avec des fichiers de log dans le même équipement jeeLog.
 
 Créer un équipement jeeLog avec un fichier de log permet d'afficher ce fichier sur une *vue*, un *design*, et donc aussi dans l'app mobile (avec un *design*) ou la version mobile du dashboard.
 
 ## Affichage
 
->App Mobile: Si vous souhaitez afficher un journal dans l'app mobile, créez un *design* au bon format, ajoutez l'équipement JeeLog sur toute la surface. Vous pouvez également ajouter un bouton avec la commande Rafraichir, si l’icône rafraichir est trop petite. Vous aurez ainsi accès au journal en plein écran directement dans l'app mobile.
+>App Mobile: Si vous souhaitez afficher un journal dans l'app mobile, créez un *design* au bon format, ajoutez l'équipement JeeLog sur toute la surface. Vous pouvez également ajouter un bouton avec la commande Rafraîchir, si l’icône rafraîchir est trop petite. Vous aurez ainsi accès au journal en plein écran directement dans l'app mobile.
 
 Voici quelques illustrations du résultat, avec les paramètres par défaut.
 

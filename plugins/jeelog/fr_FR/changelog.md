@@ -24,10 +24,10 @@ description: Plugin de journalisation d’activité
 
 ### 27/11/2018
   - Nouvelle option pour limiter le nombre de lignes pour les fichiers de log Jeedom.
-  
+
 ### 26/11/2018
   - Ajout de la possibilité d'afficher un fichier de log Jeedom.
->   *Attention: Si vous ajoutez un fichier de log (bouton "Ajouter Log"), toutes les autre commandes et scenarios seront  supprimés du log quand vous sauvegarderez celui-ci. En effet, le fonctionnement n'est pas le même, puisque dans ce cas il  n'y a pas d'évènement triés par date etc. mais simplement le continu du fichier.*
+>   *Attention: Si vous ajoutez un fichier de log (bouton "Ajouter Log"), toutes les autre commandes et scénarios seront  supprimés du log quand vous sauvegarderez celui-ci. En effet, le fonctionnement n'est pas le même, puisque dans ce cas il  n'y a pas d’événement triés par date etc. mais simplement le continu du fichier.*
 
 ### 08/05/2018
 

@@ -17,10 +17,10 @@ Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / C
 Référez vous à la documentation, ou à l'aide sur chaque paramètre.
 
 Jeedom propose aussi d'inclure des ***Personnalisation avancée***.
-Vous pouvez ainsi paramétrer vos propres fonctions javascripts et/ou règles css, pour le desktop ou la webapp (mobile).
+Vous pouvez ainsi paramétrer vos propres fonctions javascript et/ou règles css, pour le desktop ou la webapp (mobile).
 Pour y accéder : ***Réglages / Système / Personnalisation avancée***
 
-Concernant les règles css, vous aurez probablement besoin de connaitre les bons sélecteurs (sur quels éléments s'appliquent les règles css définies). Pour cela, quasiment tous les navigateurs proposent des *Outils de développement*, généralement accessibles par Ctrl+Shift+I (ou par le menu bien sûr).
+Concernant les règles css, vous aurez probablement besoin de connaître les bons sélecteurs (sur quels éléments s'appliquent les règles css définies). Pour cela, quasiment tous les navigateurs proposent des *Outils de développement*, généralement accessibles par Ctrl+Shift+I (ou par le menu bien sûr).
 
 Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis en pointant le curseur sur l'élément de la page que vous souhaitez, vous accédez directement à son code html, où vous pouvez voir ses classes css, id, sa structure, etc.
 

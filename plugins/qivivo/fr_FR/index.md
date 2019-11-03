@@ -58,7 +58,7 @@ Vous pouvez ainsi visualiser:
 - Le programme en cours par zone
 - La date de dernière communication du module avec les serveurs Qivivo
 
-> Quand vous changez la consigne du thermostat, l'affichage change sur le dashboard. Toutefois, la commande info de consigne n'est volontairement pas mise à jour. En effet, les programmes temporaires ne sont pas pris en compte immédiatement par Qivivo, cela peu prendre entre 1 et 5mins. De cette façon, l'historique de la consigne enregistrera les vraies valeurs de consigne du thermostat et sera mise à jour lors de la prise en compte par celui-ci. 
+> Quand vous changez la consigne du thermostat, l'affichage change sur le dashboard. Toutefois, la commande info de consigne n'est volontairement pas mise à jour. En effet, les programmes temporaires ne sont pas pris en compte immédiatement par Qivivo, cela peu prendre entre 1 et 5mins. De cette façon, l'historique de la consigne enregistrera les vraies valeurs de consigne du thermostat et sera mise à jour lors de la prise en compte par celui-ci.
 > Idéalement, il faudrait pouvoir savoir si un programme temporaire est en cours, mais l'API Qivivo ne remonte pas cette info. A voir dans le futur.
 
 Vous pouvez également:
@@ -90,11 +90,11 @@ Sur chaque module, y compris celui de la zone thermostat, vous trouverez un ongl
 
 > Sur chaque jour, vous pouvez bien sûr créer des périodes de chauffe, mais aussi copier un jour entier pour le coller ailleurs, y compris sur un autre programme.
 
-Une fois vos programmes créés et votre équipement sauvegardé, la liste de vos programmes apparaitra sur la tuile de cette zone sur votre dashboard, et dans la liste proposée sur l'action *SetProgramme* dans vos scénarios.
+Une fois vos programmes créés et votre équipement sauvegardé, la liste de vos programmes apparaîtra sur la tuile de cette zone sur votre dashboard, et dans la liste proposée sur l'action *SetProgramme* dans vos scénarios.
 
 Vous pouvez également exporter chaque programme (un fichier json correspondant sera créé dans plugins/qivivo/exportedPrograms), pour pouvoir ensuite l'importer dans un autre programme.
 
-## Equipements
+## Équipements
 
 ### Thermostat
 
@@ -159,8 +159,8 @@ Dans ce cas, vous avez deux possibilités, dans la configuration du plugin:
 
 ### Auto actualisation
 
-Dans la page de configuration, onglet *Fonctionnalités*, l'option cron15 est activée par défaut. Ceci permet d'actualiser toutes les infos des modules et du thermostat toutes les 15mins. Au regard de la réactivité du chauffage, c'est suffisant.
-Toutefois, l'actualisation des données sur les serveurs Qivivo se faisant toutes les 5 minutes, vous pouvez si vous le souhaitez passer le cron à 5mins.
+Dans la page de configuration, onglet *Fonctionnalités*, l'option cron15 est activée par défaut. Ceci permet d'actualiser toutes les infos des modules et du thermostat toutes les 15 mins. Au regard de la réactivité du chauffage, c'est suffisant.
+Toutefois, l'actualisation des données sur les serveurs Qivivo se faisant toutes les 5 minutes, vous pouvez si vous le souhaitez passer le cron à 5 mins.
 
 ### Eté / Hiver
 

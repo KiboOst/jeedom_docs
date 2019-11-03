@@ -51,7 +51,7 @@ cmd::byString('#[Maison][Planning][Mode]#')->event('Vacances');
 
 #### Remarques
 
-Concernant php, je ne pourrai que conseiller de s'y familiariser un minimum. Pour çà il existe plein de sites, blogs et la doc sur Internet. En dehors des fonctions propres à Jeedom, l'étendu de php est extrêmement large, et vous familiariser avec les opérations les plus courante (manipulation de chaines, boucles, conditions, dates etc) est un plus si vous vous engagez sur ce chemin ;-)
+Concernant php, je ne pourrai que conseiller de s'y familiariser un minimum. Pour çà il existe plein de sites, blogs et la doc sur Internet. En dehors des fonctions propres à Jeedom, l'étendu de php est extrêmement large, et vous familiariser avec les opérations les plus courante (manipulation de chaînes, boucles, conditions, dates etc) est un plus si vous vous engagez sur ce chemin ;-)
 
 Quelques remarques
 ```php
@@ -61,7 +61,7 @@ message::add("Titre", 'Message: '.$message);
 Deux lignes qui illustrent plusieurs choses.
 - $message est une variable php que vous définissez ($xx)
 - message tout court (message::add) est une classe php, ici une classe définit par Jeedom (html/core/class/message.class.php)
-- "string" ou 'string' sont des chaines de caractères. Toutefois, notez la différence entre les double-quote et simple-quote. Dans une "string", php va rechercher des variables pour les traduire, ce sera donc plus lent qu'une 'string'. Donc utilisez toujours des simple-quote dans ce cas, sauf si vous savez pourquoi.
+- "string" ou 'string' sont des chaînes de caractères. Toutefois, notez la différence entre les double-quote et simple-quote. Dans une "string", php va rechercher des variables pour les traduire, ce sera donc plus lent qu'une 'string'. Donc utilisez toujours des simple-quote dans ce cas, sauf si vous savez pourquoi.
 ex:
 ```php
 $var = 'bibi';
@@ -71,13 +71,13 @@ $msg2 = "message de $var";
 $msg1 sera égal à : message de $var<br/>
 $msg2 sera égal à : message de bibi
 
-Et enfin, la concaténation de chaine étant différente d'un langage à l'autre, vous pouvez aussi faire:
+Et enfin, la concaténation de chaîne étant différente d'un langage à l'autre, vous pouvez aussi faire:
 ```php
 $var = 'bibi';
 $msg = 'message de '.$var;
 ```
 
-Un autre exemple, que j'ai publié il y a 2ans déjà, avec des virtuels, un script php, et un gros bloc CODE en scénario pour récupérer les levé/couché du soleil, date, azimuth, élévation, ensoleillement de façades etc: [php-sunPos - Jeedom](https://github.com/KiboOst/php-sunPos/tree/master/Jeedom). Vous y trouverez notamment des manipulations de dates qui pourront vous intéresser.
+Un autre exemple, que j'ai publié il y a 2 ans déjà, avec des virtuels, un script php, et un gros bloc CODE en scénario pour récupérer les levé/couché du soleil, date, azimut, élévation, ensoleillement de façades etc: [php-sunPos - Jeedom](https://github.com/KiboOst/php-sunPos/tree/master/Jeedom). Vous y trouverez notamment des manipulations de dates qui pourront vous intéresser.
 
 
 *Si vous n'avez pas encore lâché, vous pouvez continuer avec quelques exemples !*

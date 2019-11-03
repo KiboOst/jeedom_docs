@@ -21,7 +21,7 @@ Attention :
 ## Configuration du plugin JeeXplorer
 
 Après installation du plugin, il vous suffit de l’activer.
-Il apparaitra alors dans le menu *Plugins > Programmation*
+Il apparaîtra alors dans le menu *Plugins > Programmation*
 
 Vous pouvez également:
 - Changer la langue de l'explorateur de fichiers.
