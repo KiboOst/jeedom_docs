@@ -140,6 +140,30 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 	background-color: rgb(50,60,80);
 }
 ```
+
+<br/>• Spécial développeurs et beta-testeurs : Toujours afficher le badge d'update :
+```css
+#span_nbUpdate[style*="display : none"] {
+  display: block !important;
+  visibility: hidden;
+}
+#span_nbUpdate[style*="display : none"]:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content:'\f021';
+  font-size: 8px;
+  visibility: visible;
+  display: block;
+  position: absolute;
+  background-color: var(--al-danger-color);
+  padding: 4px;
+  top: 18px;
+  left: 32px;
+  border-radius: var(--border-radius) !important;
+}
+```
+
+
 ### Affichage des logs
 
 Vous pouvez changer la manière dont les logs sont affichés sur la page Analyse / Logs:
