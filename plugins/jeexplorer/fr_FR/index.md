@@ -62,19 +62,19 @@ Vous pouvez créer, supprimer, renommer, éditer etc des dossiers et fichiers gr
 
 ### Pour rappel, voici la structure des dossiers:
 
-- 3rdparty : dossier comprenant les librairies externe utilisées par Jeedom (Jquery, CodeMirror, etc).
-- backup : dossier de vos sauvegardes de Jeedom (à toujours dupliquer sur un autre système !)
-- core : dossier comprenant le moteur de Jeedom, le Core, et toutes ses fonctions internes.
-- data : dossier comprenant vos données (Rapports, Vues, css/js de PErsonnalisation Avancée, Design 3D, etc).
-- desktop : dossier comprenant toutes les pages affichées (l'interface) en desktop et leurs fonctions.
-- docs : documentation.
-- install : fichiers d'installation de Jeedom.
-- log : dossier comprenant tous les logs (http.error, update, etc) et ceux des scénarios (sous-dossier scenarioLog, nommés par id)
-- mobile : dossier comprenant toutes les pages affichées (l'interface webapp) en mobile et leurs fonctions.
-- plugins : dossier comprenant tout les plugins installés.
-- script :
-- support :
-- vendor :
+- 3rdparty : Dossier comprenant les librairies externe utilisées par Jeedom (Jquery, CodeMirror, etc).
+- backup : Dossier de vos sauvegardes de Jeedom (à toujours dupliquer sur un autre système !).
+- core : Dossier comprenant le moteur de Jeedom, le Core, et toutes ses fonctions internes.
+- data : Dossier comprenant vos données (Rapports, Vues, css/js de PErsonnalisation Avancée, Design 3D, etc).
+- desktop : Dossier comprenant toutes les pages affichées (l'interface) en desktop et leurs fonctions.
+- docs : Documentation.
+- install : Fichiers d'installation de Jeedom.
+- log : Dossier comprenant tous les logs (http.error, update, etc) et ceux des scénarios (sous-dossier scenarioLog, nommés par id).
+- mobile : Dossier comprenant toutes les pages affichées (l'interface webapp) en mobile et leurs fonctions.
+- plugins : Dossier comprenant tout les plugins installés.
+- script : Sript de déploiement, certificats.
+- support : Dossier utilisé en cas de demande de support.
+- vendor : Dossier comprenant des librairies tierces php.
 
 Les configurations de Jeedom et de vos plugins sont, elles, stockées en base de données.
 
