@@ -1,3 +1,4 @@
+
 ---
 title: Jeedom v4 | Programmation du jour
 description: Exemple de scénario de programmation journalière
@@ -130,3 +131,25 @@ La fonction time_op permet décaller un horaire, ici on prend l'heure de coucher
 > *Quoi ? Et c'est tout ? Tout çà pour çà alors ?*
 
 :stuck_out_tongue_winking_eye:
+
+
+### Volets automatique ou manuel
+
+Allons un peu loin avec une gestion automatique ou manuelle des volets.
+Pour çà, installez le plugin [Mode](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=1929)
+- Créez un nouveau Mode "Volets".
+- Créez alors deux modes, "Auto" et "Manuel". Pas besoin d'action ou quoique ce soit dans notre cas.
+
+Vous pourrez changer ce Mode par une action sur le Dashboard, par un scénario, avec Snips, etc.
+
+Dans notre scénario, nous allons donc simplement vérifier que les volets sont en gestion automatique pour la fermeture.
+
+{% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/suncode.jpg" data="Scénario" title="Mode Volets auto" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+Et voilà, donc 1h après le coucher du soleil, si la gestion est bien automatique, alors le volet se fermera.
+
+> **Tip**
+>
+> La condition `#[Maison][Volets][Mode]# == 'Auto' ` est placée dans le bloc A, ce qui veux dire que celle-ci sera vérifier à l'heure de fermeture des volets. En effet, vous pourriez mettre le SI avant, mais rappelez vous que le scénario s’exécute à 4h20. Donc si à 4h20 vous êtes en gestion manuelle, la fermeture ne sera pas programmée. Donc même si vous passez en gestion auto dans la journée, il ne se fermera pas. En mettant la condition à l'heure de fermeture, elle sera vérifiée à cette heure et donc tiendra compte d'un changement de gestion dans la journée.
+
+:innocent:
