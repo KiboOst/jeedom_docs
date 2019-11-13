@@ -32,6 +32,15 @@ img {
 	font-weight: bold;
 }
 
+.emoji {
+  padding: 0;
+  margin: 0;
+}
+li .emoji {
+  padding-bottom: 4px !important;
+  vertical-align: bottom
+}
+
 //scroll to top:
 .scrollUpButton {
 	display: none;
