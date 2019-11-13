@@ -15,8 +15,8 @@ description: Exemple de scénario de programmation journalière
 
 Un sujet récurent pour les débutants de Jeedom, la programmation d’événements journaliers comme :
 
-- Ouvrir les volets au levé du soleil.
-- Fermer les volets au couché du soleil, si je ne suis pas là.
+- Ouvrir les volets au lever du soleil.
+- Fermer les volets au coucher du soleil, si je ne suis pas là.
 - Allumer la cafetière à 7h en semaine.
 etc
 
@@ -36,8 +36,9 @@ Je ne vais pas rentrer dans les détails des paramètres, puisque la doc est plu
 
 {% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/scenario_general.jpg" data="Scénario" title="Onglet Général" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Ce qui nous intéresse ici :
-- Nous avons un déclenchement programmé : `20 4 * * *`. Cela veut dire que notre scénario va se déclencher tout les jours à 4h20. 4h20 pour deux raisons : Il faut qu'il se déclenche avant le levé du soleil le plus tôt de l'année, pour pouvoir prévoir des actions au levé du soleil voir un peu avant. Logique non ? Ensuite, pas 4h mais 4h20 car Jeedom exécute déjà certaines tâches toutes les heures, donc çà permet de ne pas chargé encore plus Jeedom à heure fixe. C'est insignifiant sur la plupart des configurations, mais sur certaines configurations chargées, çà permet d'optimiser un peu.
+Nous avons un déclenchement programmé : `20 4 * * *`. Cela veut dire que notre scénario va se déclencher tout les jours à 4h20.
+4h20 pour deux raisons : Il faut qu'il se déclenche avant le lever du soleil le plus tôt de l'année, pour pouvoir prévoir des actions au lever du soleil voir un peu avant. Logique non ?
+Ensuite, pas 4h mais 4h20 car Jeedom exécute déjà certaines tâches toutes les heures, donc çà permet de ne pas chargé encore plus Jeedom à heure fixe. C'est insignifiant sur la plupart des configurations, mais sur certaines configurations chargées, çà permet d'optimiser un peu.
 
 
 > **Tip**
@@ -88,9 +89,44 @@ Rien de bien méchant, vous en conviendrez ... :smiley:
 
 ### Mes volets
 
-Dans le cas des volets en fonction des levé et couché du soleil, nous allons avoir besoin des infos de ... levé et couché du soleil !
+Dans le cas des volets en fonction des lever et coucher du soleil, nous allons avoir besoin des infos de ... lever et coucher du soleil !
 
 > **Note**
 >
-> Les volets sont souvent ouverts à heure fixe le matin, pour éviter de se faire réveillé à 5h en été. Nous verrons donc ici le cas du couché du soleil, mais le principe est exactement le même.
+> Les volets sont souvent ouverts à heure fixe le matin, pour éviter de se faire réveiller à 5h en été. Nous verrons donc ici le cas du coucher du soleil, mais le principe est exactement le même.
 
+L'heure de coucher du soleil dépend de la date bien sûr, mais surtout de votre localisation (généralement, vos coordonnées GPS).
+- Plusieurs plugins permettent d'avoir cette info. Le plus simple est sans doute le plugin [Weather](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=7). Une fois installé et configuré vous aurez alors l'info `#[Maison][Météo][Coucher du soleil]#`.
+- Vous pouvez très simplement créer un bloc Code avec quelques lignes de php pour renseigner deux variables, que vous pourrez alors utiliser dans n'importe quel scénario.
+
+Rendez-vous sur Google Map, placez un repère sur votre habitation, notez les coordonnées GPS qui s'affichent en bas.
+Créez un bloc Code en début du scénario avec comme code (remplacer vos coordonnées) :
+
+```php
+$lat = 45.808;
+$long = 4.872;
+$sun_info = date_sun_info(time(), $lat, $long);
+$sunrise = date("Hi", $sun_info["sunrise"]);
+$sunset = date("Hi", $sun_info["sunset"]);
+$scenario->setData('sunrise', $sunrise);
+$scenario->setData('sunset', $sunset);
+```
+
+{% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/suncode.jpg" data="Scénario" title="bloc Code lever/coucher du soleil" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+Ce code vas simplement calculer les heures de lever et coucher du soleil et les renseigner dans deux variable, sunrise et sunset. Aucun besoin de plugin, d'internet, d'API etc. Vous pouvez ensuite collapser le bloc et l'oublier :grin:
+Les variables sont accessibles comme des commandes infos avec `variable(sunrise)`, et visible dans **Outils → Variables**
+
+Il nous reste donc tout simplement à programmer notre fermeture des volets pour le soir :
+
+{% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/sunsetShutters.jpg" data="Scénario" title="Fermeture des volets au coucher du soleil" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+Ici, nous programmons A `time_op(variable(sunset), 60)`
+La fonction time_op permet décaller un horaire, ici on prend l'heure de coucher du soleil et on décalle de 60 minutes, les volets se fermerons donc 1h après le couché du soleil.
+- Au coucher du soleil : `variable(sunset)`
+- 20 mins avant le coucher du soleil : `time_op(variable(sunset), -20)`
+- Bien sur, çà marche avec une commande info : `time_op(#[Maison][Météo][sunset]#, 60)`
+
+> *Quoi ? Et c'est tout ? Tout çà pour çà alors ?*
+
+:stuck_out_tongue_winking_eye:
