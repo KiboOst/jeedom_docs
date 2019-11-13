@@ -144,7 +144,7 @@ Vous pourrez changer ce Mode par une action sur le Dashboard, par un scénario, 
 
 Dans notre scénario, nous allons donc simplement vérifier que les volets sont en gestion automatique pour la fermeture.
 
-{% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/suncode.jpg" data="Scénario" title="Mode Volets auto" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/sunsetShuttersAuto.jpg" data="Scénario" title="Mode Volets auto" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Et voilà, donc 1h après le coucher du soleil, si la gestion est bien automatique, alors le volet se fermera.
 
