@@ -154,4 +154,6 @@ Et voilà, donc 1h après le coucher du soleil, si la gestion est bien automatiq
 >
 > La condition `#[Maison][Volets][Mode]# == 'Auto' ` est placée dans le bloc A, ce qui veux dire que celle-ci sera vérifiée à l'heure de fermeture des volets. En effet, vous pourriez mettre le SI avant, mais rappelez vous que le scénario s’exécute à 4h20. Donc si à 4h20 vous êtes en gestion manuelle, la fermeture ne sera pas programmée. Donc même si vous passez en gestion auto dans la journée, il ne se fermera pas. En mettant la condition à l'heure de fermeture, elle sera vérifiée à cette heure et tiendra donc compte d'un changement de gestion dans la journée.
 
+A vous maintenant de construire votre scénario "Prog du jour" selon vos besoins. Les volets, un réveil en lumière, éteindre la lumière du petit le soir, etc.
+
 :innocent:
