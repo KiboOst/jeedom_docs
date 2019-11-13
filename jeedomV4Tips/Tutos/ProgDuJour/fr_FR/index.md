@@ -7,9 +7,9 @@ description: Exemple de scénario de programmation journalière
 
 # Jeedom v4 | Programmation du jour
 
-• [Astuces pour la personnalisation de l'interface](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface/fr_FR/)
+{% capture my_include %}{% include ../../../common.md %}{% endcapture %}
+{{ my_include | markdownify }}
 
-• [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)
 
 ## Introduction
 
