@@ -7,8 +7,7 @@ description: Exemple de scénario de programmation journalière
 
 # Jeedom v4 | Programmation du jour
 
-{% capture my_include %}{% include ../../../common.md %}{% endcapture %}
-{{ my_include | markdownify }}
+{% include_relative ../../../common.md %}
 
 
 ## Introduction
