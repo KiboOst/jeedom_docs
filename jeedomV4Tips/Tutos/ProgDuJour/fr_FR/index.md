@@ -3,7 +3,7 @@ title: Jeedom v4 | Programmation du jour
 description: Exemple de scénario de programmation journalière
 ---
 
-<img align="right" src="../../images/logo-jeedom.png" width="100">
+<img align="right" src="../../../images/logo-jeedom.png" width="100">
 
 # Jeedom v4 | Programmation du jour
 
