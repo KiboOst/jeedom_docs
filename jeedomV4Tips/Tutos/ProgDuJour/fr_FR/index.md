@@ -8,6 +8,7 @@ description: Exemple de scénario de programmation journalière
 # Jeedom v4 | Programmation du jour
 
 • [Astuces pour la personnalisation de l'interface](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface/fr_FR/)
+
 • [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)
 
 ## Introduction
@@ -87,4 +88,9 @@ Rien de bien méchant, vous en conviendrez ... :smiley:
 
 ### Mes volets
 
-Dans le cas des volets en fonction des levés et couchés du soleil, nous allons avoir besoin des infos de ... levé et couché du soleil !
+Dans le cas des volets en fonction des levé et couché du soleil, nous allons avoir besoin des infos de ... levé et couché du soleil !
+
+> **Note**
+>
+> Les volets sont souvent ouverts à heure fixe le matin, pour éviter de se faire réveillé à 5h en été. Nous verrons donc ici le cas du couché du soleil, mais le principe est exactement le même.
+

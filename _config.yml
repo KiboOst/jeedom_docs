@@ -1,6 +1,6 @@
 theme: jekyll-theme-slate
 
-title: 
+title:
 name: Documentations
 description: Documentations Jeedom
 
@@ -9,4 +9,5 @@ defaultLang: fr
 languageNames:
   fr: Français
   en: English
-
+plugins:
+  - jemoji
