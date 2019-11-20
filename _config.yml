@@ -1,13 +1,17 @@
 theme: jekyll-theme-slate
 
-title:
-name: Documentations
+title: Jeedom by KiboOst
 description: Documentations Jeedom
+
+author:
+  name: KiboOst
 
 languages: ["en", "fr"]
 defaultLang: fr
 languageNames:
   fr: Français
   en: English
+
 plugins:
   - jemoji
+  - jekyll-seo-tag

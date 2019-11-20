@@ -7,7 +7,8 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 # Jeedom v4 | Astuces pour la personnalisation de l'interface
 
-• [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)
+• [Scénarios : Programmation du jour](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Tutos/ProgDuJour/fr_FR/)<br>
+• [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)<br>
 
 ## Introduction
 
