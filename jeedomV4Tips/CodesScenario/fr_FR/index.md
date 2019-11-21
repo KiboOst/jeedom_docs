@@ -188,6 +188,21 @@ $scenario->setTags($tags);
 
 {% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/tags.jpg" data="codes" title="Tags" imgstyle="width:800px;display: block;margin: 0 auto;" %}
 
+
+<br/>• Renseigner des variables lever et coucher du soleil<br/>
+*Rendez-vous sur Google Map, placez un repère sur votre habitation, notez les coordonnées GPS qui s'affichent en bas*
+```php
+$lat = 45.808;
+$long = 4.872;
+$sun_info = date_sun_info(time(), $lat, $long);
+$sunrise = date("Hi", $sun_info["sunrise"]);
+$sunset = date("Hi", $sun_info["sunset"]);
+$scenario->setData('sunrise', $sunrise);
+$scenario->setData('sunset', $sunset);
+```
+cf [Scénarios : Programmation du jour](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Tutos/ProgDuJour/fr_FR/)
+
+
 <br/><br/>
 *To be continued...*
 

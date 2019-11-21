@@ -26,8 +26,8 @@ Il y a bien sûr maintes manières de le faire. Nous allons ici voir comment gé
 Un scénario est une suite logique d'actions, principalement des commandes action donc, à l’exécution du scénario ou à un horaire plus tard, selon des conditions définies si nécessaire.
 
 Un scénario peut être lancé de deux façons :
-- En mode déclenché, donc n'importe quand, sur une action. Cette action peu-être un bouton sur l'interface, le changement d'une valeur comme la détection d'une présence, le lancement par un autre scénario, etc.
-- En mode programmé, donc à des horaires fixes.
+- En mode déclenché, donc n'importe quand, sur une action. Cette action peu-être un bouton sur l'interface, le changement d'une valeur comme la détection d'une présence ou même d'une variable, le lancement par un autre scénario, etc.
+- En mode programmé, donc à des horaires fixes pré-définies.
 
 C'est le mode programmé qui va nous intéresser ici.
 
@@ -35,22 +35,26 @@ Je ne vais pas rentrer dans les détails des paramètres, puisque la doc est plu
 
 {% include lightbox.html src="../jeedomV4Tips/Tutos/ProgDuJour/images/scenario_general.jpg" data="Scénario" title="Onglet Général" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Nous avons un déclenchement programmé : `20 4 * * *`. Cela veut dire que notre scénario va se déclencher tout les jours à 4h20.
-4h20 pour deux raisons : Il faut qu'il se déclenche avant le lever du soleil le plus tôt de l'année, pour pouvoir prévoir des actions au lever du soleil voir un peu avant. Logique non ?
-Ensuite, pas 4h mais 4h20 car Jeedom exécute déjà certaines tâches toutes les heures, donc çà permet de ne pas charger encore plus Jeedom ce moment là. Ce sera insignifiant sur la plupart des configurations, mais sur certaines configurations chargées, çà permet d'optimiser un peu. Et comme il faut une troisième raison, le faire après 2h permettra de ne pas poser de problème lors d'un changement d'heure été/hiver.
+Nous avons donc ici un déclenchement programmé : `20 4 * * *`.
+Cela veut dire que notre scénario va se déclencher tous les jours à 4h20.
+4h20 pour deux raisons :
+	- Il faut qu'il se déclenche avant le lever du soleil le plus tôt de l'année, pour pouvoir prévoir des actions au lever du soleil voir un peu avant. Logique non ?
+	- Ensuite, pas 4h mais 4h20 car Jeedom exécute déjà certaines tâches toutes les heures, donc çà permet de ne pas charger encore plus Jeedom ce moment là. Ce sera insignifiant sur la plupart des configurations, mais sur certaines configurations chargées, çà permet d'optimiser un peu.
+	- Et comme il faut une troisième raison, le faire après 2h permettra de ne pas poser de problème lors d'un changement d'heure été/hiver.
 
 
 > **Tip**
 >
 > Le format des programmations horaire est un standard, une expression *cron*. Voir [crontab guru](https://crontab.guru/) pour en savoir plus.
+> Vous pouvez ajouter une deuxième programmation en mettant `#start#`, pour que ce scénario se déclenche également au (re)démarrage de Jeedom.
 
 
 ## Réalisation
 
 - Sur la page **Outils → Scénarios**, cliquez sur **Ajouter** en nommant votre scénario *Prog du jour* (Par exemple...).
-- Définissez son Mode sur programmé, ajoutez une programmation, et entrer `20 4 * * *`.
+- Définissez son Mode sur programmé, ajoutez une programmation, puis entrez `20 4 * * *`.
 
-Pour les groupes et objet parent je vous maître, vérifiez simplement qu'il est **Actif**.
+Pour les groupes, objet parent et. je vous laisse maître. Vérifiez simplement qu'il est **Actif**.
 
 Nous avons donc notre scénario qui va se déclencher tous les jours à 4h20, et ... ne rien faire ! :sweat_smile:
 
