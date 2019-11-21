@@ -12,7 +12,7 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 
 ## Introduction
 
-Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***
+Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***.
 
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/interface_settings.jpg" data="interface" title="Paramètres d'Interface" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 Référez vous à la documentation, ou à l'aide sur chaque paramètre.
@@ -43,7 +43,9 @@ Si toutefois vous souhaitez disposer quand même des modes colorés du plugin Mo
 Vous pouvez adapter ce code à n'importe quel plugin supportant les icônes colorées en modifiant le sélecteur ```[data-eqtype="mode"]``` (voir introduction ci dessus).
 
 ## Changer certaines couleurs de l'interface
-La v4 de Jeedom est une réécriture complète de son design et de la façon dont il est appliqué. Les versions précédentes s'appuyaient énormément sur du code css sur les éléments (*inline style*), alors que la v4 possède un système de design et de thème global, plus efficace (et moderne). Ce système s'appuie notamment sur l'utilisation de variables css, utilisées par les différents thèmes pour changer les couleurs. Ce qui va nous permettre de jouer aussi sur ces couleurs, toujours dans la partie css des ***Personnalisation avancée***
+La v4 de Jeedom est une réécriture complète de son design et de la façon dont il est appliqué. Les versions précédentes s'appuyaient énormément sur du code css sur les éléments (*inline style*), alors que la v4 possède un système de design et de thème global, plus efficace (et moderne). Ce système s'appuie notamment sur l'utilisation de variables css, utilisées par les différents thèmes pour changer les couleurs. Ce qui va nous permettre de jouer aussi sur ces couleurs, toujours dans la partie css des ***Personnalisation avancée***.
+
+> Vous verrez dans les exemples suivant que les couleurs sont parfois définies en rgb(x,x,x) ou directement en x,x,x. Veuillez à respecter le format original.
 
 #### Les couleurs de catégories d'équipement
 Voici les couleurs de catégories de la v3. Ce n'est qu'un exemple, puisque bien sûr les couleurs de catégories des thèmes Light et Dark sont différentes, pour s'intégrer au mieux à chaque thème dans son ensemble.
@@ -60,39 +62,34 @@ Voici les couleurs de catégories de la v3. Ce n'est qu'un exemple, puisque bien
 }
 ```
 #### Les couleurs de blocs de scénarios
-Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléatoirement mais par type de bloc. La correspondances avec la v3 n'est donc pas possible, et je suis plus pour s'adapter que pour l'immobilisme dans le passé, mais voici par exemple celle du thème v4 Dark.
-
-> Vous verrez dans les exemples suivant que les couleurs sont parfois
-> définies en rgb(x,x,x) ou directement en x,x,x. Veuillez à respecter
-> le format original.
+Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléatoirement mais par type de bloc. La correspondances avec la v3 n'est donc pas possible, et je suis plus pour s'adapter que pour l'immobilisme dans le passé, mais voici par exemple celle du thème v4 Dark. A noter qu'en V3 il était totalement impossible de changer ces couleurs :wink:.
 
 ```css
 :root {
-  --scBlocIF: rgb(88,89,90);
-  --scBlocACTION: rgb(154,152,152);
+  --scBlocIF: rgb(65,90,110);
+  --scBlocElse: rgb(50,75,95);
+  --scBlocACTION: rgb(132,120,112);
   --scBlocIN: rgb(75,128,62);
-  --scBlocAT: rgb(58,86,128);
-  --scBlocFOR: rgb(152,126,22);
-  --scBlocCODE: rgb(50,62,85);
-  --scBlocCOM: rgb(65,95,115);
+  --scBlocAT: rgb(92,122,132);
+  --scBlocFOR: rgb(152,116,22);
+  --scBlocCODE: rgb(160,60,25);
+  --scBlocCOM: rgb(60,60,60);
 
-  --scBlocIF-sep:rgb(56, 56, 56);
-  --scBlocACTION-sep: rgb(96,93,90);
-  --scBlocIN-sep: rgb(45, 77, 37);
-  --scBlocAT-sep: rgb(35, 52, 83);
-  --scBlocFOR-sep: rgb(91, 76, 13);
+  --scBlocSep: rgb(35,35,35);
 }
 ```
 ## Autre exemples
 
-<br/>• Aligner les noms des objets à gauche sur le *dashboard*:
+Parce que l'équipe se doit de faire des choix, et qu'ils peuvent ne pas correspondre à tout le monde dans les dizaines de milliers d'utilisateurs, voici quelques exemples que vous pouvez appliquer sur votre Jeedom :sweat_smile:.
+
+<br/>• Aligner les noms des objets à gauche sur le *Dashboard*:
 ```css
 [data-page="dashboard"] legend {
   text-align: left !important;
 }
 ```
 
-<br/>• Conserver la barre de recherche en haut du *dashboard*:
+<br/>• Conserver la barre de recherche en haut du *Dashboard*:
 ```css
 #dashTopBar {
   position: fixed;
@@ -102,7 +99,7 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
 }
 ```
 
-<br/>• Changement du background des tuiles sur le *dashboard* (ici couleur v4 thème dark) :
+<br/>• Changement du background des tuiles sur le *Dashboard* (ici couleur v4 thème dark) :
 ```css
 :root {
   --eq-bg-color: 38, 38, 38;
@@ -186,7 +183,7 @@ Et pour inclure les logs de scénarios:
 
 ## Affichage des scénarios sur un design
 
-Les scénarios sont affichés sur les *designs* de la même façon que sur le *dashboard*, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
+Les scénarios sont affichés sur les *designs* de la même façon que sur le *Dashboard*, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/scenario_design.jpg" data="interface" title="Scénario compact" imgstyle="width:508px;display: block;margin: 0 auto;" %}
 ```css
 /* scenario display design */
@@ -217,9 +214,12 @@ Les scénarios sont affichés sur les *designs* de la même façon que sur le *d
   color: var(--sc-lightTxt-color) !important;
 }
 ```
+
 ## Couleur d'arrière plan des designs
+
 Si vous affichez les images de fonds, celles-ci peuvent perturber la lisibilité des designs sur fond transparent. Mais si vous spécifiez une couleur, celle-ci est la même quel que soit le thème.
 Vous pouvez ou spécifier la variable de couleur de fond du thème, ou une couleur définie par thème:
+
 ```css
 [data-page="plan"] .div_displayObject {
   background-color: rgb(var(--bg-color)) !important;
@@ -234,6 +234,31 @@ Vous pouvez ou spécifier la variable de couleur de fond du thème, ou une coule
 }
 ```
 
+## Des *dummies* sur le Dashboard
+
+Si vous souhaitez avoir des tuiles invisible sur le Dashboard pour créer des espaces entre deux tuiles, voici comment créer un dummy :
+
+{% include lightbox.html src="../jeedomV4Tips/Interface/images/dummy.jpg" data="interface" title="Dummy sur le Dashboard" imgstyle="width:508px;display: block;margin: 0 auto;" %}
+
+- Installez le plugin [HTML Display](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3843).
+- Créez un équipement avec comme parent l'objet où vous voulez l'insérer.
+- Mettez ceci en code (onglet Dashboard):
+
+```
+<div id="dummy"></div>
+<script>
+  $('#dummy').closest('.eqLogic-widget').addClass('dummy')
+</script>
+```
+
+Pour comme css:
+```css
+[data-page="dashboard"] .dummy:not(.editingMode) {
+  opacity: 0;
+}
+```
+
+Sur la Dashboard, passez en Mode Edition et déplacez / redimensionnez le comme vous voulez :kissing:.
 
 *To be continued...*
 
