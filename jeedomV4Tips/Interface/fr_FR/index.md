@@ -99,6 +99,17 @@ Parce que l'équipe se doit de faire des choix, et qu'ils peuvent ne pas corresp
 }
 ```
 
+<br/>• Supprimer des éléments du menu **Accueil** (Ici, aucun ne sera visible !):
+```css
+#bt_gotoPreview,
+#bt_gotoDashboard,
+#bt_gotoView,
+#bt_gotoPlan,
+#bt_gotoPlan3d {
+  display: none;
+}
+```
+
 <br/>• Changement du background des tuiles sur le *Dashboard* (ici couleur v4 thème dark) :
 ```css
 :root {
