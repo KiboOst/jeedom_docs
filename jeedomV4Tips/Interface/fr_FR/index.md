@@ -110,6 +110,14 @@ Parce que l'équipe se doit de faire des choix, et qu'ils peuvent ne pas corresp
 }
 ```
 
+<br/>• Arrondi différent en Desktop et Mobile:
+Réglez **Réglages → Système → Configuration / Interface** à 0,2 pour le Desktop, puis en personnalisation, onglet Mobile:
+```css
+body {
+  --border-radius:0.6rem !important;
+}
+```
+
 <br/>• Changement du background des tuiles sur le *Dashboard* (ici couleur v4 thème dark) :
 ```css
 :root {
