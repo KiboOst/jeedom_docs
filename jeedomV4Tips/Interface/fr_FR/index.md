@@ -101,7 +101,7 @@ Parce que l'équipe se doit de faire des choix, et qu'ils peuvent ne pas corresp
 
 <br/>• Supprimer des éléments du menu **Accueil** (Ici, aucun ne sera visible !):
 ```css
-#bt_gotoPreview,
+#bt_gotoOverview,
 #bt_gotoDashboard,
 #bt_gotoView,
 #bt_gotoPlan,
