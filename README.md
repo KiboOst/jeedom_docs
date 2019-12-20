@@ -8,6 +8,9 @@
 
 • [Qivivo](https://kiboost.github.io/jeedom_docs/plugins/qivivo)
 
+• [JeeRhasspy](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy)
+
+
 ## Documentations
 
 • [Personnalisation de l'interface de Jeedom v4](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface)
