@@ -43,9 +43,12 @@ En cliquant que un Device Rhasspy, vous pouvez lancer un test TTS.
 
 ## Configuration Rhasspy
 
-Pour que Rhasspy envoit les évènements souhaités à Jeedom, vous devez ensuite modifier le fichier `.config\rhasspy\profiles\fr\profile.json`
+Pour que Rhasspy envoit les évènements souhaités à Jeedom, vous devez ensuite lui indiquer l'url du plugin, indiquée dans la partie Assistant.
+Vous pouvez le faire:
+- Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
+- Par l'interface de Rhasspy, onglet *Advanced* ou,
+- En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`
 
-Ajoutez dedans :
 ```json
 	"handle": {
         "system": "remote",
@@ -55,7 +58,7 @@ Ajoutez dedans :
     }
 
 ```
-Le paramètre `url` doit être l'url indiquée dans le plugin, partie Assistant.
+
 
 ### Callback Scénario
 
