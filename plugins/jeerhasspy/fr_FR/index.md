@@ -166,7 +166,7 @@ Certe, çà fonctionnera, mais çà complexifie énormément les scénarios.
 
 La commande *dynamic Speak* va vous permettre de faire simplement :
 
-dynamic Speak : Le volet de la salle est {#[Salon][Volet Terrasse][Etat]#\|0:fermé\|<99:ouvert à #[Salon][Volet Terrasse][Etat]# pour cent\|99:ouvert}
+> Le volet de la salle est {#[Salon][Volet Terrasse][Etat]#\|0:fermé\|<99:ouvert à #[Salon][Volet Terrasse][Etat]# pour cent\|99:ouvert}
 
 Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|**, on passe les conditions si:alors avec le si comme valeur et et alors, le texte. Dès qu'un condition est trouvée, l'évaluation s'arrête, donc si le volet est à 0 c'est bien 'fermé' qui serat énoncé, car <99 ne serat pas évalué.
 
