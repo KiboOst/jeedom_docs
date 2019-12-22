@@ -127,7 +127,7 @@ On a donc maintenant tag(rhasspy_room) qui correspond à la pièce souhaitée.
 Le deuxième bloc SI n'est pas obligatoire. Vous pouvez lancer le même scénario pour plusieurs intents, et il sert donc à filtrer l'intent souhaité.
 Par exemple si on veux allumer ou éteindre une lumière.
 
-Finalement, on vérifie de quelle lumière il s'agit : SI tag(rhasspy_room) matches "/cuisine|maison/"
+Finalement, on vérifie de quelle lumière il s'agit : SI tag(rhasspy_room) matches "/cuisine\|maison/"
 
 En matchant cuisine ou maison, on pourra aussi demander :
 
@@ -137,6 +137,6 @@ On peut aussi différencier *en bas*, *en haut* pour pouvoir demander :
 
 > Allume les lumière en bas
 
-Avec SI tag(rhasspy_room) matches "/cuisine|maison|en bas/"
+Avec SI tag(rhasspy_room) matches "/cuisine\|maison\|en bas/"
 
 Et ainsi de suite ...
