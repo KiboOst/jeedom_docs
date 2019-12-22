@@ -172,4 +172,5 @@ Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|
 
 Un autre exemple pour demander si une lumière est allumée ou éteinte :
 
-> La lumière est actuellement {#[Cuisine][Lumière][Etat]#|0:éteinte|1:allumée}
+> La lumière est actuellement {#[Cuisine][Lumière][Etat]#\|0:éteinte\|1:allumée}
+
