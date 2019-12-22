@@ -22,6 +22,7 @@ Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom.
 ## TODO
 - Ce plugin est en beta !
 - Integrer [ttsRemap](https://github.com/KiboOst/SNIPS-Tips/tree/master/JeedomTTSremap) dans le plugin
+- Commande speak avec siteid variable
 
 
 En attente de Rhasspy:
