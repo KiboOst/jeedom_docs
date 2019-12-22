@@ -154,7 +154,7 @@ Cette commande permet de construire un texte dynamique en fonction d'information
 
 {% include lightbox.html src="jeerhasspy/images/dynspeak.jpg" data="jeelog" title="dynamic Speak" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne serat pas très waf.
+Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très waf.
 
 Vous pourriez faire trois blocs SI :
 SI #[Salon][Volet Terrasse][Etat]# == 0 THEN speak Le volet est fermé
@@ -162,13 +162,13 @@ SINON
 	SI #[Salon][Volet Terrasse][Etat]# == 99 THEN speak Le volet est ouvert
 	SINON speak Le volet est ouvert à #[Salon][Volet Terrasse][Etat]# pour cent
 
-Certe, çà fonctionnera, mais çà complexifie énormément les scénarios.
+Certes, çà fonctionnera, mais çà complexifie énormément les scénarios.
 
 La commande *dynamic Speak* va vous permettre de faire simplement :
 
 > Le volet de la salle est {#[Salon][Volet Terrasse][Etat]#\|0:fermé\|<99:ouvert à #[Salon][Volet Terrasse][Etat]# pour cent\|99:ouvert}
 
-Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|**, on passe les conditions si:alors avec le si comme valeur et et alors, le texte. Dès qu'un condition est trouvée, l'évaluation s'arrête, donc si le volet est à 0 c'est bien 'fermé' qui serat énoncé, car <99 ne serat pas évalué.
+Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|**, on passe les conditions si:alors avec le si comme valeur et et alors, le texte. Dès qu'un condition est trouvée, l'évaluation s'arrête, donc si le volet est à 0 c'est bien 'fermé' qui sera énoncé, car <99 ne sera pas évalué.
 
 Un autre exemple pour demander si une lumière est allumée ou éteinte :
 
