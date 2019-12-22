@@ -16,6 +16,10 @@ Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom.
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
 ### 20/12/2019
+- New : commande *dynamic Speak* sur les devices Rhasspy.
+
+
+### 20/12/2019
 - Première version (Beta).
 
 
