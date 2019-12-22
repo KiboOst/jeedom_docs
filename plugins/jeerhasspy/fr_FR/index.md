@@ -170,3 +170,6 @@ dynamic Speak : Le volet de la salle est {#[Salon][Volet Terrasse][Etat]#\|0:fer
 
 Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|**, on passe les conditions si:alors avec le si comme valeur et et alors, le texte. Dès qu'un condition est trouvée, l'évaluation s'arrête, donc si le volet est à 0 c'est bien 'fermé' qui serat énoncé, car <99 ne serat pas évalué.
 
+Un autre exemple pour demander si une lumière est allumée ou éteinte :
+
+> La lumière est actuellement {#[Cuisine][Lumière][Etat]#|0:éteinte|1:allumée}
