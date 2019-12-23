@@ -8,6 +8,7 @@ description: Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom
 # JeeRhasspy - Plugin pour Jeedom
 
 Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom.
+Vous devez au préalable avoir un système Rhasspy fonctionnel !
 
 [Changelog](changelog.md)<br />
 
