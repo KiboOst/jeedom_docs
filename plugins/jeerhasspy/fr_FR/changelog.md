@@ -7,7 +7,7 @@ description: Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom
 
 # JeeRhasspy - Plugin pour Jeedom
 
-Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom.
+Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedocs.io/en/latest/) dans Jeedom.
 
 ## Changelog
 
@@ -17,11 +17,13 @@ Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom.
 
 ### 28/12/2019
 - New : commande *ask* voir [Documentation](index.md).
-	*Il faut réimporter l'assistant pour créer la commande sur le device Rhasspy*
+
+*Il faut réimporter l'assistant pour créer la commande sur le device Rhasspy*
 
 ### 22/12/2019
 - New : commande *dynamic Speak* sur les devices Rhasspy.
-	*Il faut réimporter l'assistant pour créer la commande sur le device Rhasspy*
+
+*Il faut réimporter l'assistant pour créer la commande sur le device Rhasspy*
 
 ### 20/12/2019
 - Première version (Beta).

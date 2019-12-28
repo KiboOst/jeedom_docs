@@ -7,7 +7,7 @@ description: Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom
 
 # JeeRhasspy - Plugin pour Jeedom
 
-Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom.
+Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedocs.io/en/latest/) dans Jeedom.
 Vous devez au préalable avoir un système Rhasspy fonctionnel !
 
 [Changelog](changelog.md)<br />
@@ -40,7 +40,7 @@ A l'important il y a trois options possible:
 
 L'importation de l'assistant va créer :
 
-- Un Device : C'est votre machine Rhasspy, permettant notamment de lancer une commande TTS.
+- Un Device : C'est votre machine Rhasspy, permettant notamment de lancer une commande TTS ou Ask.
 - Vos Intentions : Chaque Intent de votre assistant.
 
 > Tip
@@ -49,11 +49,11 @@ L'importation de l'assistant va créer :
 > - En utilisant le bouton **Supprimer les intentions**, qui supprimera tous vos Intents actuels.
 > - Sur une intention, utilisez le bouton **Supprimer**.
 
-En cliquant que un Device Rhasspy, vous pouvez lancer un test TTS sur ce device.
+En cliquant sur un Device Rhasspy, vous pouvez effectuer un test TTS sur ce device.
 
 ## Configuration Rhasspy
 
-Pour que Rhasspy envoi les événements souhaités à Jeedom, vous devez ensuite lui indiquer l'url du plugin, indiquée dans la partie Assistant.
+Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez ensuite lui indiquer l'url du plugin, indiquée dans la partie Assistant.
 Vous pouvez le faire:
 - Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
 
@@ -72,6 +72,13 @@ Ou manuellement:
     }
 
 ```
+
+> Tip
+> Actuellement pour nommer votre device rhasspy, vous devez :
+> - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
+> - Cliquer sur MQTT et cocher *Enable MQTT*
+> - Renseigner un nom dans le champ **Site ID**
+> - Décocher *Enable MQTT* si vous ne l'utilisez pas, puis sauver les settings.
 
 ## Callback Scénario
 
@@ -108,7 +115,7 @@ Voici ce que rhasspy va envoyer au plugin :
 			"value": "cuisine",
 		}
 	],
-	"text": "allume les lumi\u00e8re de le cuisine",
+	"text": "allume les lumière de la cuisine",
 	"wakeId": "snowboy\/hey_brigitte.pmdl",
 	"siteId": "salon"
 }
@@ -116,10 +123,10 @@ Voici ce que rhasspy va envoyer au plugin :
 Le plugin sait donc de qu'elle intention il s'agit, et lance alors le scénario correspondant avec les tags suivant :
 
 ```
-Start : Lancement provoque. Tags : {"#intent#":"lightsTurnOnJeedom","#confidence#":"1","#wakeword#":"snowboy\/hey_brigitte.pmdl","#query#":"allume les lumi\u00e8re de le cuisine","#siteId#":"salon","#house_room#":"cuisine"}
+Start : Lancement provoque. Tags : {"#intent#":"lightsTurnOnJeedom","#confidence#":"1","#wakeword#":"snowboy\/hey_brigitte.pmdl","#query#":"allume les lumière de la cuisine","#siteId#":"salon","#house_room#":"cuisine"}
 ```
 
-Donc si on pas de tag(house_room), car on peux simplement lui demander d'allumer la lumière sans préciser où, on a deux solutions :
+Donc si on pas de tag(house_room), car on peut simplement lui demander d'allumer la lumière sans préciser où, on a deux solutions :
 - Soit le siteId n'est pas renseigné dans Rhasspy, donc on donne le nom de notre device de base (master) Rhasspy, ici dans le *salon*.
 - Soit le siteId est renseigné, et on l'utilise.
 Et si on a le tag(house_room), on l'utilise.
@@ -128,48 +135,51 @@ On a donc maintenant tag(rhasspy_room) qui correspond à la pièce souhaitée.
 Le deuxième bloc SI n'est pas obligatoire. Vous pouvez lancer le même scénario pour plusieurs intents, et il sert donc à filtrer l'intent souhaité.
 Par exemple si on veux allumer ou éteindre une lumière.
 
-Finalement, on vérifie de quelle lumière il s'agit : SI tag(rhasspy_room) matches "/cuisine\|maison/"
+Finalement, on vérifie de quelle lumière il s'agit : `SI tag(rhasspy_room) matches "/cuisine\|maison/"`
 
 En matchant cuisine ou maison, on pourra aussi demander :
 
-> Allume les lumière de la maison
+> Allume les lumières de la maison
 
 On peut aussi différencier *en bas*, *en haut* pour pouvoir demander :
 
-> Allume les lumière en bas
+> Allume les lumières en bas
 
-Avec SI tag(rhasspy_room) matches "/cuisine\|maison\|en bas/"
+Avec `SI tag(rhasspy_room) matches "/cuisine\|maison\|en bas/"`
 
 Et ainsi de suite ...
 
 ## Commandes
 
-Sur chaque device Rhasspy, il y a deux commandes:
+Sur chaque device Rhasspy, il y a trois commandes:
 
 - Speak : Permet d'énoncer un texte.
 - dynamic Speak : Permet d'énoncer un texte construit dynamiquement.
+- Ask : Permet d'utiliser la fonction **Ask** de Jeedom.
 
 ### Commande *dynamic Speak*
 
-Cette commande permet de construire un texte dynamique en fonction d'informations d'équipement dans Jeedom.
+Cette commande permet de construire un texte dynamique en fonction d'informations d'équipements dans Jeedom.
 
 {% include lightbox.html src="jeerhasspy/images/dynspeak.jpg" data="jeerhasspy" title="dynamic Speak" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très waf.
+Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très *waf*.
 
 Vous pourriez faire trois blocs SI :
+```
 SI #[Salon][Volet Terrasse][Etat]# == 0 THEN speak Le volet est fermé
 SINON
 	SI #[Salon][Volet Terrasse][Etat]# == 99 THEN speak Le volet est ouvert
 	SINON speak Le volet est ouvert à #[Salon][Volet Terrasse][Etat]# pour cent
-
+```
 Certes, çà fonctionnera, mais çà complexifie énormément les scénarios.
 
 La commande *dynamic Speak* va vous permettre de faire simplement :
 
-> Le volet de la salle est {#[Salon][Volet Terrasse][Etat]#\|0:fermé\|<99:ouvert à #[Salon][Volet Terrasse][Etat]# pour cent\|99:ouvert}
+> Le volet de la salle est {#[Salon][Volet Terrasse][Etat]#\|0:fermé\|<99:ouvert à #[Salon][Volet Terrasse][Etat]# pourcent\|99:ouvert}
 
-Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|**, on passe les conditions si:alors avec le si comme valeur et et alors, le texte. Dès qu'un condition est trouvée, l'évaluation s'arrête, donc si le volet est à 0 c'est bien 'fermé' qui sera énoncé, car <99 ne sera pas évalué.
+Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|**, on passe les conditions si:alors avec le si comme valeur et le alors comme texte.
+Dès qu'une condition est trouvée, l'évaluation s'arrête. Si le volet est à 0 c'est bien 'fermé' qui sera énoncé, car <99 ne sera pas évalué.
 
 Un autre exemple pour demander si une lumière est allumée ou éteinte :
 
@@ -180,11 +190,13 @@ Un autre exemple pour demander si une lumière est allumée ou éteinte :
 Vous pouvez utiliser la commande interne de Jeedom **Ask** pour que votre Rhasspy vous pose une question, et attende votre réponse. Votre scénario pourra ensuite agir en fonction de votre réponse.
 
 Pour cela vous devez indiquer :
-- Dans le champ **Réponse** : Le nom du slot contenant la réponse, tel que définit dans rhasspy.
+- Dans le champ **Réponse** : Le nom du *slot* contenant la réponse, tel que définit dans rhasspy.
 - Dans le champ **Commandes** : La commande **Ask** du device rhasspy.
 
 Voici un exemple :
 
 {% include lightbox.html src="jeerhasspy/images/scenario_ask.jpg" data="jeerhasspy" title="Commande Ask" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+
 
 
