@@ -19,7 +19,7 @@ Il apparaîtra alors dans le menu *Plugins > Communication*.
 
 Vous devez d'abord renseigner sur la page de configuration:
 
-{% include lightbox.html src="jeerhasspy/images/config.jpg" data="jeelog" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeerhasspy/images/config.jpg" data="jeerhasspy" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 
 - Adresse : L'adresse IP de votre Rhasspy (comprenant http:// ou https://).
@@ -57,7 +57,7 @@ Pour que Rhasspy envoi les événements souhaités à Jeedom, vous devez ensuite
 Vous pouvez le faire:
 - Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
 
-{% include lightbox.html src="jeerhasspy/images/rhasspy_config.jpg" data="jeelog" title="Configuration Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeerhasspy/images/rhasspy_config.jpg" data="jeerhasspy" title="Configuration Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Ou manuellement:
 - Par l'interface de Rhasspy, onglet *Advanced* ou,
@@ -82,14 +82,14 @@ Pour chaque Intention (Intent), vous devez :
 - Cocher les informations comprises dans l'Intent, qui seront passées au scénario sous forme de tags.
 - Renseigner éventuellement d'autres tags spécifiques.
 
-{% include lightbox.html src="jeerhasspy/images/intent_config.jpg" data="jeelog" title="Configuration d'une Intention" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeerhasspy/images/intent_config.jpg" data="jeerhasspy" title="Configuration d'une Intention" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 
 ### Exemple de scénario
 
 Voici un exemple de scénario.
 
-{% include lightbox.html src="jeerhasspy/images/scenario_01.jpg" data="jeelog" title="Exemple de scénario" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeerhasspy/images/scenario_01.jpg" data="jeerhasspy" title="Exemple de scénario" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Le premier bloc SI sera commun à la plupart de ce type de scénario : On veut savoir d'où vient la demande pour pouvoir la traiter correctement. *house_room* est un slot de rhasspy, par exemple, si on lui demande :
 
@@ -153,7 +153,7 @@ Sur chaque device Rhasspy, il y a deux commandes:
 
 Cette commande permet de construire un texte dynamique en fonction d'informations d'équipement dans Jeedom.
 
-{% include lightbox.html src="jeerhasspy/images/dynspeak.jpg" data="jeelog" title="dynamic Speak" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeerhasspy/images/dynspeak.jpg" data="jeerhasspy" title="dynamic Speak" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très waf.
 
@@ -174,4 +174,17 @@ Donc, on passe d'abord l'information dans un **{}** puis, séparés par des **\|
 Un autre exemple pour demander si une lumière est allumée ou éteinte :
 
 > La lumière est actuellement {#[Cuisine][Lumière][Etat]#\|0:éteinte\|1:allumée}
+
+### Commande *Ask*
+
+Vous pouvez utiliser la commande interne de Jeedom **Ask** pour que votre Rhasspy vous pose une question, et attende votre réponse. Votre scénario pourra ensuite agir en fonction de votre réponse.
+
+Pour cela vous devez indiquer :
+- Dans le champ **Réponse** : Le nom du slot contenant la réponse, tel que définit dans rhasspy.
+- Dans le champ **Commandes** : La commande **Ask** du device rhasspy.
+
+Voici un exemple :
+
+{% include lightbox.html src="jeerhasspy/images/scenario_ask.jpg" data="jeerhasspy" title="Commande Ask" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
 
