@@ -39,9 +39,8 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 
 ## TODO
-- Ce plugin est en beta !
-- Commande speak avec siteid variable
-
-
 En attente de Rhasspy:
-- Device satellite.
+- Commande speak avec siteid variable
+- Builtin Slots (Duration, DateTime, Number, etc.)
+- Config Master / Satellite
+
