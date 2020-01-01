@@ -17,36 +17,36 @@ Vous devez au préalable avoir un système Rhasspy fonctionnel !
 Après installation du plugin, il vous suffit de l’activer.
 Il apparaîtra alors dans le menu *Plugins > Communication*.
 
-Vous devez d'abord renseigner sur la page de configuration:
+Vous devez alors renseigner, sur la page de configuration du plugin :
 
 {% include lightbox.html src="jeerhasspy/images/config.jpg" data="jeerhasspy" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-
 - Adresse : L'adresse IP de votre Rhasspy (comprenant http:// ou https://).
 - Port : Le Port de votre Rhasspy (par défaut 12101).
-- Feedback : Une phrase que Jeedom dira si il ne trouve pas de scénario correspondant à l'Intent souhaité.
+- Feedback : Une phrase que Rhasspy dira si il ne trouve pas de scénario correspondant à l'Intent souhaité.
 - Filtrer les Intents Jeedom : A l'importation de l'assistant, seuls les Itents donc le nom finit pas *jeedom* seront crées (**TurnOnJeedom**, **LightSetJeedom**, etc).
+- Variables rhasspyWakeWord / rhasspyWakeSiteId : Quand le wakeword est détecté, le plugin renseigne ces deux variables avec le wakewordId et siteId. Vous pouvez alors déclencher un scénario sur `#variable(rhasspyWakeWord)#` pour par exemple couper la musique le temps de votre demande.
 
 
 ## Utilisation
 
-Une fois configuré, il faut une première fois importer l'assistant Rhasspy.
+Une fois le plugin configuré, il faut une première fois importer l'assistant Rhasspy.
 
-A l'important il y a trois options possible:
+A l'importation, il y a trois options possible:
+*Lors de la première importantation, ces options n'ont pas d'incidence*.
 - Conserver toutes les Intentions : Ne supprime aucun Intent, et crée ceux non présent dans Jeedom.
 - Supprimer les Intentions qui ne sont plus dans l'assistant : Supprime seulement les Intents de Jeedom qui ne sont plus dans Rhasspy.
 - Supprimer et recréer toutes les Intentions : Supprime tous les Intents de Jeedom, avant de recréer les Intents présents sur Rhasspy.
 
-
 L'importation de l'assistant va créer :
 
-- Un Device : C'est votre machine Rhasspy, permettant notamment de lancer une commande TTS ou Ask.
-- Vos Intentions : Chaque Intent de votre assistant.
+- Un Device : C'est votre machine Rhasspy, permettant notamment de lancer une commande **TTS** ou **Ask**.
+- Vos Intentions : Chaque Intent présent sur votre assistant Rhasspy.
 
 > Tip
 > Vous pouvez supprimer des intentions de trois façons:
 > - En réimportant votre assistant, suivant l'option choisie (voir ci-dessus).
-> - En utilisant le bouton **Supprimer les intentions**, qui supprimera tous vos Intents actuels.
+> - En utilisant le bouton **Supprimer les intentions**, qui supprimera tous vos Intents actuels du plugin.
 > - Sur une intention, utilisez le bouton **Supprimer**.
 
 En cliquant sur un Device Rhasspy, vous pouvez effectuer un test TTS sur ce device.
@@ -54,6 +54,11 @@ En cliquant sur un Device Rhasspy, vous pouvez effectuer un test TTS sur ce devi
 ## Configuration Rhasspy
 
 Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez ensuite lui indiquer l'url du plugin, indiquée dans la partie Assistant.
+
+### Intent recognized
+
+Rhasspy envoie directement l'Intent reconnu sur une url (ici, le plugin).
+
 Vous pouvez le faire:
 - Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
 
@@ -67,18 +72,31 @@ Ou manuellement:
 	"handle": {
         "system": "remote",
         "remote": {
-            "url": "http://127.0.0.1:80/core/api/jeeApi.php?plugin=jeerhasspy&apikey=---apikey---&plugin=jeerhasspy&type=jeerhasspy"
+            "url": "http://x.x.x.x:80/core/api/jeeApi.php?plugin=jeerhasspy&apikey=---apikey---&plugin=jeerhasspy&type=jeerhasspy"
         }
-    }
+    },
 
 ```
 
 > Tip
-> Actuellement pour nommer votre device rhasspy, vous devez :
+> Actuellement pour nommer votre device Rhasspy, vous devez :
 > - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
 > - Cliquer sur MQTT et cocher *Enable MQTT*
 > - Renseigner un nom dans le champ **Site ID**
 > - Décocher *Enable MQTT* si vous ne l'utilisez pas, puis sauver les settings.
+
+### Wakeword detected
+
+Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord / rhasspyWakeSiteId sur détection du wakeword, vous devez éditer votre profile Rhasspy. Cette option n'est pas disponible par l'interface de Rhasspy.
+
+Fichier `.config\rhasspy\profiles\fr\profile.json`, ajoutez:
+
+```json
+	"webhooks": {
+		"awake": ["http://x.x.x.x:80/core/api/jeeApi.php?plugin=jeerhasspy&apikey=---apikey---&plugin=jeerhasspy&type=jeerhasspy"]
+	},
+
+```
 
 ## Callback Scénario
 
@@ -153,9 +171,9 @@ Et ainsi de suite ...
 
 Sur chaque device Rhasspy, il y a trois commandes:
 
-- Speak : Permet d'énoncer un texte.
-- dynamic Speak : Permet d'énoncer un texte construit dynamiquement.
-- Ask : Permet d'utiliser la fonction **Ask** de Jeedom.
+- **Speak** : Permet d'énoncer un texte.
+- **dynamic Speak** : Permet d'énoncer un texte construit dynamiquement.
+- **Ask** : Permet d'utiliser la fonction **Ask** de Jeedom.
 
 ### Commande *dynamic Speak*
 

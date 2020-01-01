@@ -15,6 +15,15 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 01/01/2020
+- Mise à jour de la [Documentation](index.md).
+- BugFix : Option *Filtrer les Intents Jeedom*.
+- New : Affichage des intentions par groupes, comme les scénarios.
+- New : Ajout d'un bouton sur la configuration des Intentions pour ouvrir le scénario callback dans un autre onglet.
+- New : Variables rhasspyWakeWord / rhasspyWakeSiteId.
+
+*Il faut éditer votre profile rhasspy pour bénéficier de cette fonction, voir [Documentation](index.md).*
+
 ### 28/12/2019
 - New : commande *ask* voir [Documentation](index.md).
 
