@@ -16,6 +16,9 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
 ### 01/01/2020
+- New : Configuration automatique de Rhasspy depuis le panel Assistant.
+
+### 01/01/2020
 - Mise à jour de la [Documentation](index.md).
 - BugFix : Option *Filtrer les Intents Jeedom*.
 - New : Affichage des intentions par groupes, comme les scénarios.
@@ -40,7 +43,6 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 ## TODO
 En attente de Rhasspy:
-- Commande speak avec siteid variable
-- Builtin Slots (Duration, DateTime, Number, etc.)
-- Config Master / Satellite
+- Builtin Slots (Duration, DateTime, Number, etc.) -> slot duration totalMinutes pour les DANS
+- Config Master / Satellite -> Commande speak avec siteid variable
 

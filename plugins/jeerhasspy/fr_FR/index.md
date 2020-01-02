@@ -55,17 +55,19 @@ En cliquant sur un Device Rhasspy, vous pouvez effectuer un test TTS sur ce devi
 
 Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez ensuite lui indiquer l'url du plugin, indiquée dans la partie Assistant.
 
+{% include lightbox.html src="jeerhasspy/images/assistant_configure.jpg" data="jeerhasspy" title="Configuration de Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+
 ### Intent recognized
 
 Rhasspy envoie directement l'Intent reconnu sur une url (ici, le plugin).
 
 Vous pouvez le faire:
+- **Automatiquement** : *Plugins > Communication > jeeRhasspy* Dans le panel **Assistant** cliquez sur le bouton **Configurer** à droite de l'url à utiliser.
 - Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
 
 {% include lightbox.html src="jeerhasspy/images/rhasspy_config.jpg" data="jeerhasspy" title="Configuration Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Ou manuellement:
-- Par l'interface de Rhasspy, onglet *Advanced* ou,
 - En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`
 
 ```json
@@ -89,7 +91,8 @@ Ou manuellement:
 
 Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord / rhasspyWakeSiteId sur détection du wakeword, vous devez éditer votre profile Rhasspy. Cette option n'est pas disponible par l'interface de Rhasspy.
 
-Fichier `.config\rhasspy\profiles\fr\profile.json`, ajoutez:
+- **Automatiquement** : *Plugins > Communication > jeeRhasspy* Dans le panel **Assistant** cliquez sur le bouton **Configurer** à droite de l'option *Wake event*.
+- En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`
 
 ```json
 	"webhooks": {
