@@ -12,6 +12,12 @@ Vous devez au préalable avoir un système Rhasspy fonctionnel !
 
 [Changelog](changelog.md)<br />
 
+[Configuration du plugin JeeRhasspy](#configuration-du-plugin-jeerhasspy)<br />
+[Utilisation](#utilisation)<br />
+[Configuration Rhasspy](#configuration-rhasspy)<br />
+[Callback Scénario](#callback-scénario)<br />
+[Commandes](#commandes)<br />
+
 ## Configuration du plugin JeeRhasspy
 
 Après installation du plugin, il vous suffit de l’activer.

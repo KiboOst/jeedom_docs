@@ -10,6 +10,14 @@ description: Astuces pour la personnalisation de l'interface de Jeedom v4
 • [Scénarios : Programmation du jour](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Tutos/ProgDuJour/fr_FR/)<br>
 • [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario/fr_FR/)<br>
 
+[Introduction](#introduction)<br />
+[Plugin Mode coloré](#plugin-mode-coloré)<br />
+[Changer certaines couleurs de l’interface](#changer-certaines-couleurs-de-linterface)<br />
+[Autre exemples](#autre-exemples)<br />
+[Affichage des scénarios sur un design](#affichage-des-scénarios-sur-un-design)<br />
+[Couleur d’arrière plan des designs](#couleur-darrière-plan-des-designs)<br />
+[Des dummies sur le Dashboard](#des-dummies-sur-le-dashboard)<br />
+
 ## Introduction
 
 Plusieurs choses sont paramétrables nativement dans ***Réglages / Système / Configuration, Interface***.
