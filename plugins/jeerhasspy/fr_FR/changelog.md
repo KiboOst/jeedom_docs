@@ -15,7 +15,10 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
-### 01/01/2020
+### 15/01/2020
+- New : Confidence minimale sur les Intents pour l'éxécution du scénario callback.
+
+### 04/01/2020
 - New : Configuration automatique de Rhasspy depuis le panel Assistant.
 
 ### 01/01/2020

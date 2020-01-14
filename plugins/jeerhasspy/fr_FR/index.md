@@ -27,11 +27,11 @@ Vous devez alors renseigner, sur la page de configuration du plugin :
 
 {% include lightbox.html src="jeerhasspy/images/config.jpg" data="jeerhasspy" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-- Adresse : L'adresse IP de votre Rhasspy (comprenant http:// ou https://).
-- Port : Le Port de votre Rhasspy (par défaut 12101).
-- Feedback : Une phrase que Rhasspy dira si il ne trouve pas de scénario correspondant à l'Intent souhaité.
-- Filtrer les Intents Jeedom : A l'importation de l'assistant, seuls les Itents donc le nom finit pas *jeedom* seront crées (**TurnOnJeedom**, **LightSetJeedom**, etc).
-- Variables rhasspyWakeWord / rhasspyWakeSiteId : Quand le wakeword est détecté, le plugin renseigne ces deux variables avec le wakewordId et siteId. Vous pouvez alors déclencher un scénario sur `#variable(rhasspyWakeWord)#` pour par exemple couper la musique le temps de votre demande.
+- **Adresse** : L'adresse IP de votre Rhasspy (comprenant http:// ou https://).
+- **Port** : Le Port de votre Rhasspy (par défaut 12101).
+- **Feedback** : Une phrase que Rhasspy dira si il ne trouve pas de scénario correspondant à l'Intent souhaité.
+- **Filtrer les Intents Jeedom** : A l'importation de l'assistant, seuls les Itents donc le nom finit pas *jeedom* seront crées (*TurnOnJeedom*, *LightSetJeedom*, etc).
+- **Variables rhasspyWakeWord / rhasspyWakeSiteId** : Quand le wakeword est détecté, le plugin renseigne ces deux variables avec le wakewordId et siteId. Vous pouvez alors déclencher un scénario sur `#variable(rhasspyWakeWord)#` pour par exemple couper la musique le temps de votre demande.
 
 
 ## Utilisation
@@ -40,9 +40,9 @@ Une fois le plugin configuré, il faut une première fois importer l'assistant R
 
 A l'importation, il y a trois options possible:
 *Lors de la première importantation, ces options n'ont pas d'incidence*.
-- Conserver toutes les Intentions : Ne supprime aucun Intent, et crée ceux non présent dans Jeedom.
-- Supprimer les Intentions qui ne sont plus dans l'assistant : Supprime seulement les Intents de Jeedom qui ne sont plus dans Rhasspy.
-- Supprimer et recréer toutes les Intentions : Supprime tous les Intents de Jeedom, avant de recréer les Intents présents sur Rhasspy.
+- **Conserver toutes les Intentions** : Ne supprime aucun Intent, et crée ceux non présent dans Jeedom.
+- **Supprimer les Intentions qui ne sont plus dans l'assistant** : Supprime seulement les Intents de Jeedom qui ne sont plus dans Rhasspy.
+- **Supprimer et recréer toutes les Intentions** : Supprime tous les Intents de Jeedom, avant de recréer les Intents présents sur Rhasspy.
 
 L'importation de l'assistant va créer :
 
@@ -114,6 +114,7 @@ Pour chaque Intention (Intent), vous devez :
 - Renseigner un scénario qui sera exécuté à la détection de cet Intent par Rhasspy.
 - Renseigner l'action à réaliser sur le scénario (start, ...).
 - Cocher les informations comprises dans l'Intent, qui seront passées au scénario sous forme de tags.
+- Renseigner une *Confidence* minimale pour l'éxécution du scénario. Vous pouvez aussi la laisser à 0 et la vérifier dans le scénario avec un SI tag(confidence) > 0.
 - Renseigner éventuellement d'autres tags spécifiques.
 
 {% include lightbox.html src="jeerhasspy/images/intent_config.jpg" data="jeerhasspy" title="Configuration d'une Intention" imgstyle="width:550px;display: block;margin: 0 auto;" %}
