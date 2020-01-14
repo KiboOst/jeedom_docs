@@ -203,6 +203,43 @@ $scenario->setData('sunset', $sunset);
 cf [Scénarios : Programmation du jour](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Tutos/ProgDuJour/fr_FR/)
 
 
+## Ajout de fonction php
+
+Jeedom permet également d'ajouter des fonctions utilisables directement dans les scénarios.
+[Doc officielle](https://jeedom.github.io/core/fr_FR/scenario#tocAnchor-1-15)
+
+Pour cela il faut éditer le fichier `/data/user.function.class.php`.
+Vous pouvez utiliser l'éditeur de Jeedom (voir doc) ou le plugin [JeeXplorer](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3690)
+
+Un petit exemple qui va nous permettre de tester et de récupérer un paramètre de configuration de Jeedom ou d'un plugin dans un scénario.
+
+Le fichier `/data/user.function.class.php`:
+```php
+<?php
+require_once dirname(__FILE__) . '/../../core/php/core.inc.php';
+
+class userFunction {
+	public static function getConfigByKey($_key='', $_type='core', $_default = '', $_forceFresh = false) {
+      $_key = self::stripQuotes($_key);
+      $_type = self::stripQuotes($_type);
+      $_default = self::stripQuotes($_default);
+      return config::byKey($_key, $_type, $_default, $_forceFresh);;
+	}
+
+  /* INTERNAL FUNCTIONS */
+  static function stripQuotes($text) {
+  		return preg_replace('/(^[\"\']|[\"\']$)/', '', $text);
+	}
+}
+```
+Ce qui nous permet d’appeler la fonction getConfigByKey() dans un scénario:
+
+{% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/user_getConfigByKey.jpg" data="codes" title="getConfigByKey" imgstyle="width:800px;display: block;margin: 0 auto;" %}
+
+## pyJeedom
+
+Si vous êtes un habitué du Python, le module pyJeedom permet d'accéder aux fonctions de l'api jsonrpc en python : [pyJeedom](https://github.com/KiboOst/pyJeedom)
+
 <br/><br/>
 *To be continued...*
 
