@@ -10,6 +10,12 @@ description: Scénarios - Petits codes entre amis
 • [Astuces pour la personnalisation de l'interface](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Interface/fr_FR/)<br>
 • [Scénarios : Programmation du jour](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Tutos/ProgDuJour/fr_FR/)<br>
 
+
+[Introduction](#introduction)<br />
+[Quelques exemples](#quelques-exemples)<br />
+[Ajout de fonction php](#ajout-de-fonction-php)<br />
+[pyJeedom](#pyJeedom)<br />
+
 ## Introduction
 
 Vous le savez, un scénario est constitué de différents blocs (SI, A, DANS, etc), utilisés en fonction de ce que l'on désire faire.
