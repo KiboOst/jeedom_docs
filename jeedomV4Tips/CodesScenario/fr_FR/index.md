@@ -220,18 +220,20 @@ require_once dirname(__FILE__) . '/../../core/php/core.inc.php';
 
 class userFunction {
 	public static function getConfigByKey($_key='', $_type='core', $_default = '', $_forceFresh = false) {
-      $_key = self::stripQuotes($_key);
-      $_type = self::stripQuotes($_type);
-      $_default = self::stripQuotes($_default);
-      return config::byKey($_key, $_type, $_default, $_forceFresh);;
+		$_key = self::stripQuotes($_key);
+		$_type = self::stripQuotes($_type);
+		$_default = self::stripQuotes($_default);
+		return config::byKey($_key, $_type, $_default, $_forceFresh);;
 	}
 
-  /* INTERNAL FUNCTIONS */
-  static function stripQuotes($text) {
-  		return preg_replace('/(^[\"\']|[\"\']$)/', '', $text);
+	/* INTERNAL FUNCTIONS */
+	static function stripQuotes($text) {
+		return preg_replace('/(^[\"\']|[\"\']$)/', '', $text);
 	}
 }
 ```
+> La fonction stripQuotes() permet d'appeller getConfigByKey(name, core) ou getConfigByKey("name", "core"), evitant les erreurs ;-)
+
 Ce qui nous permet d’appeler la fonction getConfigByKey() dans un scénario:
 
 {% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/user_getConfigByKey.jpg" data="codes" title="getConfigByKey" imgstyle="width:800px;display: block;margin: 0 auto;" %}
