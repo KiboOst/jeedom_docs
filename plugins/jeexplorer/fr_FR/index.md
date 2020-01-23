@@ -7,6 +7,8 @@ description: Explorateur / éditeur de fichiers pour Jeedom
 
 # JeeXplorer - Plugin pour Jeedom
 
+*[Lien market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3690)*
+
 Explorateur / éditeur de fichiers pour Jeedom.
 
 <div class="alert">

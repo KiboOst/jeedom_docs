@@ -7,6 +7,8 @@ description: Plugin de journalisation d’activité
 
 # JeeLog - Plugin pour Jeedom
 
+*[Lien market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3362)*
+
 Plugin de journalisation d'activité.
 
 Après avoir renseigné les commandes info et scénarios souhaités, vous disposez d’un journal sur le Dashboard/Vue/Design.

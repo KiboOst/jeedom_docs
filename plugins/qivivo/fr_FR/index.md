@@ -7,6 +7,8 @@ description: Intégration du Thermostat Qivivo.
 
 # Qivivo - Plugin pour Jeedom
 
+*[Lien market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3551)*
+
 Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 [Pré-requis](#pré-requis)<br />
