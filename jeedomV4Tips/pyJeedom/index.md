@@ -9,22 +9,34 @@ Module python pour Jeedom.
 
 Utilisation dans des scripts python dans Jeedom, ou depuis l’extérieur (même réseau ou pas).
 
-## Requirements
+[Pré-requis](#pré-requis)<br />
+[Installation](#installation)<br />
+[Documentation](#documentation)<br />
+[Utilisation](#utilisation)<br />
+[Change Log](#changelog)<br />
+
+
+## Pré-requis
+
 - Une installation Jeedom fonctionnelle !
-- Activer l'API Json:
-Réglages → Système → Configuration / API :
-Accès API JSONRPC : Activé, IP Blanche ou localhost.
+- Activer l'API Json:<br />
+Réglages → Système → Configuration / API :<br />
+Accès API JSONRPC : *Activé*, *IP Blanche* ou *localhost*.
 - Python 2 ou 3 installé.
 
 ## Installation
+
 - Copier le fichier [pyJeedom.py](https://github.com/KiboOst/pyJeedom/blob/master/pyJeedom.py) sur votre Jeedom, ou une autre machine ayant Python.
 - Importer le module dans un script Python.
 
 ## Documentation
+
 - Vous pouvez vous référer à la documentation de l'API JSONRPC : [jsonrpc_api](https://jeedom.github.io/core/fr_FR/jsonrpc_api)
 
 ### Changements
+
 Certains noms de fonctions sont réservés en Python :
+
 ##### summary::global
 > Utilisez `jeedom.summary.main()`
 
@@ -41,6 +53,7 @@ Certains noms de fonctions sont réservés en Python :
 ##### `jeedom.jeeObject.byName('string')`
 
 ## Utilisation
+
 Voici un exemple avec le module copié sur Jeedom, dans le répertoire */var/www/html/kiboost/*
 Vous trouverez la clé API dans Réglages → Système → Configuration / API : Clé API
 
@@ -106,14 +119,18 @@ print(pluginEqlogics)
 ```
 
 Exemple depuis un scénario, bloc CODE:
+
 On passe en paramètre les tags du scénario au script python, puis on récupère le résultat.
+
 ```php
 $tags = $scenario->getTags();
 $arg = escapeshellarg(json_encode($tags));
 $tags['#result#'] = shell_exec("python /var/www/html/kiboost/doStuff.py ".$arg);
 $scenario->setTags($tags);
 ```
+
 En Python (/var/www/html/kiboost/doStuff.py) :
+
 ```python
 #-*- coding: UTF-8 -*-
 
@@ -137,6 +154,7 @@ if __name__ == "__main__":
   #send result to scenario:
   print('something stuffy')
 ```
+
 Vous pouvez ensuite utiliser **tag(result)**, ou une variable enregistrée par votre script python par exemple, dans la suite de votre scénario.
 
 ## Changelog
@@ -148,6 +166,3 @@ Vous pouvez ensuite utiliser **tag(result)**, ou une variable enregistrée par v
 
 ##### 09/01/2020
 - Création et parution !
-
-
-

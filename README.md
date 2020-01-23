@@ -1,4 +1,4 @@
-# jeedom_docs
+# Plugins, astuces, doc *by KiboOst*
 
 ## Plugins
 
