@@ -23,6 +23,7 @@ Après installation du plugin, il vous suffit de l’activer.
 Il apparaîtra alors dans le menu *Plugins > Monitoring*
 
 ## Ajouter un journal
+
 Cliquez simplement sur *Ajouter*, puis nommez votre équipement.
 
 {% include lightbox.html src="jeelog/images/eq_settings.jpg" data="jeelog" title="Equipement" imgstyle="width:550px;display: block;margin: 0 auto;" %}
@@ -36,7 +37,7 @@ Vous pouvez également paramétrer:
     - [Doc php](http://php.net/manual/fr/function.date.php)
     - Si vous voulez seulement l'heure en début de ligne : H:i:s
     - Pour seulement jour-mois heure : d-m H:i:s
-- Les couleurs de fond et de texte au format css pour la tuile Design. Par ex, pour un fond transparent, indiquez rgba(0,0,0,0) !
+
 
 ### Onglet *Logs*
 
@@ -59,7 +60,7 @@ Vous pouvez monter/descendre les éléments de cette liste pour plus de clarté 
 - Pour que ces commandes apparaissent dans votre journal, il faut qu'elles soient historisées sur la période. De la même manière que pour les voir dans *Analyse > Historique*.
 - L'affichage des scénarios se fait par le log de chaque scénario demandé. Si le log est vidé, il n’apparaîtra plus.
 
-{% include lightbox.html src="jeelog/images/jeelog_screenshot1.png" data="jeelog_screenshot1" title="Infos et scénarios" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="jeelog/images/jeelog_logtab.jpg" data="jeelog" title="Infos et scénarios" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Vous pouvez également afficher un fichier log de Jeedom.
 
@@ -73,21 +74,9 @@ Créer un équipement jeeLog avec un fichier de log permet d'afficher ce fichier
 
 ## Affichage
 
->App Mobile: Si vous souhaitez afficher un journal dans l'app mobile, créez un *design* au bon format, ajoutez l'équipement JeeLog sur toute la surface. Vous pouvez également ajouter un bouton avec la commande Rafraîchir, si l’icône rafraîchir est trop petite. Vous aurez ainsi accès au journal en plein écran directement dans l'app mobile.
+> App Mobile (Android / iOS) : Si vous souhaitez afficher un journal dans l'app mobile, créez un *design* au bon format, ajoutez l'équipement JeeLog sur toute la surface. Vous pouvez également ajouter un bouton avec la commande Rafraîchir, si l’icône rafraîchir est trop petite. Vous aurez ainsi accès au journal en plein écran directement dans l'app mobile.
 
-Voici quelques illustrations du résultat, avec les paramètres par défaut.
-
-Dashboard:
-
-{% include lightbox.html src="jeelog/images/dashboard.jpg" data="jeelog" title="Dashboard" imgstyle="width:400px;display: block;margin: 0 auto;" %}
-
-Vue:
-
-{% include lightbox.html src="jeelog/images/dview.jpg" data="jeelog" title="Vue" imgstyle="width:400px;display: block;margin: 0 auto;" %}
-
-Vue sur mobile:
-
-{% include lightbox.html src="jeelog/images/mview.jpg" data="jeelog" title="Vue sur mobile" imgstyle="width:400px;display: block;margin: 0 auto;" %}
+Le plugin est bien sûr utilisable sur des vues et designs.
 
 
 ## Changelog
