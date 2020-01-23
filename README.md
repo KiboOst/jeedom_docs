@@ -18,3 +18,5 @@
 • [Scénarios : Petits codes entre amis](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/CodesScenario)
 
 • [Scénarios : Programmation du jour](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/Tutos/ProgDuJour/fr_FR/)
+
+• [pyJeedom : Module python pour Jeedom](https://kiboost.github.io/jeedom_docs/jeedomV4Tips/pyJeedom/)
