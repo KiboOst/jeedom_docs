@@ -3,7 +3,7 @@ title: Rhasspy Assistant Tips n Tricks
 description: Some unofficial doc and tools for Rhasspt Assistant.
 ---
 
-<img align="right" src="images/rhasspyLogoLong.png.png" width="100">
+<img align="right" src="../Rhasspy/images/rhasspyLogoLong.png.png" width="100">
 
 # Rhasspy Assistant
 
@@ -39,10 +39,13 @@ Rhasspy also have its own plugin for smarthome solution **Jeedom**
 
 ### Docker
 *rhasspy can run as a Docker container, which is extremely simple to run it without setup!*
+
 Install Docker:
-`curl -sSL https://get.docker.com | sh`
-`sudo usermod -a -G docker $USER`
-List running instances: `docker ps`
+```
+curl -sSL https://get.docker.com | sh
+sudo usermod -a -G docker $USER
+```
+List running instances: `docker ps`</br>
 Start named rhasspy instance:
 ```bash
 docker run -d -p 12101:12101 \
@@ -54,9 +57,9 @@ docker run -d -p 12101:12101 \
       --user-profiles /profiles \
       --profile fr
 ```
-Start an instance: `docker start rhasspy-server`
-Stop an instance: `docker stop rhasspy-server`
-Update the container: `docker pull synesthesiam/rhasspy-server:latest`
+Start an instance: `docker start rhasspy-server`</br>
+Stop an instance: `docker stop rhasspy-server`</br>
+Update the container: `docker pull synesthesiam/rhasspy-server:latest`</br>
 Remove current container: `docker rm rhasspy-server`
 
 ## 3rdparty installations
@@ -87,17 +90,18 @@ sudo apt install -y mosquitto mosquitto-clients
 sudo systemctl enable mosquitto.service
 ```
 ### Kaldi
-Kaldi is a lot better at speech recognition than pocketspinx. But it comes by default with a even language model which make it slower. You can install lighter models from here (get the TDNN-250):
-Models: https://github.com/gooofy/zamia-speech#asr-models
-French models: https://github.com/pguyot/zamia-speech/releases/tag/20190930
+Kaldi is a lot better at speech recognition than pocketspinx. But it comes by default with a even language model which make it slower.</br>
+You can install lighter models from here (get the TDNN-250):</br>
+Models: [zamia-speech ASR models](https://github.com/gooofy/zamia-speech#asr-models)</br>
+French models: [zamia-speech releases](https://github.com/pguyot/zamia-speech/releases/tag/20190930)
 
 Replace these files in `{profile_dir}/kaldi/model/model` folder and retrain Rhasspy!
 
-> cmvn_opts
-> den.fst
-> final.mdl
-> normalization.fst
-> tree
+> cmvn_opts</br>
+> den.fst</br>
+> final.mdl</br>
+> normalization.fst</br>
+> tree</br>
 
 ## To Do:
 - Rhasspy batcher : python tool to batch test intents after a new training
