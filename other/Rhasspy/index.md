@@ -84,12 +84,16 @@ sudo apt-get install -f ./libttspico0_1.0+git20130326-3+rpi1_armhf.deb ./libttsp
 pico2wave -l fr-FR -w test.wav "Bonjour Rhasspy"
 aplay test.wav
 ```
+
 ### MQTT
+
 ```bash
 sudo apt install -y mosquitto mosquitto-clients
 sudo systemctl enable mosquitto.service
 ```
+
 ### Kaldi
+
 Kaldi is a lot better at speech recognition than pocketspinx. But it comes by default with a even language model which make it slower.<br />
 You can install lighter models from here (get the TDNN-250):<br />
 Models: [zamia-speech ASR models](https://github.com/gooofy/zamia-speech#asr-models)<br />
