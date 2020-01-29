@@ -8,7 +8,9 @@ description: RhasspyLogger for Rhasspy Assistant.
 # Rhasspy-Logger
 
 Python script as a service to provides a log file of most important Rhasspy mqtt topics.
-Basically, this script subscribe to hotword, intent, tss and such Rhasspy topics, to provides a log files of what happens.
+
+Basically, this script subscribe to hotword, intent, tss and such Rhasspy MQTT topics, to provides a log files of what happens on master and its satellites.
+
 This allow to check what's going on while using Rhasspy.
 
 Coming soon ...
