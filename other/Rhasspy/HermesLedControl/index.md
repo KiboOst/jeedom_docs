@@ -33,7 +33,7 @@ The important command line parameters are:
 
 Edit the service file and change **ExecStart** line as follow:
 
-Adapt HLC version number, your profile path (en instead of fr ?) and your hardware if needed:
+*Adapt HLC version number, your profile path (en instead of fr ?) and your hardware if needed*
 
 
 ```bash
@@ -43,7 +43,6 @@ sudo nano /etc/systemd/system/hermesledcontrol.service
 ```bash
 ExecStart=/home/pi/hermesLedControl_v2.0.1/venv/bin/python3 main.py --engine=rhasspy --pathToConfig=/home/pi/.config/rhasspy/profiles/fr/profile.json --hardware=respeaker2 --pattern=kiboost
 ```
-
 Then reload daemon and sart it:
 
 ```bash
@@ -85,6 +84,19 @@ def onButton1(self, *args):
 ```
 
 Pressing the button will toggle wakeword service, and set *self.muted* variable accordingly so idle LEDS will show three leds breathing or only the middle one if muted.
+
+### Turn LEDs on/off
+
+HLC have topics to turn LEDs on and off. Just run this command on the master Rhasspy:
+
+```bash
+mosquitto_pub -p 1883 -t 'hermes/leds/toggleOn' -m '{"siteId" : "salle"}'
+mosquitto_pub -p 1883 -t 'hermes/leds/toggleOff' -m '{"siteId" : "salle"}'
+```
+
+> Tips
+>
+> If you install several Rhasspy with a master and satellites, keep in mind that each device should have its MQTT host setting to the master IP.
 
 ### debug
 
