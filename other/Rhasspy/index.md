@@ -10,20 +10,21 @@ description: Some unofficial doc and tools for Rhasspy Assistant.
 **Rhasspy** is an open source, fully offline voice assistant toolkit.
 
 After Sonos literally killed Snips, a lot of users switched to Rhasspy, which get actively developed and enhanced into an amazing fully customizable offline assistant.
-Once installed and setup, you can define all intents, slots and interact everyday with it, without any Internet connection. Welcome private life!
+
+Once installed and setup, you can define all intents, slots and interact everyday with it, without any Internet connection. All settings and intents/slots definition are available through Rhasspy own on Pi interface. Welcome private life!
 
 The official documentation is rather complete and enough to set it up and running so I won't rewrite it, but focus on tips and add-on tools.
 
 Before going further, you should ever know these:
 - [Official documentation](https://rhasspy.readthedocs.io/en/latest/)
-- [Official repository](https://github.com/rhasspy)
 - [Official community](https://community.rhasspy.org/)
+- [Official repository](https://github.com/rhasspy)
 
-
-Rhasspy also have its own plugin for smarthome solution **Jeedom**
+Rhasspy also have its own plugin for **Jeedom** smart-home solution
 - [jeeRhasspy documentation](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy/fr_FR/)
 - [jeeRhasspy on the market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3869)
 
+**summary**
 
 [Common commands](#common-commands)<br />
 [3rdparty installations](#3rdparty-installations)<br />
@@ -31,18 +32,18 @@ Rhasspy also have its own plugin for smarthome solution **Jeedom**
 
 ## Common commands
 
-*Here are a few common used ssh commands*
+A few common used ssh commands.
 
 ### Docker
-*rhasspy can run as a Docker container, which is extremely simple to run it without setup!*
+*rhasspy can run as a Docker container, which is extremely simple to run without setup!*
 
-Install Docker:
+- Install Docker:
 ```
 curl -sSL https://get.docker.com | sh
 sudo usermod -a -G docker $USER
 ```
-List running instances: `docker ps`<br />
-Start named rhasspy instance:
+- List running instances: `docker ps`<br />
+- Start named rhasspy instance:
 ```bash
 docker run -d -p 12101:12101 \
       --name rhasspy-server \
@@ -53,27 +54,25 @@ docker run -d -p 12101:12101 \
       --user-profiles /profiles \
       --profile fr
 ```
-Start an instance: `docker start rhasspy-server`<br />
-Stop an instance: `docker stop rhasspy-server`<br />
-Update the container: `docker pull synesthesiam/rhasspy-server:latest`<br />
-Remove current container: `docker rm rhasspy-server`
+- Start an instance: `docker start rhasspy-server`<br />
+- Stop an instance: `docker stop rhasspy-server`<br />
+- Update the container: `docker pull synesthesiam/rhasspy-server:latest`<br />
+- Remove current container: `docker rm rhasspy-server`
 
 
 ### Startup commands
 
-You can set commands run at Raspberry startup. For example, set volume level:
-
+You can set commands run at Raspberry startup. Just edit /etc/rc.local file and add some commands.
 `sudo nano /etc/rc.local`
 
-Add :
-
+- Set volume level (*-c 0 is your sound-card identifier*):
 ```bash
 # Set alsa volume
 sleep 30
 amixer -c 0 set Playback 88%
 ```
 
-Turn off wifi power standby on Rpi 0:
+- Turn off wifi power standby on Rpi 0:
 
 ```bash
 # Turn off wifi standby on pi0
@@ -83,19 +82,20 @@ sudo iwconfig wlan0 power off
 You can debug the execution of rc.local like this: `journalctl -u rc-local`
 
 ## 3rdparty installations
-*Some 3rdparty tools that your Rhasspy setup may need.*
+
+Some 3rdparty tools that your Rhasspy setup may need.
 
 ### ReSpeaker
 
 If you have a ReSpeaker 2-Mics Pi HAT or such, install its drivers:
 
-First, disable Raspberry onboard soundcard:
+- First, disable Raspberry onboard soundcard:
 
 `sudo nano /boot/config.txt`
 
 Turn **dtparam=audio** parameter to off: `dtparam=audio=off`
 
-Then install seeed drivers:
+- Then install seeed drivers:
 
 ```bash
 sudo apt-get install git
@@ -105,7 +105,7 @@ sudo ./install.sh
 sudo reboot
 ```
 
-[seed wiki](http://wiki.seeedstudio.com/Raspberry_Pi/)
+> [seed wiki](http://wiki.seeedstudio.com/Raspberry_Pi/)
 
 ### PicoTTS
 
@@ -136,7 +136,7 @@ sudo systemctl enable mosquitto.service
 
 ### Kaldi
 
-Kaldi is a lot better at speech recognition than pocketspinx. But it comes by default with a even language model which make it slower.<br />
+Kaldi is a lot better at speech recognition than pocketspinx. But it comes by default with an heavy language model which make it slower.<br />
 You can install lighter models from here (get the TDNN-250):<br />
 Models: [zamia-speech ASR models](https://github.com/gooofy/zamia-speech#asr-models)<br />
 French models: [zamia-speech releases](https://github.com/pguyot/zamia-speech/releases/tag/20190930)
@@ -150,18 +150,12 @@ Replace these files in `{profile_dir}/kaldi/model/model` folder and retrain Rhas
 > tree<br />
 
 ## Custom tools
-*these will be different pages to write*
 
 - [HermesLedControl](HermesLedControl)
-- [RhasspyBatchTester](RhasspyBatchTester)
-- [RhasspyLogger](RhasspyLogger)
-- [SnowboyCustomMaker](SnowboyCustomMaker)
+- [Rhasspy-BatchTester](RhasspyBatchTester)
+- [Rhasspy-Logger](RhasspyLogger)
+- [Snowboy-CustomMaker](SnowboyCustomMaker)
 - [PyJeedom and intent handling with scenarios](JeedomPyHandling)
 
 
-## To Do:
-- Rhasspy batcher : python tool to batch test intents after a new training
-- Rhasspy logger : python tool that listen mqtt and write a log file with wakewords, thinking / intents recognized, speak so you can read/show it anywhere and keep history of master/satellites interactions.
-- Snowboy custom wake tool : python tool to record samples and generate pmdl file.
-- For jeedom users, a way to handle intents with python directly inside Jeedom.
-- And different tips here and there
+*A lot more to come ...*
