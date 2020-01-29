@@ -60,12 +60,14 @@ docker run -d -p 12101:12101 \
 - Remove current container: `docker rm rhasspy-server`
 
 
+
 ### Startup commands
 
 You can set commands run at Raspberry startup. Just edit /etc/rc.local file and add some commands.
 `sudo nano /etc/rc.local`
 
 - Set volume level (*-c 0 is your sound-card identifier*):
+
 ```bash
 # Set alsa volume
 sleep 30
