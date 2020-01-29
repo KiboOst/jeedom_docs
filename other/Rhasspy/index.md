@@ -7,6 +7,14 @@ description: Some unofficial doc and tools for Rhasspy Assistant.
 
 # Rhasspy Assistant
 
+**summary**
+
+[Common commands](#common-commands)<br />
+[3rdparty installations](#3rdparty-installations)<br />
+[Custom tools](#custom-tools)<br />
+
+## Introduction
+
 **Rhasspy** is an open source, fully offline voice assistant toolkit.
 
 After Sonos literally killed Snips, a lot of users switched to Rhasspy, which get actively developed and enhanced into an amazing fully customizable offline assistant.
@@ -24,11 +32,6 @@ Rhasspy also have its own plugin for **Jeedom** smart-home solution
 - [jeeRhasspy documentation](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy/fr_FR/)
 - [jeeRhasspy on the market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3869)
 
-**summary**
-
-[Common commands](#common-commands)<br />
-[3rdparty installations](#3rdparty-installations)<br />
-[Custom tools](#custom-tools)<br />
 
 ## Common commands
 
