@@ -88,9 +88,9 @@ Pressing the button will toggle wakeword service, and set *self.muted* variable 
 
 ### debug
 
-Start the service: `sudo systemctl start hermesledcontrol`
-Stop the service: `sudo systemctl stop hermesledcontrol`
-Restart the service: `sudo systemctl restart hermesledcontrol`
-Show service log: `journalctl -u hermesledcontrol.service`
+Start the service: `sudo systemctl start hermesledcontrol`<br />
+Stop the service: `sudo systemctl stop hermesledcontrol`<br />
+Restart the service: `sudo systemctl restart hermesledcontrol`<br />
+Show service log: `journalctl -u hermesledcontrol.service`<br />
 
 
