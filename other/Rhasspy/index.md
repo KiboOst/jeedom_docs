@@ -1,6 +1,6 @@
 ---
 title: Rhasspy Assistant Tips n Tricks
-description: Some unofficial doc and tools for Rhasspt Assistant.
+description: Some unofficial doc and tools for Rhasspy Assistant.
 ---
 
 <img align="right" src="images/rhasspyLogoLong.png" width="160" style="top: 15px">
@@ -24,14 +24,10 @@ Rhasspy also have its own plugin for smarthome solution **Jeedom**
 - [jeeRhasspy documentation](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy/fr_FR/)
 - [jeeRhasspy on the market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3869)
 
-## Custom tools
-*these will be different pages to write*
 
-- HermesLedControl
-- RhasspyBatchTester
-- RhasspyLogger
-- SnowboyCustomMaker
-- PyJeedom and intent handling with scenarios
+[Common commands](#common-commands)<br />
+[3rdparty installations](#3rdparty-installations)<br />
+[Custom tools](#custom-tools)<br />
 
 ## Common commands
 
@@ -62,8 +58,54 @@ Stop an instance: `docker stop rhasspy-server`<br />
 Update the container: `docker pull synesthesiam/rhasspy-server:latest`<br />
 Remove current container: `docker rm rhasspy-server`
 
+
+### Startup commands
+
+You can set commands run at Raspberry startup. For example, set volume level:
+
+`sudo nano /etc/rc.local`
+
+Add :
+
+```bash
+# Set alsa volume
+sleep 30
+amixer -c 0 set Playback 88%
+```
+
+Turn off wifi power standby on Rpi 0:
+
+```bash
+# Turn off wifi standby on pi0
+sudo iwconfig wlan0 power off
+```
+
+You can debug the execution of rc.local like this: `journalctl -u rc-local`
+
 ## 3rdparty installations
 *Some 3rdparty tools that your Rhasspy setup may need.*
+
+### ReSpeaker
+
+If you have a ReSpeaker 2-Mics Pi HAT or such, install its drivers:
+
+First, disable Raspberry onboard soundcard:
+
+`sudo nano /boot/config.txt`
+
+Turn **dtparam=audio** parameter to off: `dtparam=audio=off`
+
+Then install seeed drivers:
+
+```bash
+sudo apt-get install git
+git clone https://github.com/respeaker/seeed-voicecard
+cd seeed-voicecard
+sudo ./install.sh
+sudo reboot
+```
+
+[seed wiki](http://wiki.seeedstudio.com/Raspberry_Pi/)
 
 ### PicoTTS
 
@@ -106,6 +148,16 @@ Replace these files in `{profile_dir}/kaldi/model/model` folder and retrain Rhas
 > final.mdl<br />
 > normalization.fst<br />
 > tree<br />
+
+## Custom tools
+*these will be different pages to write*
+
+- [HermesLedControl](HermesLedControl)
+- [RhasspyBatchTester](RhasspyBatchTester)
+- [RhasspyLogger](RhasspyLogger)
+- [SnowboyCustomMaker](SnowboyCustomMaker)
+- [PyJeedom and intent handling with scenarios](JeedomPyHandling)
+
 
 ## To Do:
 - Rhasspy batcher : python tool to batch test intents after a new training

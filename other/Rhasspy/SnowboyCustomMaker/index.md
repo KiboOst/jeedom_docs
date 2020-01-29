@@ -1,6 +1,12 @@
 ---
 title: Rhasspy Assistant Tips n Tricks
-description: Some unofficial doc and tools for Rhasspt Assistant.
+description: SnowboyCustomMaker for Rhasspy Assistant.
 ---
+
+<img align="right" src="../images/rhasspyLogoLong.png" width="160" style="top: 15px">
+
+# Snowboy-CustomMaker
+
+Snowboy-CustomMaker is a set of python script to help recording custom wakeword samples and generate pmdl file.
 
 Coming soon ...
