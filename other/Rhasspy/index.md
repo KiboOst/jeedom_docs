@@ -10,7 +10,7 @@ description: Some unofficial doc and tools for Rhasspy Assistant.
 **summary**
 
 [Common commands](#common-commands)<br />
-[3rdparty installations](#3rdparty-installations)<br />
+[3rdparty installations](#rdparty-installations)<br />
 [Custom tools](#custom-tools)<br />
 
 ## Introduction

@@ -7,6 +7,8 @@ description: RhasspyBatchTester for Rhasspy Assistant.
 
 # Rhasspy-BatchTester
 
+[← Main page](../index.md)
+
 Rhasspy-BatchTester is a python script that provide a way to mass test intents.
 
 You can test one or several sentences to intent recognition, or define a json with several sentences, intent that should be detected, and test it in one go with a report of matched / unmatched intents and there slots.

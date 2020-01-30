@@ -7,6 +7,8 @@ description: HermesLedControl for Rhasspy Assistant.
 
 # HermesLedControl
 
+[← Main page](../index.md)
+
 [Official repository](https://github.com/project-alice-assistant/HermesLedControl)
 
 ## HLC setup for Rhasspy

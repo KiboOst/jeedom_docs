@@ -7,6 +7,8 @@ description: SnowboyCustomMaker for Rhasspy Assistant.
 
 # Snowboy-CustomMaker
 
+[← Main page](../index.md)
+
 Snowboy-CustomMaker is a set of python script to help recording custom wakeword samples and generate pmdl file.
 
 Coming soon ...
