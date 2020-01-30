@@ -41,6 +41,10 @@ li .emoji {
   vertical-align: bottom
 }
 
+summary:hover {
+  cursor: pointer;
+}
+
 //scroll to top:
 .scrollUpButton {
 	display: none;
