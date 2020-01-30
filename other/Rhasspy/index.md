@@ -37,33 +37,6 @@ Rhasspy also have its own plugin for **Jeedom** smart-home solution
 
 A few common used ssh commands.
 
-### Docker
-*rhasspy can run as a Docker container, which is extremely simple to run without setup!*
-
-- Install Docker:
-```
-curl -sSL https://get.docker.com | sh
-sudo usermod -a -G docker $USER
-```
-- List running instances: `docker ps`<br />
-- Start named rhasspy instance:
-```bash
-docker run -d -p 12101:12101 \
-      --name rhasspy-server \
-      --restart unless-stopped \
-      -v "$HOME/.config/rhasspy/profiles:/profiles" \
-      --device /dev/snd:/dev/snd \
-      synesthesiam/rhasspy-server:latest \
-      --user-profiles /profiles \
-      --profile fr
-```
-- Start an instance: `docker start rhasspy-server`<br />
-- Stop an instance: `docker stop rhasspy-server`<br />
-- Update the container: `docker pull synesthesiam/rhasspy-server:latest`<br />
-- Remove current container: `docker rm rhasspy-server`
-
-
-
 ### Startup commands
 
 You can set commands run at Raspberry startup. Just edit /etc/rc.local file and add some commands.
@@ -153,6 +126,87 @@ Replace these files in `{profile_dir}/kaldi/model/model` folder and retrain Rhas
 > final.mdl<br />
 > normalization.fst<br />
 > tree<br />
+
+### Docker
+*rhasspy can run as a Docker container, which is extremely simple to run without setup!*
+
+- Install Docker:
+```
+curl -sSL https://get.docker.com | sh
+sudo usermod -a -G docker $USER
+```
+- List running instances: `docker ps`<br />
+- Start named rhasspy instance:
+```bash
+docker run -d -p 12101:12101 \
+      --name rhasspy-server \
+      --restart unless-stopped \
+      -v "$HOME/.config/rhasspy/profiles:/profiles" \
+      --device /dev/snd:/dev/snd \
+      synesthesiam/rhasspy-server:latest \
+      --user-profiles /profiles \
+      --profile fr
+```
+- Start an instance: `docker start rhasspy-server`<br />
+- Stop an instance: `docker stop rhasspy-server`<br />
+- Update the container: `docker pull synesthesiam/rhasspy-server:latest`<br />
+- Remove current container: `docker rm rhasspy-server`
+
+### Virtual environement as a service
+
+If you start rhasspy as venv with an ssh command, it won't live forever, which is what we need for an assistant.
+
+So you have to setup the venv as a service, and activate the service at startup. So you can unplug the pi, plug it and had rhasspy running without any manipulation.
+
+Create the systemd service file:
+
+```bash
+sudo nano /etc/systemd/system/rhasspy.service
+
+```
+
+Edit this file with your settings, like --profile manguage, --host IP and --user-profiles path. Then paste in `/etc/systemd/system/rhasspy.service` file.
+
+<details>
+<summary>rhasspy.service file</summary>
+```bash
+[Unit]
+Description=Rhasspy
+After=syslog.target network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/rhasspy
+ExecStart=/bin/bash -lc './run-venv.sh --profile fr --host 192.168.0.140 --user-profiles /home/pi/.config/rhasspy/profiles'
+
+RestartSec=1
+Restart=on-failure
+
+StandardOutput=syslog
+StandardError=syslog
+
+SyslogIdentifier=rhasspy
+
+[Install]
+WantedBy=multi-user.target
+```
+</details>
+
+Then simply run these to set, enable, then start the service:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable rhasspy
+sudo systemctl start rhasspy
+
+```
+
+If you need to debug it:
+
+```bash
+journalctl -u rhasspy.service
+
+```
 
 ## Custom tools
 
