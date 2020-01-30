@@ -56,7 +56,8 @@ HLC allow to map some function on button pressed.
 
 Actually, Rhasspy doesn't allow to stop/start wakeword service, but this should come later.
 
-Here is an example toggling snips wakeword service:
+<details>
+<summary>Here is an example toggling snips wakeword service:</summary>
 
 ```python
 def idle(self, *args):
@@ -82,6 +83,8 @@ def onButton1(self, *args):
 		call('sudo systemctl stop snips-hotword.service', shell=True)
 	self._controller.idle()
 ```
+
+</details>
 
 Pressing the button will toggle wakeword service, and set *self.muted* variable accordingly so idle LEDS will show three leds breathing or only the middle one if muted.
 

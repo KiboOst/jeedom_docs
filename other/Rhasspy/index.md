@@ -74,7 +74,7 @@ If you have a ReSpeaker 2-Mics Pi HAT or such, install its drivers:
 Turn **dtparam=audio** parameter to off: `dtparam=audio=off`
 
 <details>
-<summary>- Then install seeed drivers:</summary>
+<summary>Then install seeed drivers:</summary>
 
 ```bash
 sudo apt-get install git
@@ -90,23 +90,37 @@ sudo reboot
 
 ### PicoTTS
 
-- Rpi 4 Buster:
+<details>
+<summary>Rpi 4 Buster:</summary>
+
 ```bash
 wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb
 wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb
 sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb
 ```
-- Rpi 0 buster:
+
+</details>
+
+<details>
+<summary>Rpi 0 buster:</summary>
+
 ```bash
 wget http://archive.raspberrypi.org/debian/pool/main/s/svox/libttspico-utils_1.0+git20130326-3+rpi1_armhf.deb
 wget http://archive.raspberrypi.org/debian/pool/main/s/svox/libttspico0_1.0+git20130326-3+rpi1_armhf.deb
 sudo apt-get install -f ./libttspico0_1.0+git20130326-3+rpi1_armhf.deb ./libttspico-utils_1.0+git20130326-3+rpi1_armhf.deb
 ```
-- Testing:
+
+</details>
+
+<details>
+<summary>Testing:</summary>
+
 ```bash
 pico2wave -l fr-FR -w test.wav "Bonjour Rhasspy"
 aplay test.wav
 ```
+
+</details>
 
 ### MQTT
 
