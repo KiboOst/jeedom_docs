@@ -23,7 +23,7 @@ Download it on a PC or use wget to download it on your Rpi:
 ```bash
 mkdir RhasspyBatchTester
 cd RhasspyBatchTester
-wget https://github.com/KiboOst/jeedom_docs/tree/master/other/Rhasspy/RhasspyBatchTester/pyRhasspyBatcher.py
+wget https://raw.githubusercontent.com/KiboOst/jeedom_docs/master/other/Rhasspy/RhasspyBatchTester/pyRhasspyBatcher.py
 ```
 
 [pyRhasspyBatcher.py](https://github.com/KiboOst/jeedom_docs/tree/master/other/Rhasspy/RhasspyBatchTester/pyRhasspyBatcher.py)
@@ -53,7 +53,7 @@ Example with one single sentence to test:
 
 ```bash
 cd Rhasspy-BatchTester
-pyRhasspyBatcher --addr 192.168.0.140 --sentence "Turn light on in the kitchen" --intent "turnLightOn"
+python3 pyRhasspyBatcher.py --addr http://192.168.0.140 --sentence "Turn light on in the kitchen" --intent "turnLightOn"
 
 ```
 
@@ -100,16 +100,6 @@ if __name__ == "__main__":
 ```
 
 </details>
-
-in Rhasspy-BatchTester folder you will find a python script example to test:
-
-`sudo nano /Rhasspy-BatchTester/runTest.py`
-
-In this script, you can set your own arguments for later re-use, and what to do in `if rhasspy.connected condition`.
-
-- `rhasspy.testSentence("allume la lumière de la cuisine", "lightsTurnOnJeedom")`
-- `rhasspy.testJsonFile("mySentences.json")`
-
 
 ## Output example
 

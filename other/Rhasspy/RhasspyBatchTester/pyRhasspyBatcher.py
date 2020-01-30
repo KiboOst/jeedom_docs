@@ -119,7 +119,9 @@ class rhasspyBatcher():
 				displayResult += '[     MATCHED] %s | query: %s'%(matchIntent, query)
 			else:
 				self.unmatched += 1
-				displayResult += '[---UNMATCHED] %s  should: %s | query: %s'%(intentName, matchIntent, query)
+				displayResult += '[---UNMATCHED] %s should: %s | query: %s'%(intentName, matchIntent, query)
+		else:
+			displayResult += '[       FOUND] %s | query: %s'%(intentName, query)
 
 		displayResult += ' | confidence:%s'%round(confidence, 2)
 
