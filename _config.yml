@@ -15,3 +15,5 @@ languageNames:
 plugins:
   - jemoji
   - jekyll-seo-tag
+
+markdown: CommonMarkGhPages
