@@ -169,6 +169,7 @@ Edit this file with your settings, like --profile manguage, --host IP and --user
 
 <details>
 <summary>rhasspy.service file</summary>
+
 ```bash
 [Unit]
 Description=Rhasspy
@@ -190,6 +191,7 @@ SyslogIdentifier=rhasspy
 [Install]
 WantedBy=multi-user.target
 ```
+
 </details>
 
 Then simply run these to set, enable, then start the service:
