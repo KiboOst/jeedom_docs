@@ -28,8 +28,8 @@ sudo ./hlc_download.sh
 Before starting it, we will have to configure service file for Rhasspy.
 
 The important command line parameters are:
-> --engine=rhasspy<br />
-> --pathToConfig=/home/pi/.config/rhasspy/profiles/fr/profile.json
+> --engine<br />
+> --pathToConfig
 
 Edit the service file and change **ExecStart** line as follow:
 
@@ -41,7 +41,7 @@ sudo nano /etc/systemd/system/hermesledcontrol.service
 ```
 
 ```bash
-ExecStart=/home/pi/hermesLedControl_v2.0.1/venv/bin/python3 main.py --engine=rhasspy --pathToConfig=/home/pi/.config/rhasspy/profiles/fr/profile.json --hardware=respeaker2 --pattern=kiboost
+ExecStart=/home/pi/hermesLedControl_v2.0.3/venv/bin/python3 main.py --engine=rhasspy --pathToConfig=/home/pi/.config/rhasspy/profiles/fr/profile.json --hardware=respeaker2 --pattern=kiboost
 ```
 Then reload daemon and sart it:
 
