@@ -73,7 +73,8 @@ If you have a ReSpeaker 2-Mics Pi HAT or such, install its drivers:
 
 Turn **dtparam=audio** parameter to off: `dtparam=audio=off`
 
-- Then install seeed drivers:
+<details>
+<summary>- Then install seeed drivers:</summary>
 
 ```bash
 sudo apt-get install git
@@ -82,6 +83,8 @@ cd seeed-voicecard
 sudo ./install.sh
 sudo reboot
 ```
+
+</details>
 
 > [seed wiki](http://wiki.seeedstudio.com/Raspberry_Pi/)
 
