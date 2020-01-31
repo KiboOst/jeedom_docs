@@ -9,11 +9,11 @@ description: Snowboy-CustomMaker for Rhasspy Assistant.
 
 [← Main page](../index.md)
 
-Snowboy-CustomMaker is a set of python script to help recording custom wakeword samples and generate pmdl file.
+Snowboy-CustomMaker is a set of python scripts to help recording custom wakeword samples and generate pmdl file.
 
 ## Installation
 
-This tool require python 3 and four python package that you will need to install:
+This tool require python 3 and four python packages to run:
 
 - numpy
 - pyaudio
@@ -21,6 +21,7 @@ This tool require python 3 and four python package that you will need to install
 - requests
 
 SSH to your rhasspy device, on /home/pi folder.
+
 Install python packages, download snowboyCustomMaker-list.txt, then download this list into SnowboyCustomMaker folder:
 
 
@@ -32,18 +33,19 @@ cd SnowboyCustomMaker
 ```
 
 You now have three python scripts:
-- snowboyRecord.py: Used to record your custom wakeword samples as wav files.
-- snowboyTrain.py: Used to generate the pmdl file from
+- **snowboyRecord.py**: Used to record your custom wakeword samples as wav files.
+- **snowboyTrain.py**: Used to generate the pmdl file from
 - utils.py: Just keep it there, used by the snowbiyRecord script.
 
 You can have a look at these files [here](https://github.com/KiboOst/jeedom_docs/tree/master/other/Rhasspy/SnowboyCustomMaker)
 
 ## snowboyRecord
 
-This script is based on [snips-record-personal-hotword](https://github.com/snipsco/snips-record-personal-hotword)
-It have been converted to python3, cleaned, and rhasspied!
+This script is based on [snips-record-personal-hotword](https://github.com/snipsco/snips-record-personal-hotword).
 
-It will guide you through recording thee wave sample file to later generate your custom wakeword pdml file for Rhasspy (or whatever use snowboy wakeword).
+It have been converted to python3, cleaned, enhanced and rhasspied!
+
+It will guide you through recording three wave sample files to later generate your custom wakeword pdml file for Rhasspy (or whatever use snowboy wakeword).
 
 ```bash
 cd SnowboyCustomMaker
@@ -55,6 +57,8 @@ The three sample files with be saved into SnowboyCustomMaker/myhotword folder, a
 
 You can use for example *heyJarvis_Dady* then later record *heyJarvis_Mom*, etc.
 
+> While running the script with a previously used identifier, it will delete previous saved folder!
+
 ### Tips for recoding wakeword
 
 Recording a custom wakeword is something sensible to get good detection without false positive detection.
@@ -64,13 +68,15 @@ Here are a few rules from my experience with both Snips and Snowboy:
 - Record your samples on the same device that will handle wakeword detection. If you have one Rhasspy master and several Satellites, all with same ReSpeaker 2mic PiHat for example, you can use same pmdl file for all, as the hardware (even mixing Pi4 / Pi0) are the same. But don't record it on your desktop ...
 - Each room, even the most silent one (you don't live in an anechoic chamber ...), have its own background noise signature. So, it's better to record samples in a room where you don't plan to use this wakeword. Not having this background noise in the wakeword will prevent some false positive.
 - Obviously, move your Rasp into your most silent room for recording. No fridge noise, no PC or NAS fan noise, just ... no noise ! If you can hear something, move!
-- snowboyRecord or whatever you use will create samples with leading and trailing noise. You will have to clean this before generating pmdl file! You can use free Audacity tool or any wave file editor.
+- snowboyRecord or whatever you use will create samples with leading and trailing noise. You will have to clean each sample before generating pmdl file! You can use free Audacity tool or any wave file editor. Overwrite recorded files (0.wav, 1.wav, 2.wav) so snowboyTrain take the cleaned ones.
 
 {% include lightbox.html src="../other/Rhasspy/images/customWakeword_cut.jpg" data="Snowboy-CustomMaker" title="Cut samples leading/trailing noise." imgstyle="width:500px;display: block;margin: 0 auto;" %}
 
 ## snowboyTrain
 
 snowboyTrain will load your previously recorded samples and connect to snowboy.kitt.ai API to generate corresponding pmdl file.
+
+> Don't forget to clean each samples! See above *Tips for recoding wakeword*
 
 You will need an API token for this : go to [snowboy.kitt.ai](https://snowboy.kitt.ai/) and login (you can login with Github account), then get your token from your profile.
 
