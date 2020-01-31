@@ -1,0 +1,3 @@
+https://raw.githubusercontent.com/KiboOst/jeedom_docs/master/other/Rhasspy/SnowboyCustomMaker/snowboyRecord.py
+https://raw.githubusercontent.com/KiboOst/jeedom_docs/master/other/Rhasspy/SnowboyCustomMaker/snowboyTrain.py
+https://raw.githubusercontent.com/KiboOst/jeedom_docs/master/other/Rhasspy/SnowboyCustomMaker/utils.py
