@@ -21,9 +21,7 @@ Nothing fancy here, just a python file ...
 Download it on a PC or use wget to download it on your Rpi:
 
 ```bash
-mkdir Rhasspy-BatchTester
-cd Rhasspy-BatchTester
-wget https://raw.githubusercontent.com/KiboOst/jeedom_docs/master/other/Rhasspy/RhasspyBatchTester/pyRhasspyBatcher.py
+wget -P /home/pi/Rhasspy-BatchTester https://raw.githubusercontent.com/KiboOst/jeedom_docs/master/other/Rhasspy/RhasspyBatchTester/pyRhasspyBatcher.py
 ```
 
 [pyRhasspyBatcher.py](https://github.com/KiboOst/jeedom_docs/tree/master/other/Rhasspy/RhasspyBatchTester/pyRhasspyBatcher.py)

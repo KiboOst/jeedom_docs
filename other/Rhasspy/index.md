@@ -236,4 +236,3 @@ journalctl -u rhasspy.service
 - [PyJeedom and intent handling with scenarios](JeedomPyHandling)
 
 
-*A lot more to come ...*
