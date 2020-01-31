@@ -9,7 +9,7 @@ description: Snowboy-CustomMaker for Rhasspy Assistant.
 
 [← Main page](../index.md)
 
-Snowboy-CustomMaker is a set of python scripts to help recording custom wakeword samples and generate pmdl file.
+Snowboy-CustomMaker is a set of python scripts and tips to help recording custom wakeword samples and generate pmdl file.
 
 ## Installation
 
@@ -22,7 +22,7 @@ This tool require python 3 and four python packages to run:
 
 SSH to your rhasspy device, on /home/pi folder.
 
-Install python packages, download snowboyCustomMaker-list.txt, then download this list into SnowboyCustomMaker folder:
+Install python packages, download *snowboyCustomMaker-list.txt*, then download this list into SnowboyCustomMaker folder:
 
 
 ```bash
@@ -32,10 +32,10 @@ wget -P /home/pi/SnowboyCustomMaker -i snowboyCustomMaker-list.txt
 cd SnowboyCustomMaker
 ```
 
-You now have three python scripts:
+You should get three python scripts:
 - **snowboyRecord.py**: Used to record your custom wakeword samples as wav files.
 - **snowboyTrain.py**: Used to generate the pmdl file from
-- utils.py: Just keep it there, used by the snowbiyRecord script.
+- utils.py: Just keep it there, used by the snowboyRecord script.
 
 You can have a look at these files [here](https://github.com/KiboOst/jeedom_docs/tree/master/other/Rhasspy/SnowboyCustomMaker)
 
@@ -43,7 +43,7 @@ You can have a look at these files [here](https://github.com/KiboOst/jeedom_docs
 
 This script is based on [snips-record-personal-hotword](https://github.com/snipsco/snips-record-personal-hotword).
 
-It have been converted to python3, cleaned, enhanced and rhasspied!
+It have been converted to python3, cleaned, enhanced and snowboyed!
 
 It will guide you through recording three wave sample files to later generate your custom wakeword pdml file for Rhasspy (or whatever use snowboy wakeword).
 
@@ -94,3 +94,5 @@ python3 snowboyTrain.py --token ccccc0000000ccccccccccccc --lang fr --gender M -
 You should now have your pmdl file in `/home/pi/SnowboyCustomMaker/myhotword/myhotword.pmdl`.
 
 Move it in your Rhasspy profile like `/home/pi/.config/rhasspy/profiles/fr/snowboy/myhotword.pmdl` and set it in Rhasspy settings (snowboy/myhotword.pmdl).
+
+Don't forget to check Rhasspy official [documentation](https://rhasspy.readthedocs.io/en/latest/wake-word/#snowboy) on using snowboy wake word detector!
