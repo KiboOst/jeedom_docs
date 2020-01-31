@@ -6,6 +6,8 @@ import argparse
 import base64
 import requests
 
+endpoint = "https://snowboy.kitt.ai/api/v1/train/"
+
 def get_wave(fname):
 	with open(fname) as infile:
 		file = infile.read()
