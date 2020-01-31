@@ -47,6 +47,10 @@ It have been converted to python3, cleaned, enhanced and snowboyed!
 
 It will guide you through recording three wave sample files to later generate your custom wakeword pdml file for Rhasspy (or whatever use snowboy wakeword).
 
+First you will have free-up access to microphone, so shutdown Rhasspy: `docker stop rhasspy-server`
+
+Then, run snowboyRecord:
+
 ```bash
 cd SnowboyCustomMaker
 python3 snowboyRecord.py --wakeword myhotword
