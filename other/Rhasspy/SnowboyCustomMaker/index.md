@@ -49,7 +49,11 @@ It will guide you through recording thee wave sample file to later generate your
 cd SnowboyCustomMaker
 python3 snowboyRecord.py --wakeword myhotword
 ```
-**myhotword** is an identifier for your wakeword. The three sample files with be saved into SnowboyCustomMaker/myhotword folder, and **snowboyTrain** will get them to generate myhotword.pmdl file. You can use *heyJarvis_Dady* then later record *heyJarvis_Mom*, etc.
+**myhotword** is an identifier for your wakeword.
+
+The three sample files with be saved into SnowboyCustomMaker/myhotword folder, and **snowboyTrain** will get them to generate **myhotword.pmdl** file.
+
+You can use for example *heyJarvis_Dady* then later record *heyJarvis_Mom*, etc.
 
 ### Tips for recoding wakeword
 
@@ -62,13 +66,25 @@ Here are a few rules from my experience with both Snips and Snowboy:
 - Obviously, move your Rasp into your most silent room for recording. No fridge noise, no PC or NAS fan noise, just ... no noise ! If you can hear something, move!
 - snowboyRecord or whatever you use will create samples with leading and trailing noise. You will have to clean this before generating pmdl file! You can use free Audacity tool or any wave file editor.
 
-{% include lightbox.html src="../images/customWakeword_cut.jpg" data="Snowboy-CustomMaker" title="Cut samples leading/trailing noise." imgstyle="width:500px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="../other/Rhasspy/images/customWakeword_cut.jpg" data="Snowboy-CustomMaker" title="Cut samples leading/trailing noise." imgstyle="width:500px;display: block;margin: 0 auto;" %}
 
 ## snowboyTrain
 
-get token from website
+snowboyTrain will load your previously recorded samples and connect to snowboy.kitt.ai API to generate corresponding pmdl file.
+
+You will need an API token for this : go to [snowboy.kitt.ai](https://snowboy.kitt.ai/) and login (you can login with Github account), then get your token from your profile.
+
+{% include lightbox.html src="../other/Rhasspy/images/snowboy_token.jpg" data="Snowboy-CustomMaker" title="Get your API token." imgstyle="width:500px;display: block;margin: 0 auto;" %}
+
+Then, start snowboyTrain with your token and your previously recorded wakeword identifier (see above).
 
 ```bash
 cd SnowboyCustomMaker
 python3 snowboyTrain.py --token ccccc0000000ccccccccccccc --lang fr --gender M --age 3 --wakeword myhotword
 ```
+
+> run `python3 snowboyTrain.py -h` to see arguments options.
+
+You should now have your pmdl file in `/home/pi/SnowboyCustomMaker/myhotword/myhotword.pmdl`.
+
+Move it in your Rhasspy profile like `/home/pi/.config/rhasspy/profiles/fr/snowboy/myhotword.pmdl` and set it in Rhasspy settings (snowboy/myhotword.pmdl).
