@@ -49,8 +49,26 @@ It will guide you through recording thee wave sample file to later generate your
 cd SnowboyCustomMaker
 python3 snowboyRecord.py --wakeword myhotword
 ```
-**myhotword** is an identifier for your wakeword. The three sample files with be saved into SnowboyCustomMaker/myhotword folder, and *snowboyTrain* will get them to generate myhotword.pmdl file. You can use heyJarvis_Dady then later record heyJarvis_Mom, etc.
+**myhotword** is an identifier for your wakeword. The three sample files with be saved into SnowboyCustomMaker/myhotword folder, and **snowboyTrain** will get them to generate myhotword.pmdl file. You can use *heyJarvis_Dady* then later record *heyJarvis_Mom*, etc.
 
+### Tips for recoding wakeword
 
+Recording a custom wakeword is something sensible to get good detection without false positive detection.
+
+Here are a few rules from my experience with both Snips and Snowboy:
+
+- Record your samples on the same device that will handle wakeword detection. If you have one Rhasspy master and several Satellites, all with same ReSpeaker 2mic PiHat for example, you can use same pmdl file for all, as the hardware (even mixing Pi4 / Pi0) are the same. But don't record it on your desktop ...
+- Each room, even the most silent one (you don't live in an anechoic chamber ...), have its own background noise signature. So, it's better to record samples in a room where you don't plan to use this wakeword. Not having this background noise in the wakeword will prevent some false positive.
+- Obviously, move your Rasp into your most silent room for recording. No fridge noise, no PC or NAS fan noise, just ... no noise ! If you can hear something, move!
+- snowboyRecord or whatever you use will create samples with leading and trailing noise. You will have to clean this before generating pmdl file! You can use free Audacity tool or any wave file editor.
+
+{% include lightbox.html src="../images/customWakeword_cut.jpg" data="Snowboy-CustomMaker" title="Cut samples leading/trailing noise." imgstyle="width:500px;display: block;margin: 0 auto;" %}
 
 ## snowboyTrain
+
+get token from website
+
+```bash
+cd SnowboyCustomMaker
+python3 snowboyTrain.py --token ccccc0000000ccccccccccccc --lang fr --gender M --age 3 --wakeword myhotword
+```
