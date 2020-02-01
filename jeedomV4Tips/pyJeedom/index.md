@@ -44,18 +44,22 @@ Certains noms de fonctions sont réservés en Python :
 > Utilisez `jeedom.scenario.doImport()`
 
 ### Additions
-##### `jeedom.eqLogic.byName('string')`
-##### `jeedom.eqLogic.byHumanName('string')`
-##### `jeedom.cmd.byName('string')`
-##### `jeedom.cmd.byHumanName('string')`
-##### `jeedom.scenario.byName('string')`
-##### `jeedom.scenario.byHumanName('string')`
-##### `jeedom.jeeObject.byName('string')`
+
+- `jeedom.eqLogic.byName('string')`<br />
+- `jeedom.eqLogic.byHumanName('string')`<br />
+- `jeedom.cmd.byName('string')`<br />
+- `jeedom.cmd.byHumanName('string')`<br />
+- `jeedom.scenario.byName('string')`<br />
+- `jeedom.scenario.byHumanName('string')`<br />
+- `jeedom.jeeObject.byName('string')`<br />
 
 ## Utilisation
 
 Voici un exemple avec le module copié sur Jeedom, dans le répertoire */var/www/html/kiboost/*
 Vous trouverez la clé API dans Réglages → Système → Configuration / API : Clé API
+
+<details>
+<summary>Script python</summary>
 
 ```python
 #-*- coding: UTF-8 -*-
@@ -118,7 +122,12 @@ pluginEqlogics = jeedom.eqLogic.byType('jeerhasspy')
 print(pluginEqlogics)
 ```
 
-Exemple depuis un scénario, bloc CODE:
+</details>
+
+
+<details>
+<summary>Exemple depuis un scénario, bloc CODE</summary>
+
 
 On passe en paramètre les tags du scénario au script python, puis on récupère le résultat.
 
@@ -129,7 +138,11 @@ $tags['#result#'] = shell_exec("python /var/www/html/kiboost/doStuff.py ".$arg);
 $scenario->setTags($tags);
 ```
 
-En Python (/var/www/html/kiboost/doStuff.py) :
+</details>
+
+<details>
+<summary>En Python (/var/www/html/kiboost/doStuff.py)</summary>
+
 
 ```python
 #-*- coding: UTF-8 -*-
@@ -154,6 +167,8 @@ if __name__ == "__main__":
   #send result to scenario:
   print('something stuffy')
 ```
+
+</details>
 
 Vous pouvez ensuite utiliser **tag(result)**, ou une variable enregistrée par votre script python par exemple, dans la suite de votre scénario.
 
