@@ -102,8 +102,6 @@ Here are a few rules from my experience with both Snips and Snowboy:
 
 snowboyTrain will load your previously recorded samples and connect to snowboy.kitt.ai API to generate corresponding pmdl file.
 
-> Don't forget to clean each samples! See above *Tips for recoding wakeword*
-
 You will need an API token for this : go to [snowboy.kitt.ai](https://snowboy.kitt.ai/) and login (you can login with Github account), then get your token from your profile.
 
 {% include lightbox.html src="../other/Rhasspy/images/snowboy_token.jpg" data="Snowboy-CustomMaker" title="Get your API token." imgstyle="width:500px;display: block;margin: 0 auto;" %}
