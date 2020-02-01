@@ -102,7 +102,7 @@ Then, start snowboyTrain with your token and your previously recorded wakeword i
 
 ```bash
 cd SnowboyCustomMaker
-python3 snowboyTrain.py --token ccccc0000000ccccccccccccc --lang fr --gender M --age 3 --wakeword myhotword
+python3 snowboyTrain.py --token ccccc0000000ccccccccccccc --lang fr --gender M --age 30 --wakeword myhotword
 ```
 
 > run `python3 snowboyTrain.py -h` to see arguments options.
