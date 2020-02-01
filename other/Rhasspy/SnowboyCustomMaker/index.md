@@ -63,6 +63,18 @@ You can use for example *heyJarvis_Dady* then later record *heyJarvis_Mom*, etc.
 
 > While running the script with a previously used identifier, it will delete previous saved folder!
 
+So, why use this tool and not just record three samples like this ?
+
+```bash
+arecord -D 'sysdefault:CARD=seeed2micvoicec' -r 16000 -f S16_LE -c 1 -t wav > 0.wav
+ctrl C
+```
+
+snowboyRecord script check each recorded sample for noise, and if there is too much noise it will display a warning and record a new one. It will also check previous records for consistency and warn you if there is too much difference between records. So you can end up recording not three, but more ...
+
+If there is too much noise in the room, you will simply be unable to validate your records. Which will avoid generating a pmdl file that will cause many false positive!
+
+
 ### Tips for recoding wakeword
 
 Recording a custom wakeword is something sensible to get good detection without false positive detection.
