@@ -39,11 +39,9 @@ RATE = 16000
 CHUNK = 1024
 RECORD_SECONDS = 2.2
 SNR_TRIM = 18
-FOLDER_BASE = ""
+SNR_TRIM_CUT = 9
 MAX_RECORD_DURATION = 1.6
-MAX_DIFFERENCE_DURATION = 0.3
-DATE_FORMAT = '%Y_%m_%dT%H_%M_%S'
-
+MAX_DIFFERENCE_DURATION = 0.7
 
 def record_one(directory, i):
     dest_path = os.path.join(directory, "{0}.wav".format(i))
@@ -51,8 +49,7 @@ def record_one(directory, i):
     with noalsaerr():
         audio = pyaudio.PyAudio()
 
-        input(
-            """\n\nPress enter to record one sample, say your hotword when "recording..." shows up""")
+        input("\nPress enter to record sample %s, say your wakeword when \"recording...\" shows up"%i)
         time.sleep(0.5)
 
         stream = audio.open(format=FORMAT, channels=CHANNELS,
@@ -77,19 +74,9 @@ def record_one(directory, i):
         waveFile.writeframes(b''.join(frames))
         waveFile.close()
 
-
-def check_audios(durations):
-    if any([d > MAX_RECORD_DURATION for d in durations]):
-        print("WARNING: at least one your record seems to have a too long duration, you are going to have")
-
-
 def record_and_trim(wakeword, nb_records=3):
-    input("You will record your personal hotword." \
-              " Please be sure to be in a quiet environment." \
-              " Press enter once you are ready.\n".format(
-        nb_records))
-
-    directory = os.path.join(FOLDER_BASE, wakeword)
+    input("You will record %s samples for your wakeword. Be sure to be in a quiet environment. Press enter once you are ready"%nb_records)
+    directory = os.path.join('', wakeword)
     if os.path.exists(directory):
         os.system("rm -rf "+directory)
     os.makedirs(directory)
@@ -103,9 +90,7 @@ def record_and_trim(wakeword, nb_records=3):
             audio = Audio.from_file(dest_path)
             audio.trim_silences(SNR_TRIM)
             while audio.duration() > MAX_RECORD_DURATION:
-                print("WARNING: there seems to be too much noise in your" \
-                      " environment please retry to record this sample by " \
-                      "following the instructions.")
+                print("WARNING: there seems to be too much noise in your environment.")
                 record_one(directory, i)
                 audio = Audio.from_file(dest_path)
                 audio.trim_silences(SNR_TRIM)
@@ -115,9 +100,7 @@ def record_and_trim(wakeword, nb_records=3):
                         audio_1.duration() - audio_2.duration()) > MAX_DIFFERENCE_DURATION
                 for i, audio_1 in enumerate(audios) for j, audio_2 in
                 enumerate(audios) if i < j]):
-            print("WARNING: there seems to be too much difference between " \
-                  "your records please retry to record all of them by following " \
-                  "the instructions.")
+            print("WARNING: there seems to be too much difference between your records.")
         else:
             is_validated = True
 
@@ -125,8 +108,16 @@ def record_and_trim(wakeword, nb_records=3):
         dest_path = os.path.join(directory, "{0}.wav".format(i))
         audio.write(dest_path)
 
-    print("Your samples has been saved in {0}".format(
-        os.path.join(os.path.dirname(os.path.realpath(__file__)), directory)))
+    #remove silences:
+    for i, audio in enumerate(audios):
+        dest_path = os.path.join(directory, "{0}.wav".format(i))
+        audio = Audio.from_file(dest_path)
+        audio.write(dest_path.replace('.wav', '_uncut.wav'))
+        audio.trim_silences(SNR_TRIM_CUT)
+        audio.write(dest_path)
+
+    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), directory)
+    print("Your samples have been saved in %s"%path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='Snowboy Recorder', formatter_class=argparse.RawTextHelpFormatter)

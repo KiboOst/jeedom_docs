@@ -47,7 +47,26 @@ It have been converted to python3, cleaned, enhanced and snowboyed!
 
 It will guide you through recording three wave sample files to later generate your custom wakeword pdml file for Rhasspy (or whatever use snowboy wakeword).
 
-First you will have free-up access to microphone, so shutdown Rhasspy: `docker stop rhasspy-server`
+<details>
+<summary>Why not just record samples with arecord ?</summary>
+
+Indeed, we can use arecord to get our three sample wav files:
+
+```bash
+arecord -D 'sysdefault:CARD=seeed2micvoicec' -r 16000 -f S16_LE -c 1 -t wav > 0.wav
+ctrl C
+```
+
+snowboyRecord script check each recorded sample for noise, and if there is too much noise it will display a warning and record a new one.
+If there is too much noise in the room, you will simply be unable to validate your records. Which will avoid generating a pmdl file that will cause many false positive!
+
+It will also check duration consistency between samples. So you can end up recording not three, but more ...
+
+Finally, snowboyRecord will also automatically cut leading and trailing noise/silence in the wav file, to ensure better wakeword definition.
+
+</details>
+
+First you will have to free-up access to microphone, so shutdown Rhasspy: `docker stop rhasspy-server`
 
 Then, run snowboyRecord:
 
@@ -63,16 +82,7 @@ You can use for example *heyJarvis_Dady* then later record *heyJarvis_Mom*, etc.
 
 > While running the script with a previously used identifier, it will delete previous saved folder!
 
-So, why use this tool and not just record three samples like this ?
-
-```bash
-arecord -D 'sysdefault:CARD=seeed2micvoicec' -r 16000 -f S16_LE -c 1 -t wav > 0.wav
-ctrl C
-```
-
-snowboyRecord script check each recorded sample for noise, and if there is too much noise it will display a warning and record a new one. It will also check previous records for consistency and warn you if there is too much difference between records. So you can end up recording not three, but more ...
-
-If there is too much noise in the room, you will simply be unable to validate your records. Which will avoid generating a pmdl file that will cause many false positive!
+At the end you will end-up with a *myhotword* folder with six wav files: three samples, two files per sample. For each sample you will have a x_uncut.wav which is the original recorded wav. The x.wav has been cut (leading and trailing noise/silence) by snowboyRecord.
 
 
 ### Tips for recoding wakeword
@@ -84,7 +94,7 @@ Here are a few rules from my experience with both Snips and Snowboy:
 - Record your samples on the same device that will handle wakeword detection. If you have one Rhasspy master and several Satellites, all with same ReSpeaker 2mic PiHat for example, you can use same pmdl file for all, as the hardware (even mixing Pi4 / Pi0) are the same. But don't record it on your desktop ...
 - Each room, even the most silent one (you don't live in an anechoic chamber ...), have its own background noise signature. So, it's better to record samples in a room where you don't plan to use this wakeword. Not having this background noise in the wakeword will prevent some false positive.
 - Obviously, move your Rasp into your most silent room for recording. No fridge noise, no PC or NAS fan noise, just ... no noise ! If you can hear something, move!
-- snowboyRecord or whatever you use will create samples with leading and trailing noise. You will have to clean each sample before generating pmdl file! You can use free Audacity tool or any wave file editor. Overwrite recorded files (0.wav, 1.wav, 2.wav) so snowboyTrain take the cleaned ones.
+- snowboyRecord will automatically cut leading and trailing noise/silence in your sample. If you use arecord or another tool, you will have to clean each sample before generating pmdl file! You can use free Audacity tool or any wave file editor. Check a x_uncut.wav sample for example.
 
 {% include lightbox.html src="../other/Rhasspy/images/customWakeword_cut.jpg" data="Snowboy-CustomMaker" title="Cut samples leading/trailing noise." imgstyle="width:500px;display: block;margin: 0 auto;" %}
 
