@@ -9,21 +9,35 @@ import requests
 endpoint = "https://snowboy.kitt.ai/api/v1/train/"
 
 def get_wave(fname):
-	with open(fname) as infile:
+	with open(fname, 'rb') as infile:
 		file = infile.read()
 	return base64.b64encode(file)
 
+def switch_age(age):
+	switcher = {
+		'0': "0_9",
+		'10': "10_19",
+		'20': "20_29",
+		'30': "30_39",
+		'40': "40_49",
+		'50': "50_59",
+		'60': "60+"
+	}
+	return switcher.get(age, False)
+
 def generateModel(args):
-	print('Building model %s with options %s : %s'%(args.wakeword, args.gender, args.age))
+	print('Building model %s with options %s | %s | %s'%(args.wakeword, args.lang, args.gender, args.age))
 	wavSample1 = get_wave(args.wakeword+"/0.wav").decode()
 	wavSample2 = get_wave(args.wakeword+"/1.wav").decode()
 	wavSample3 = get_wave(args.wakeword+"/2.wav").decode()
 	wakeModel = args.wakeword + '/' + args.wakeword + ".pmdl"
 
+	age = switch_age(args.age)
+
 	data = {
 		"name": args.wakeword,
 		"language": args.lang,
-		"age_group": args.age,
+		"age_group": age,
 		"gender": args.gender,
 		"microphone": "MyCustomMic",
 		"token": args.token,
@@ -36,7 +50,7 @@ def generateModel(args):
 
 	response = requests.post(endpoint, json=data)
 	if response.ok:
-		with open(wakeModel, "w") as outfile:
+		with open(wakeModel, "wb") as outfile:
 			outfile.write(response.content)
 		print("Saved model to '%s'." %wakeModel)
 	else:
