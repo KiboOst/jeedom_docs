@@ -53,12 +53,13 @@ L'importation de l'assistant va créer :
 - Vos Intentions : Chaque Intent présent sur votre assistant Rhasspy.
 
 > Tip
+>
 > Vous pouvez supprimer des intentions de trois façons:
 > - En réimportant votre assistant, suivant l'option choisie (voir ci-dessus).
 > - En utilisant le bouton **Supprimer les intentions**, qui supprimera tous vos Intents actuels du plugin.
 > - Sur une intention, utilisez le bouton **Supprimer**.
 
-Si vous avez également des satellites reliés à votre Rhasspy, créez les dans le plugin avec le bouton **Ajouter un satellite**. Vous devrez renseigner l'url complète et le siteId du satellite.
+Si vous avez également des **satellites** reliés à votre Rhasspy, créez les dans le plugin avec le bouton **Ajouter un satellite**. Vous devrez renseigner l'url complète et le siteId du satellite.
 
 {% include lightbox.html src="jeerhasspy/images/device_config.jpg" data="jeerhasspy" title="Configuration de Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
@@ -87,12 +88,10 @@ Vous pouvez le faire:
 - **Automatiquement** avec le bouton **Configurer le profile Rhasspy** sous le Device correspondant.
 > Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord / rhasspyWakeSiteId sur détection du wakeword, cochez la case **Configurer l'event Wakeword Detected**.
 
-- Par l'interface de Rhasspy, ou directement en éditant le profile.json sur le Rhasspy.
+- **Manuellement** :
 
 <details>
-<summary>Modifier le profile Rhasspy manuellement</summary>
-
-> Ceci n'est pas necessaire si vous utilisez la configuration automatiquement avec le bouton correspondant sous chaque Device.
+<summary>Par l'interface de Rhasspy, ou directement en éditant le profile.json sur le Rhasspy</summary>
 
 - Intent recognized :
 
@@ -108,6 +107,7 @@ En éditant `.config\rhasspy\profiles\fr\profile.json` :
         }
     },
 ```
+
 
 - Wakeword detected :
 
