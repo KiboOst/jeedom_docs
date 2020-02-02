@@ -15,6 +15,12 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 31/01/2020
+- Support expérimental des satellites.
+Ils sont crée automatiquement suite à une demande sur chaque satellite.<br />
+Il faut paramétrer manuellement le profile de chaque satellite : voir [doc](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy/fr_FR/#configuration-rhasspy)
+
+
 ### 19/01/2020
 - Bug fix : Commande Ask.
 

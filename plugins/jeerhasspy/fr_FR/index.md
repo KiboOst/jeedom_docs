@@ -77,7 +77,8 @@ Vous pouvez le faire:
 
 {% include lightbox.html src="jeerhasspy/images/rhasspy_config.jpg" data="jeerhasspy" title="Configuration Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-- En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`
+<details>
+<summary>En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`</summary>
 
 ```json
 	"handle": {
@@ -88,6 +89,10 @@ Vous pouvez le faire:
     },
 
 ```
+
+</details>
+
+> Si vous disposez de satellites, vous devrez éditer leurs profiles ainsi.
 
 > Tip
 > Actuellement pour nommer votre device Rhasspy, vous devez :
@@ -101,7 +106,9 @@ Vous pouvez le faire:
 Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord / rhasspyWakeSiteId sur détection du wakeword, vous devez éditer votre profile Rhasspy. Cette option n'est pas disponible par l'interface de Rhasspy.
 
 - **Automatiquement** : *Plugins > Communication > jeeRhasspy* Dans le panel **Assistant** cliquez sur le bouton **Configurer** à droite de l'option *Wake event*.
-- En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`
+
+<details>
+<summary>En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`</summary>
 
 ```json
 	"webhooks": {
@@ -109,6 +116,11 @@ Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord
 	},
 
 ```
+
+</details>
+
+> Si vous disposez de satellites, vous devrez éditer leurs profiles ainsi.
+
 
 ## Callback Scénario
 
@@ -133,7 +145,8 @@ Le premier bloc SI sera commun à la plupart de ce type de scénario : On veut s
 
 > Allume la lumière de la cuisine
 
-Voici ce que rhasspy va envoyer au plugin :
+<details>
+<summary>Voici ce que rhasspy va envoyer au plugin :</summary>
 
 ```json
 {
@@ -151,6 +164,9 @@ Voici ce que rhasspy va envoyer au plugin :
 	"siteId": "salon"
 }
 ```
+
+</details>
+
 Le plugin sait donc de qu'elle intention il s'agit, et lance alors le scénario correspondant avec les tags suivant :
 
 ```
@@ -196,14 +212,7 @@ Cette commande permet de construire un texte dynamique en fonction d'information
 
 Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très *waf*.
 
-Vous pourriez faire trois blocs SI :
-```
-SI #[Salon][Volet Terrasse][Etat]# == 0 THEN speak Le volet est fermé
-SINON
-	SI #[Salon][Volet Terrasse][Etat]# == 99 THEN speak Le volet est ouvert
-	SINON speak Le volet est ouvert à #[Salon][Volet Terrasse][Etat]# pour cent
-```
-Certes, çà fonctionnera, mais çà complexifie énormément les scénarios.
+Vous pourriez faire plusieurs blocs SI pour testant chaque possibilité et renvoyer le bon texte, mais çà complexifie énormément les scénarios.
 
 La commande *dynamic Speak* va vous permettre de faire simplement :
 
