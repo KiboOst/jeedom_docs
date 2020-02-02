@@ -58,27 +58,47 @@ L'importation de l'assistant va créer :
 > - En utilisant le bouton **Supprimer les intentions**, qui supprimera tous vos Intents actuels du plugin.
 > - Sur une intention, utilisez le bouton **Supprimer**.
 
-En cliquant sur un Device Rhasspy, vous pouvez effectuer un test TTS sur ce device.
+Si vous avez également des satellites reliés à votre Rhasspy, créez les dans le plugin avec le bouton **Ajouter un satellite**. Vous devrez renseigner l'url complète et le siteId du satellite.
+
+{% include lightbox.html src="jeerhasspy/images/device_config.jpg" data="jeerhasspy" title="Configuration de Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+Pour le master et chaque satellite, vous disposez sous son icône de plusieurs boutons:
+
+- **Supprimer le device Rhasspy** : Présent uniquement sur les satellites, il permet de le supprimer du plugin.
+- **Configurer le profile Rhasspy** : Permet de configurer automatiquement le profile Rhasspy du device. Voir ci-dessous.
+- **Test TTS sur ce device** : Effectue un test TTS que vous entendrer sur le device sur lequel vous avez cliqué.
+- **Ouvrir l'interface de ce device** : Ouvre l'interface Rhasspy du device dans un autre onglet.
+
+> Tip
+>
+> Actuellement pour nommer votre device Rhasspy, vous devez :
+> - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
+> - Cliquer sur MQTT et cocher *Enable MQTT*
+> - Renseigner un nom dans le champ **Site ID**
+> - Décocher *Enable MQTT* si vous ne l'utilisez pas, puis sauver les settings.
 
 ## Configuration Rhasspy
 
-Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez ensuite lui indiquer l'url du plugin, indiquée dans la partie Assistant.
+Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez modifier son profile.
 
-{% include lightbox.html src="jeerhasspy/images/assistant_configure.jpg" data="jeerhasspy" title="Configuration de Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
-
-
-### Intent recognized
-
-Rhasspy envoie directement l'Intent reconnu sur une url (ici, le plugin).
+> Si vous avez des satellites, il faudra le faire sur chacun d'entre eux.
 
 Vous pouvez le faire:
-- **Automatiquement** : *Plugins > Communication > jeeRhasspy* Dans le panel **Assistant** cliquez sur le bouton **Configurer** à droite de l'url à utiliser.
-- Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
+- **Automatiquement** avec le bouton **Configurer le profile Rhasspy** sous le Device correspondant.
+> Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord / rhasspyWakeSiteId sur détection du wakeword, cochez la case **Configurer l'event Wakeword Detected**.
 
-{% include lightbox.html src="jeerhasspy/images/rhasspy_config.jpg" data="jeerhasspy" title="Configuration Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+- Par l'interface de Rhasspy, ou directement en éditant le profile.json sur le Rhasspy.
 
 <details>
-<summary>En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`</summary>
+<summary>Modifier le profile Rhasspy manuellement</summary>
+
+> Ceci n'est pas necessaire si vous utilisez la configuration automatiquement avec le bouton correspondant sous chaque Device.
+
+- Intent recognized :
+
+Par l'interface de Rhasspy, onglet *Settings*, puis *Intent Handling* : Use a remote HTTP server to handle intents : cochez l'option et renseignez l'url.
+
+En éditant `.config\rhasspy\profiles\fr\profile.json` :
 
 ```json
 	"handle": {
@@ -87,28 +107,13 @@ Vous pouvez le faire:
             "url": "http://x.x.x.x:80/core/api/jeeApi.php?plugin=jeerhasspy&apikey=---apikey---&plugin=jeerhasspy&type=jeerhasspy"
         }
     },
-
 ```
 
-</details>
+- Wakeword detected :
 
-> Si vous disposez de satellites, vous devrez éditer leurs profiles ainsi.
+Cette option n'est pas disponible par l'interface de Rhasspy.
 
-> Tip
-> Actuellement pour nommer votre device Rhasspy, vous devez :
-> - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
-> - Cliquer sur MQTT et cocher *Enable MQTT*
-> - Renseigner un nom dans le champ **Site ID**
-> - Décocher *Enable MQTT* si vous ne l'utilisez pas, puis sauver les settings.
-
-### Wakeword detected
-
-Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord / rhasspyWakeSiteId sur détection du wakeword, vous devez éditer votre profile Rhasspy. Cette option n'est pas disponible par l'interface de Rhasspy.
-
-- **Automatiquement** : *Plugins > Communication > jeeRhasspy* Dans le panel **Assistant** cliquez sur le bouton **Configurer** à droite de l'option *Wake event*.
-
-<details>
-<summary>En éditant le fichier `.config\rhasspy\profiles\fr\profile.json`</summary>
+En éditant `.config\rhasspy\profiles\fr\profile.json` :
 
 ```json
 	"webhooks": {
@@ -118,8 +123,6 @@ Si vous utilisez l'option permettant de renseigner les variables rhasspyWakeWord
 ```
 
 </details>
-
-> Si vous disposez de satellites, vous devrez éditer leurs profiles ainsi.
 
 
 ## Callback Scénario
