@@ -241,5 +241,12 @@ Voici un exemple :
 {% include lightbox.html src="jeerhasspy/images/scenario_ask.jpg" data="jeerhasspy" title="Commande Ask" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 
+Si vous avez un master et des satellistes, la commande Ask devra correspondre au device d'où vient la demande.
+
+Dans ce cas, créez un tag(profile) avec le siteId et écrivez la commande ask comme cela : `#[Rhasspy-Intents][TTS-#profile#][Ask]#`
+
+Jeedom changera alors automatiquement le nom de la commande avec le siteId, et la demande de confirmation Ask sera émise sur le bon device.
+
+{% include lightbox.html src="jeerhasspy/images/dynamic_ask.jpg" data="jeerhasspy" title="Commande Ask dynamique" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 
