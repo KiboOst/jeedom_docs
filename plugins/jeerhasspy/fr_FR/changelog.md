@@ -59,10 +59,3 @@ Il faut paramétrer manuellement le profile de chaque satellite : voir [doc](htt
 
 ### 20/12/2019
 - Première version (Beta).
-
-
-## TODO
-En attente de Rhasspy:
-- Builtin Slots (Duration, DateTime, Number, etc.) -> slot duration totalMinutes pour les DANS
-- Config Master / Satellite -> Commande speak avec siteid variable
-
