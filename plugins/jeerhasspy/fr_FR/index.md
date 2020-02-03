@@ -63,7 +63,7 @@ Si vous avez également des **satellites** reliés à votre Rhasspy, créez les 
 
 {% include lightbox.html src="jeerhasspy/images/device_config.jpg" data="jeerhasspy" title="Configuration de Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Pour le master et chaque satellite, vous disposez sous son icône de plusieurs boutons:
+Pour le maître (master) et chaque satellite, vous disposez sous son icône de plusieurs boutons:
 
 - **Supprimer le device Rhasspy** : Présent uniquement sur les satellites, il permet de le supprimer du plugin.
 - **Configurer le profile Rhasspy** : Permet de configurer automatiquement le profile Rhasspy du device. Voir ci-dessous.
@@ -177,7 +177,7 @@ Start : Lancement provoque. Tags : {"#intent#":"lightsTurnOnJeedom","#confidence
 ```
 
 Donc si on pas de tag(house_room), car on peut simplement lui demander d'allumer la lumière sans préciser où, on a deux solutions :
-- Soit le siteId n'est pas renseigné dans Rhasspy, donc on donne le nom de notre device de base (master) Rhasspy, ici dans le *salon*.
+- Soit le siteId n'est pas renseigné dans Rhasspy, donc on donne le nom de notre device de base (maître) Rhasspy, ici dans le *salon*.
 - Soit le siteId est renseigné, et on l'utilise.
 Et si on a le tag(house_room), on l'utilise.
 On a donc maintenant tag(rhasspy_room) qui correspond à la pièce souhaitée.
@@ -241,7 +241,7 @@ Voici un exemple :
 {% include lightbox.html src="jeerhasspy/images/scenario_ask.jpg" data="jeerhasspy" title="Commande Ask" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 
-Si vous avez un master et des satellistes, la commande Ask devra correspondre au device d'où vient la demande.
+Si vous avez un maître et des satellistes, la commande Ask devra correspondre au device d'où vient la demande.
 
 Dans ce cas, créez un tag(profile) avec le siteId et écrivez la commande ask comme cela : `#[Rhasspy-Intents][TTS-#profile#][Ask]#`
 
