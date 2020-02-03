@@ -18,7 +18,7 @@ Vous devez au préalable avoir un système Rhasspy fonctionnel !
 [Configuration du plugin JeeRhasspy](#configuration-du-plugin-jeerhasspy)<br />
 [Utilisation](#utilisation)<br />
 [Configuration Rhasspy](#configuration-rhasspy)<br />
-[Callback Scénario](#callback-scénario)<br />
+[Callback Scénario](#callback-scnario)<br />
 [Commandes](#commandes)<br />
 
 ## Configuration du plugin JeeRhasspy
