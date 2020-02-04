@@ -60,7 +60,7 @@ def generateModel(args):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(prog='Snowboy Trainer', formatter_class=argparse.RawTextHelpFormatter)
 	parser.add_argument('--token', help='Your snowboy.kitt.ai token', type=str, default=None)
-	parser.add_argument('--lang', help='Wakeword language (fr, en, de, es ...)', type=str, default='fr')
+	parser.add_argument('--lang', help='Wakeword language (fr, en, dt, es ...)', type=str, default='fr')
 	parser.add_argument('--gender', help='Male: M or Female: F', type=str, default='M')
 	parser.add_argument('--age', help='Age used for training : \n'
 															'0 : 0_9 \n'
