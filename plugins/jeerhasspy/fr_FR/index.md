@@ -234,7 +234,6 @@ Vous pouvez utiliser la commande interne de Jeedom **Ask** pour que votre Rhassp
 
 Pour cela vous devez indiquer :
 - Dans le champ **Réponse** : Le nom du *slot* contenant la réponse, tel que définit dans rhasspy.
-
 <details>
 <summary>Exemple</summary>
 
@@ -242,7 +241,7 @@ Dans le screen ci-dessous, j'utilise le slot YesNo dans le champ **Réponse**.
 
 Voici l'intent correspondant:
 
-```json
+```
 [GetAskResponseJeedom]
 bien sur que ($YesNo){YesNo}
 mais ($YesNo){YesNo}
@@ -255,7 +254,7 @@ non{YesNo:non}
 
 Et le slot:
 
-```json
+```
 "YesNo": [
         "( non | pas | surtout pas | nan ):non",
         "( oui | ouais | yes | yep | bien sûr ):oui"
