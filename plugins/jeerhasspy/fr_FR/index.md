@@ -42,7 +42,7 @@ Vous devez alors renseigner, sur la page de configuration du plugin :
 Une fois le plugin configuré, il faut une première fois importer l'assistant Rhasspy.
 
 A l'importation, il y a trois options possible:
-*Lors de la première importantation, ces options n'ont pas d'incidence*.
+*Lors de la première importation, ces options n'ont pas d'incidence*.
 - **Conserver toutes les Intentions** : Ne supprime aucun Intent, et crée ceux non présent dans Jeedom.
 - **Supprimer les Intentions qui ne sont plus dans l'assistant** : Supprime seulement les Intents de Jeedom qui ne sont plus dans Rhasspy.
 - **Supprimer et recréer toutes les Intentions** : Supprime tous les Intents de Jeedom, avant de recréer les Intents présents sur Rhasspy.
@@ -67,7 +67,7 @@ Pour le maître (master) et chaque satellite, vous disposez sous son icône de p
 
 - **Supprimer le device Rhasspy** : Présent uniquement sur les satellites, il permet de le supprimer du plugin.
 - **Configurer le profile Rhasspy** : Permet de configurer automatiquement le profile Rhasspy du device. Voir ci-dessous.
-- **Test TTS sur ce device** : Effectue un test TTS que vous entendrer sur le device sur lequel vous avez cliqué.
+- **Test TTS sur ce device** : Effectue un test TTS que vous entendrez sur le device sur lequel vous avez cliqué.
 - **Ouvrir l'interface de ce device** : Ouvre l'interface Rhasspy du device dans un autre onglet.
 
 > Tip
@@ -132,7 +132,7 @@ Pour chaque Intention (Intent), vous devez :
 - Renseigner un scénario qui sera exécuté à la détection de cet Intent par Rhasspy.
 - Renseigner l'action à réaliser sur le scénario (start, ...).
 - Cocher les informations comprises dans l'Intent, qui seront passées au scénario sous forme de tags.
-- Renseigner une *Confidence* minimale pour l'éxécution du scénario. Vous pouvez aussi la laisser à 0 et la vérifier dans le scénario avec un SI tag(confidence) > 0.
+- Renseigner une *Confidence* minimale pour l’exécution du scénario. Vous pouvez aussi la laisser à 0 et la vérifier dans le scénario avec un SI tag(confidence) > 0.
 - Renseigner éventuellement d'autres tags spécifiques.
 
 {% include lightbox.html src="jeerhasspy/images/intent_config.jpg" data="jeerhasspy" title="Configuration d'une Intention" imgstyle="width:550px;display: block;margin: 0 auto;" %}
@@ -233,7 +233,37 @@ Un autre exemple pour demander si une lumière est allumée ou éteinte :
 Vous pouvez utiliser la commande interne de Jeedom **Ask** pour que votre Rhasspy vous pose une question, et attende votre réponse. Votre scénario pourra ensuite agir en fonction de votre réponse.
 
 Pour cela vous devez indiquer :
-- Dans le champ **Réponse** : Le nom du *slot* contenant la réponse, tel que définit dans rhasspy.
+- Dans le champ **Réponse** : Le nom du *slot* contenant la réponse, tel que définit dans Rhasspy.
+<details>
+<summary>Exemple</summary>
+
+Dans le screen ci-dessous, j'utilise le slot YesNo dans le champ **Réponse**.
+
+Voici l'intent correspondant:
+
+```
+[GetAskResponseJeedom]
+bien sur que ($YesNo){YesNo}
+mais ($YesNo){YesNo}
+surtout pas (:){YesNo:non}
+bien sur (:){YesNo:oui}
+($YesNo){YesNo}
+oui{YesNo:oui}
+non{YesNo:non}
+```
+
+Et le slot:
+
+```
+"YesNo": [
+        "( non | pas | surtout pas | nan ):non",
+        "( oui | ouais | yes | yep | bien sûr ):oui"
+    ]
+```
+
+</details>
+
+
 - Dans le champ **Commandes** : La commande **Ask** du device rhasspy.
 
 Voici un exemple :
@@ -241,9 +271,11 @@ Voici un exemple :
 {% include lightbox.html src="jeerhasspy/images/scenario_ask.jpg" data="jeerhasspy" title="Commande Ask" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 
-Si vous avez un maître et des satellistes, la commande Ask devra correspondre au device d'où vient la demande.
+Si vous avez un maître et des satellites, la commande Ask devra correspondre au device d'où vient la demande.
 
-Dans ce cas, créez un tag(profile) avec le siteId et écrivez la commande ask comme cela : `#[Rhasspy-Intents][TTS-#profile#][Ask]#`
+Dans ce cas, créez un tag(profile) avec le siteId et écrivez la commande ask comme cela :
+
+`#[Rhasspy-Intents][TTS-#profile#][Ask]#`
 
 Jeedom changera alors automatiquement le nom de la commande avec le siteId, et la demande de confirmation Ask sera émise sur le bon device.
 
