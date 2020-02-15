@@ -78,7 +78,7 @@ Le thermostat dispose de plusieurs actions que vous pouvez intégrer normalement
 
 {% include lightbox.html src="qivivo/images/thermostat_actions.jpg" data="qivivo" title="Actions du thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
->La commande SetTempérature permet de lancer un programme temporaire, de la même manière que par le site Qivivo ou physiquement sur le thermostat. Le thermostat dispose dans Jeedom d'une info *DuréeOrdre* qui sera la durée du programme temporaire. Celle-ci se remet à 120mins (comme pour le thermostat physique) toutes les 15mins (ou 5mins si vous activez le cron5). Toutefois, si vous souhaitez spécifier une autre durée, lancer une commande *SetDuréeOrdre* avant la commande *SetTempérature*.
+> La commande SetTempérature permet de lancer un programme temporaire, de la même manière que par le site Qivivo ou physiquement sur le thermostat. Le thermostat dispose dans Jeedom d'une info *DuréeOrdre* qui sera la durée du programme temporaire. Celle-ci se remet à 120mins (comme pour le thermostat physique) toutes les 15mins (ou 5mins si vous activez le cron5). Toutefois, si vous souhaitez spécifier une autre durée, lancer une commande *SetDuréeOrdre* avant la commande *SetTempérature*.
 Vous pouvez également annuler un programme temporaire avec la commande *Annule_Ordre_Temp*.
 
 Les modules de zone disposent également de leurs actions *SetMode* pour changer d'ordre, et *SetProgramme* pour appliquer un programme que vous aurez créé auparavant.
@@ -95,6 +95,12 @@ Sur chaque module, y compris celui de la zone thermostat, vous trouverez un ongl
 Une fois vos programmes créés et votre équipement sauvegardé, la liste de vos programmes apparaîtra sur la tuile de cette zone sur votre dashboard, et dans la liste proposée sur l'action *SetProgramme* dans vos scénarios.
 
 Vous pouvez également exporter chaque programme (un fichier json correspondant sera créé dans plugins/qivivo/exportedPrograms), pour pouvoir ensuite l'importer dans un autre programme.
+
+> Attention : les programmes de chauffe dans le plugin Jeedom ne correspondent pas aux programmes définits dans l'application Qivivo.
+>
+> Si vous changer de programme depuis l'application Qivivo, Jeedom n'en saura rien et l'affichage des tuiles des zones ne correspondra pas.
+> De même, quand vous changez de programme avec le plugin Jeedom, il ne change pas de programme dans l'application Qivivo, mais change les programmations horaires du programme courant.
+> Si vous souhaitez utiliser la programmation avec le plugin, il est donc conseiller de ne pas toucher aux programmes depuis l'application Qivivo.
 
 ## Équipements
 
