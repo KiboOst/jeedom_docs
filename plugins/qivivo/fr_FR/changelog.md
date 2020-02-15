@@ -18,6 +18,7 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 ### 15/02/2020
 - Amélioration des logs de debug.
 - Plus d'infos sur la commande debug de la passerelle.
+- Support des programmes sur les installations non multi-zone.
 
 ### 06/09/2019
 - Création de la version Stable Jeedom V4
