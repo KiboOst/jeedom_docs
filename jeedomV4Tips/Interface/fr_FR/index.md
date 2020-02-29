@@ -166,6 +166,15 @@ body {
 }
 ```
 
+<br/>• Dashboard sur deux colonnes (ici, au delà de 1400px de large):
+```css
+@media screen and (min-width: 1400px) {
+  [data-page="dashboard"] #div_displayObject .row div.col-md-12 {
+    width: 50% !important;
+  }
+}
+```
+
 <br/>• Spécial développeurs et beta-testeurs : Toujours afficher le badge d'update :
 ```css
 #span_nbUpdate[style*="display : none"] {
