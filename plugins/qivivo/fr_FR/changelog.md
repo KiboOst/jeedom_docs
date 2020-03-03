@@ -15,6 +15,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 03/03/2020
+- Traduction du plugin en anglais (Jeedom V4).
+
 ### 15/02/2020
 - Amélioration des logs de debug.
 - Plus d'infos sur la commande debug de la passerelle.
