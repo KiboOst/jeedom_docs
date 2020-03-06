@@ -15,6 +15,9 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 06/03/2020
+- Support du moteur d'interaction de Jeedom.
+
 ### 03/03/2020
 - Traduction du plugin en anglais (Jeedom V4).
 
