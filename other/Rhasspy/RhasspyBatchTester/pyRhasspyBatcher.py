@@ -108,7 +108,8 @@ class rhasspyBatcher():
 			displayResult = '[UNFOUND     ]'
 			self.unmatched += 1
 			if matchIntent:
-				displayResult += ' should match: %s | query: %s'%(matchIntent, query)
+				displayResult += ' should match: %s |'%matchIntent
+			displayResult += ' query: %s'%query
 			print(displayResult)
 			return False
 
