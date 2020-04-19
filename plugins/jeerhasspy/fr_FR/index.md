@@ -10,8 +10,12 @@ description: Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom
 *→ [Lien market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3869)*<br />
 *→ [Rhasspy Assistant Tips n Tricks](https://kiboost.github.io/jeedom_docs/other/Rhasspy/)*
 
-Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedocs.io/en/latest/) dans Jeedom.
+Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.github.io/rhasspy-voltron/) dans Jeedom.
 Vous devez au préalable avoir un système Rhasspy fonctionnel !
+
+> Attention
+>
+> JeeRhasspy supporte désormais l'assistant **Rhasspy en version 2.5 minimum**.
 
 [Changelog](changelog.md)<br />
 
@@ -59,7 +63,7 @@ L'importation de l'assistant va créer :
 > - En utilisant le bouton **Supprimer les intentions**, qui supprimera tous vos Intents actuels du plugin.
 > - Sur une intention, utilisez le bouton **Supprimer**.
 
-Si vous avez également des **satellites** reliés à votre Rhasspy, créez les dans le plugin avec le bouton **Ajouter un satellite**. Vous devrez renseigner l'url complète et le siteId du satellite.
+Si vous avez également des **satellites** reliés à votre Rhasspy, créez les dans le plugin avec le bouton **Ajouter un satellite**. Vous devrez renseigner l'url complète du satellite.
 
 {% include lightbox.html src="jeerhasspy/images/device_config.jpg" data="jeerhasspy" title="Configuration de Rhasspy" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
@@ -72,11 +76,9 @@ Pour le maître (master) et chaque satellite, vous disposez sous son icône de p
 
 > Tip
 >
-> Actuellement pour nommer votre device Rhasspy, vous devez :
+> Pour nommer votre device Rhasspy, vous devez :
 > - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
-> - Cliquer sur MQTT et cocher *Enable MQTT*
-> - Renseigner un nom dans le champ **Site ID**
-> - Décocher *Enable MQTT* si vous ne l'utilisez pas, puis sauver les settings.
+> - Renseigner un nom dans le champ **siteId**
 
 ## Configuration Rhasspy
 
@@ -136,6 +138,10 @@ Pour chaque Intention (Intent), vous devez :
 - Renseigner éventuellement d'autres tags spécifiques.
 
 {% include lightbox.html src="jeerhasspy/images/intent_config.jpg" data="jeerhasspy" title="Configuration d'une Intention" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+> Tip
+>
+> Vous pouvez aussi utiliser les interactions de Jeedom en cochant la case *Interaction*
 
 
 ### Exemple de scénario
@@ -201,11 +207,15 @@ Et ainsi de suite ...
 
 ## Commandes
 
-Sur chaque device Rhasspy, il y a trois commandes:
+Sur chaque device Rhasspy, il y a cinq commandes:
 
 - **Speak** : Permet d'énoncer un texte.
 - **dynamic Speak** : Permet d'énoncer un texte construit dynamiquement.
 - **Ask** : Permet d'utiliser la fonction **Ask** de Jeedom.
+- **ledOn** : Permet d'allumer les LEDs.
+- **ledOff** : Permet d'éteindre les LEDs.
+
+Ces deux dernières commandes necessitent [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki).
 
 ### Commande *dynamic Speak*
 

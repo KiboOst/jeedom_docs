@@ -15,9 +15,6 @@ description: HermesLedControl for Rhasspy Assistant.
 
 Installation of HLC is rather simple and documented [here](https://github.com/project-alice-assistant/HermesLedControl/wiki/Installation-&-update)
 
-> Important
->
-> Actually it doesn't work like advertised with Rhasspy, as Rhasspy doesn't publish all standard Hermes topics over MQTT. This should come soon with next big Rhasspy update!
 
 ### Installation
 
@@ -56,34 +53,41 @@ sudo systemctl start hermesledcontrol
 
 HLC allow to map some function on button pressed.
 
-Actually, Rhasspy doesn't allow to stop/start wakeword service, but this should come later.
-
 <details>
-<summary>Here is an example toggling snips wakeword service:</summary>
+<summary>Example toggling rhasspy wakeword:</summary>
 
 ```python
-def idle(self, *args):
-	self.off()
-	self._animation.set()
-	if self.muted:
-		middleLed = int(self._numLeds/2)
-		while self._animation.isSet():
-			self.breathLeds(1.35, [0, 0, 75], [middleLed])
-	else:
-		while self._animation.isSet():
-			self.breathLeds(1.35, [0, 0, 75])
+from subprocess import call
 
-def onButton1(self, *args):
-	#mute hotword detection:
-	self._animation.clear()
-	self.off()
-	if self.muted:
+	def __init__(self, controller):
+		super(KiboostLedPattern, self).__init__(controller)
+		self.host = '192.168.0.140'
 		self.muted = False
-		call('sudo systemctl start snips-hotword.service', shell=True)
-	else:
-		self.muted = True
-		call('sudo systemctl stop snips-hotword.service', shell=True)
-	self._controller.idle()
+
+	def idle(self, *args): #continuous blue breathing
+		if self._debug: print('---idle---')
+		self.off()
+
+		middleLed = int(self._numLeds/2)
+		if self.muted:
+			self._controller.setLed(middleLed, 85, 0, 0, 100)
+		else:
+			self._controller.setLed(middleLed, 0, 85, 0, 100)
+		self._controller.show()
+
+	def onButton1(self, *args):
+		if self._debug: print('##_onButton1')
+		#mute hotword detection:
+		self._animation.clear()
+		self.off()
+		if self.muted:
+			self.muted = False
+			call('sudo curl -d "on" http://%s:12101/api/listen-for-wake'%self.host, shell=True)
+		else:
+			self.muted = True
+			call('sudo curl -d "off" http://%s:12101/api/listen-for-wake'%self.host, shell=True)
+		self.off()
+		self._controller.idle()
 ```
 
 </details>

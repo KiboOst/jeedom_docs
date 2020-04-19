@@ -15,6 +15,15 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 19/04/2020
+- **Attention**: Le plugin supporte maintenant Rhasspy v2.5 minimum !
+- Ajouter un satellite : récupération automatique du siteId et vérifications.
+- New : Deux nouvelles commandes sur les devices Rhasspy:
+	- ledOn : Allume les LEDs
+	- ledOff : Etaint les LEDs
+	Necessite [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki)
+	*Il faut réimporter l'assistant pour créer ces nouvelles commandes*
+
 ### 06/03/2020
 - Support du moteur d'interaction de Jeedom.
 
