@@ -15,6 +15,11 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 06/05/2020 (beta)
+- CSS fix: fenêtre d"édition agrandie.
+- Update 2.1.56 (2.1-src Nightly: ffc4c0f) (2020-05-06).
+	- Fix for jQuery 3.5.0 and up.
+
 ### 06/09/2019
 - Création de la version Stable Jeedom V4
 - Passage de la beta sur Jeedom V4
