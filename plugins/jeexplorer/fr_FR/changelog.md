@@ -17,7 +17,7 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 ### 06/05/2020 (beta)
 - CSS fix: fenêtre d"édition agrandie.
-- Update 2.1.56 (2.1-src Nightly: ffc4c0f) (2020-05-06).
+- Update lib elFinder v2.1.56 (2.1-src Nightly: ffc4c0f) (2020-05-06).
 	- Fix for jQuery 3.5.0 and up.
 
 ### 06/09/2019
