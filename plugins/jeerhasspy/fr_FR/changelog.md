@@ -15,13 +15,16 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 30/05/2020
+- Support du TTS simultané sur plusieurs devices (site1,site2).
+
 ### 19/04/2020
 - **Attention**: Le plugin supporte maintenant Rhasspy v2.5 minimum !
 - Ajouter un satellite : récupération automatique du siteId et vérifications.
 - New : Deux nouvelles commandes sur les devices Rhasspy:
 	- ledOn : Allume les LEDs
 	- ledOff : Etaint les LEDs
-	Necessite [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki)
+	Nécessite [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki)
 	*Il faut réimporter l'assistant pour créer ces nouvelles commandes*
 
 ### 06/03/2020
@@ -33,7 +36,7 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 ### 02/02/2020
 - Gestion manuelle des satellites.
     - Ajout / Suppression.
-    - Edition automatique du profile Rhasspy.
+    - Édition automatique du profile Rhasspy.
 
 ### 31/01/2020
 - Support expérimental des satellites.
@@ -47,7 +50,7 @@ Il faut paramétrer manuellement le profile de chaque satellite : voir [doc](htt
 - New : Vue d'ensemble des Intentions.
 
 ### 15/01/2020
-- New : Confidence minimale sur les Intents pour l'éxécution du scénario callback.
+- New : Confidence minimale sur les Intents pour l’exécution du scénario callback.
 
 ### 04/01/2020
 - New : Configuration automatique de Rhasspy depuis le panel Assistant.
