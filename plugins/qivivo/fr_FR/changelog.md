@@ -15,6 +15,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+### 06/03/2020
+- Suppression de la vérification du certificat. *Certificat expiré pour l'API officielle Qivivo depuis 4j et aucun mouvement de leur part...*.
+
 ### 03/03/2020
 - Traduction du plugin en anglais (Jeedom V4).
 
