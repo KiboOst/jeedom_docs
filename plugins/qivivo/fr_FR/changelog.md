@@ -16,7 +16,14 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
 ### 08/09/2020
-- [Première beta](https://community.jeedom.com/t/qivivo-comap-update-interface-comap-09-2020-v2/36490) pour l'adaptation aux nouvelles interfaces Qivivo/Comap. La doc n'est donc pas à jour avec la beta, elle le sera une fois le plugin en stable.
+- [Première beta](https://community.jeedom.com/t/qivivo-comap-update-interface-comap-09-2020-v2/36490) pour l'adaptation aux nouvelles interfaces Qivivo/Comap.
+	- La doc n'est pas à jour avec la beta, elle le sera une fois le plugin en stable.
+	- Suppression de l'ancienne API officielle qui ne dialogue plus avec les modules.
+	- Refonte complète de l'[API custom](https://github.com/KiboOst/php-qivivoAPI), basée de la future API officielle utilisée par le nouveau site et apps Qivivo/Comap.
+	- Suppression lors de l'update de tout les modules ! Il faut donc refaire une synchro, les renommer etc correctement, et vérifier / updater les commandes orphelines.
+	- Suppression de toute la partie programmation. Les programmes sont repris depuis l'interface Qivivo/Comap, et sont maintenant synchronisés avec le plugin.
+	- Changement de programme par le thermostat (plus sur les zones).
+	- Testée avec 1 résidence, 1 thermostat, plusieurs modules de zones.
 
 ### 06/03/2020
 - Suppression de la vérification du certificat. *Certificat expiré pour l'API officielle Qivivo depuis 4j et aucun mouvement de leur part...*.
