@@ -15,7 +15,15 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
-### 08/09/2020
+### 15/09/2020
+- Version Stable suite à la refonte complète des site, app, et API Qivivo / Comap.
+Attention :
+	- Vous devez avoir déjà migré sur la nouvelle interface [Comap](https://app.comapsmarthome.com/real-time).
+	- Suppression des modules existants ! Vous devrez refaire une synchronisation puis adapter vos design, scenarios, résumés, etc. (aidez vous de Analyse / Équipements / Commandes orphelines).
+	- Suppression de toute la partie programmation. Les programmes sont repris depuis l'interface Qivivo/Comap, et sont maintenant synchronisés avec le plugin. Pensez à faire vos programmes sur l'interface Qivivo/Comap avant la mise à jour du plugin si possible.
+	- Le changement de programme se fait maintenant par le thermostat.
+
+### 08/09/2020 (beta)
 - [Première beta](https://community.jeedom.com/t/qivivo-comap-update-interface-comap-09-2020-v2/36490) pour l'adaptation aux nouvelles interfaces Qivivo/Comap.
 	- La doc n'est pas à jour avec la beta, elle le sera une fois le plugin en stable.
 	- Suppression de l'ancienne API officielle qui ne dialogue plus avec les modules.

@@ -9,9 +9,8 @@ description: Intégration du Thermostat Qivivo.
 
 *[Lien market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3551)*
 
-Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
+Intégration du Thermostat [Qivivo / Comap.](https://www.comapsmarthome.com/fr/)
 
-[Pré-requis](#pré-requis)<br />
 [Configuration](#configuration)<br />
 [Utilisation](#utilisation)<br />
 [Actions](#actions)<br />
@@ -21,24 +20,19 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 [Changelog](changelog.md)<br />
 
 
-## Pré-requis
-Ce plugin repose en partie sur l'API officielle Qivivo, vous devez donc créer un accès (gratuit) sur cette API, puis récupérer vos Client ID et Secret ID.
-[account.qivivo.com](https://account.qivivo.com/)
-
-
 ## Configuration
 
 Après installation, activez le plugin. Il apparaîtra alors dans le menu *Plugins > Confort*.
 - Ouvrez la page du plugin, puis cliquez sur *Configuration*.
-- Renseignez vos Login, password Qivivo, et vos Client ID et Secret ID.
+- Renseignez vos Login, password Qivivo / Comap.
 - Cliquez sur *Synchroniser mes équipements*.
 
-{% include lightbox.html src="qivivo/images/config.jpg" data="qivivo" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/config2.jpg" data="qivivo" title="Configuration" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Ceci aura pour effet d'installer votre thermostat, la passerelle (qui n'a ici aucune fonction), et vos modules fil-pilote, nommés par zone.
 Il ne vous reste qu'à rafraîchir la page du plugin (F5) !
 
-{% include lightbox.html src="qivivo/images/plugin.jpg" data="qivivo" title="Plugin" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/plugin2.jpg" data="qivivo" title="Plugin" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 ## Utilisation
 
@@ -47,28 +41,26 @@ Renseignez pour chaque module, son nom et son Objet parent si nécessaire. Ils a
 ### Dashboard
 Voici un exemple sur le dashboard:
 
-{% include lightbox.html src="qivivo/images/dashboard.jpg" data="qivivo" title="Dashboard" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/dashboard2.jpg" data="qivivo" title="Dashboard" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 Vous pouvez ainsi visualiser:
 
-- La température de consigne du thermostat
-- La température mesurée par le thermostat
-- Le taux d'humidité mesuré par le thermostat
-- Si le thermostat relève une présence
-- La dernière présence relevée par le thermostat
-- L'ordre en cours par zone
-- Le programme en cours par zone
-- La date de dernière communication du module avec les serveurs Qivivo
+- La température de consigne du thermostat.
+- La température mesurée par le thermostat.
+- Le taux d'humidité mesuré par le thermostat.
+- La dernière présence relevée par le thermostat.
+- Le programme en cours.
+- L'ordre en cours par zone.
+- La date de dernière communication du module avec les serveurs Qivivo / Comap.
 
 > Quand vous changez la consigne du thermostat, l'affichage change sur le dashboard. Toutefois, la commande info de consigne n'est volontairement pas mise à jour. En effet, les programmes temporaires ne sont pas pris en compte immédiatement par Qivivo, cela peu prendre entre 1 et 5mins. De cette façon, l'historique de la consigne enregistrera les vraies valeurs de consigne du thermostat et sera mise à jour lors de la prise en compte par celui-ci.
-> Idéalement, il faudrait pouvoir savoir si un programme temporaire est en cours, mais l'API Qivivo ne remonte pas cette info. A voir dans le futur.
 
 Vous pouvez également:
 
-- Changer la température de consigne (pendant 2h) du thermostat
-- Annuler une programmation temporaire du thermostat
-- Changer l'ordre d'une zone
-- Changer le programme d'une zone
+- Changer la température de consigne (pendant 2h) du thermostat.
+- Annuler une programmation temporaire du thermostat ou d'une zone.
+- Changer l'ordre d'une zone.
+- Changer de programme.
 
 Vous pouvez bien sûr intégrer ces informations et actions dans des scénarios !
 
@@ -76,39 +68,21 @@ Vous pouvez bien sûr intégrer ces informations et actions dans des scénarios 
 
 Le thermostat dispose de plusieurs actions que vous pouvez intégrer normalement dans Jeedom, dans les scénarios par exemple.
 
-{% include lightbox.html src="qivivo/images/thermostat_actions.jpg" data="qivivo" title="Actions du thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/thermostat_actions2.jpg" data="qivivo" title="Actions du thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
 > La commande SetTempérature permet de lancer un programme temporaire, de la même manière que par le site Qivivo ou physiquement sur le thermostat. Le thermostat dispose dans Jeedom d'une info *DuréeOrdre* qui sera la durée du programme temporaire. Celle-ci se remet à 120mins (comme pour le thermostat physique) toutes les 15mins (ou 5mins si vous activez le cron5). Toutefois, si vous souhaitez spécifier une autre durée, lancer une commande *SetDuréeOrdre* avant la commande *SetTempérature*.
 Vous pouvez également annuler un programme temporaire avec la commande *Annule_Ordre_Temp*.
 
-Les modules de zone disposent également de leurs actions *SetMode* pour changer d'ordre, et *SetProgramme* pour appliquer un programme que vous aurez créé auparavant.
+Les modules de zone disposent également de leurs actions *SetMode* pour changer d'ordre, et *Annule_Ordre_Temp* pour annuler un ordre temporaire.
 > Le module de la Zone Thermostat ne possède pas la commande *SetMode* puisqu'il est contrôlé par la consigne du thermostat.
-
-## Programmes
-
-{% include lightbox.html src="qivivo/images/programmes_2.jpg" data="qivivo" title="Programmes" imgstyle="width:550px;display: block;margin: 0 auto;" %}
-
-Sur chaque module, y compris celui de la zone thermostat, vous trouverez un onglet *Programmes*. Vous pourrez y créer plusieurs programmes, pour pouvoir en changer, depuis le dashboard ou depuis un scénario.
-
-> Sur chaque jour, vous pouvez bien sûr créer des périodes de chauffe, mais aussi copier un jour entier pour le coller ailleurs, y compris sur un autre programme.
-
-Une fois vos programmes créés et votre équipement sauvegardé, la liste de vos programmes apparaîtra sur la tuile de cette zone sur votre dashboard, et dans la liste proposée sur l'action *SetProgramme* dans vos scénarios.
-
-Vous pouvez également exporter chaque programme (un fichier json correspondant sera créé dans plugins/qivivo/exportedPrograms), pour pouvoir ensuite l'importer dans un autre programme.
-
-> Attention : les programmes de chauffe dans le plugin Jeedom ne correspondent pas aux programmes définits dans l'application Qivivo.
->
-> Si vous changer de programme depuis l'application Qivivo, Jeedom n'en saura rien et l'affichage des tuiles des zones ne correspondra pas.
-> De même, quand vous changez de programme avec le plugin Jeedom, il ne change pas de programme dans l'application Qivivo, mais change les programmations horaires du programme courant.
-> Si vous souhaitez utiliser la programmation avec le plugin, il est donc conseiller de ne pas toucher aux programmes depuis l'application Qivivo.
 
 ## Équipements
 
 ### Thermostat
 
-{% include lightbox.html src="qivivo/images/thermostat.jpg" data="qivivo" title="Thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+{% include lightbox.html src="qivivo/images/thermostat2.jpg" data="qivivo" title="Thermostat" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Certaines informations sont visibles ici, notamment les réglages de température. Ce sont les mêmes que dans les réglages sur le site de Qivivo.
+Certaines informations sont visibles ici, notamment les réglages de température. Ce sont les mêmes que dans les réglages sur le site de Qivivo / Comap.
 
 ### Module fil-pilote
 
@@ -116,45 +90,17 @@ Certaines informations sont visibles ici, notamment les réglages de températur
 
 Le module fil-pilote possède une info *Ordre* affichant l'ordre courant sous forme lisible (*string*). Cette info n'est pas historisée, mais une autre info *OrdreNum* représente l'ordre sous forme de numéro de 1 à 6, et est historisée :
 
-- Arrêt : 1
-- Hors-Gel : 2
-- Eco : 3
-- Confort -2 : 4
-- Confort -1 : 5
-- Confort : 6
-
-## Historique
-
-Comme pour toutes les commandes dans Jeedom, vous pouvez bien sûr consulter l'historique de celles-ci et ainsi avoir une synthèse quotidienne, que Qivivo ne propose plus aux nouveaux clients depuis plus d'un an.
-
-{% include lightbox.html src="qivivo/images/design_synthese.jpg" data="qivivo" title="Historique" imgstyle="width:250px;display: block;margin: 0 auto;" %}
-
->Les commandes suivantes sont créées par défaut sans mode de lissage, en conservant les valeurs pendant 1an:
->- Thermostat Consigne
->- Thermostat Temperature
->- Thermostat Humidité
->- Thermostat Presence
->- Thermostat Chauffe
->- Module Chauffage OrdreNum
-
-Vous pouvez également ajouter un *Graphique* sur un Design pour avoir la synthèse pré-configurée. Une fois le graphique créé sur le design, faites un clic droit dessus puis *Configuration avancée* pour choisir vos courbes et paramètres.
-
-Exemple:
-{% include lightbox.html src="qivivo/images/synthese.jpg" data="qivivo" title="Paramètres historique" imgstyle="width:550px;display: block;margin: 0 auto;" %}
-
-> Vous pouvez bien sûr y ajouter d'autres courbes d'autres capteurs de températures, etc.
+- Arrêt : 0
+- Hors-Gel : 1
+- Eco : 2
+- Confort -2 : 3
+- Confort -1 : 4
+- Confort : 5
 
 ## Remarques
 
-### Fonctionnement
-- L'ensemble des fonctions du thermostat (changement de consigne, récupération des informations) repose sur l'API Qivivo.
-- L'API Qivivo ne gérant pas encore le multi-zone, toutes les fonctions de changement d'ordre et de programme par zone/module repose sur une [API développée début 2018](https://github.com/KiboOst/php-qivivoAPI).
-- Ce plugin n'utilise aucune dépendances et n'installe donc rien sur votre système en dehors de ses propres fichiers dans html/plugins/qivivo.
-
-*Le but à terme est de basculer entièrement sur l'API officielle, quand celle-ci proposera l'ensemble des fonctions dont le plugin a besoin.*
-
 ### Gestion des erreurs
-Il peux arriver que les serveurs de Qivivo ne répondent pas:
+Il peux arriver que les serveurs de Qivivo / Comap ne répondent pas:
 
 Lors d'un rafraîchissement des informations, si l'appel à l'API Qivivo échoue trois fois de suite, un log d'erreur sera créé.
 
@@ -179,11 +125,9 @@ config::save('functionality::cron5::enable', 0, 'qivivo');
 config::save('functionality::cron15::enable', 1, 'qivivo');
 ```
 
-Personnellement, j'ai un programme *Off* sur chaque zone, en Arrêt et Hors-Gel. Avec un *Mode* je passe la maison en *Travail*, *Vacances* ou *Absence*, qui ajuste le programme de chauffage en fonction. J'ai ensuite deux variables pour les dates de début et fin de chauffage, et en fonction, un scénario change le programme en *Off*, change le cron du plugin, et affiche ou masque les équipements sur le dashboard.
-
 ### Debug
 
-Si vous rencontrez des problèmes, l'équipement *passerelle* possède une commande *debug*. Vous pouvez cliquer sur *Tester*, ce qui générera un log qivivo_debug. Vous pouvez l'envoyer à kiboost->free.fr (ou mp sur le forum Jeedom) avec:
+Si vous rencontrez des problèmes, l'équipement *passerelle* possède une commande action *debug*. Vous pouvez cliquer sur *Tester*, ce qui générera un log qivivo_debug. Vous pouvez l'envoyer à kiboost->free.fr (ou mp sur le forum Jeedom) avec:
 - La description du problème.
 - Une description de votre installation Qivivo avec si possible des screens du site Qivivo.
 - Si vous êtes familier ou non du plugin outildev, pour pouvoir vous envoyer des correctifs de test plus facilement.
