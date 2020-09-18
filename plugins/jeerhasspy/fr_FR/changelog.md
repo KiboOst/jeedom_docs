@@ -15,6 +15,10 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+- [Commits Github Beta](https://github.com/KiboOst/jeedom-jeerhasspy/commits/beta)
+- [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
+
+
 ### 30/05/2020
 - Support du TTS simultané sur plusieurs devices (site1,site2).
 

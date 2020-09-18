@@ -15,6 +15,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 
 >*En cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+- [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
+- [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
+
 ### 15/09/2020
 - Version Stable suite à la refonte complète des site, app, et API Qivivo / Comap.
 Attention :

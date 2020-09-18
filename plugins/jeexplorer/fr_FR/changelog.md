@@ -15,6 +15,10 @@ Explorateur / éditeur de fichiers pour Jeedom.
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+- [Commits Github Beta](https://github.com/KiboOst/jeedom-jeexplorer/commits/beta)
+- [Commits Github Stable V4](https://github.com/KiboOst/jeedom-jeexplorer/commits/stableV4)
+
+
 ### 06/05/2020 (beta)
 - CSS fix: fenêtre d"édition agrandie.
 - Update lib elFinder v2.1.56 (2.1-src Nightly: ffc4c0f) (2020-05-06).

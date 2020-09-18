@@ -13,6 +13,10 @@ description: Plugin de journalisation d’activité
 
 >*Remarque : en cas de mise à jour non listée ici, c'est que celle-ci ne comporte que des changements mineurs du type documentation ou corrections de bugs mineurs.*
 
+- [Commits Github Beta](https://github.com/KiboOst/jeedom-jeelog/commits/beta)
+- [Commits Github Stable V4](https://github.com/KiboOst/jeedom-jeelog/commits/stableV4)
+
+
 ### 03/03/2020
 - Traduction du plugin en anglais (Jeedom V4).
 
