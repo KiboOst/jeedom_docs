@@ -18,6 +18,10 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 23/09/2020
+- Version beta:
+	- Support des configurations Monozone
+
 ### 15/09/2020
 - Version Stable suite à la refonte complète des site, app, et API Qivivo / Comap.
 Attention :
