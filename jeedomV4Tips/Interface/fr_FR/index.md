@@ -35,6 +35,13 @@ Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis 
 
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/devTools.jpg" data="interface" title="Outils de développement Firefox" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
+### Remarque
+
+Depuis la version 4.1 de Jeedom, vous pouvez ajouter une classe en Desktop et/ou Mobile sur une équipement.
+Pour cela, allez sur la page de votre équipement, configuration avancée, onglet Affichage. Ajoutez une Paramètre Optionnel sur la Tuile avec comme nom *dashboard_class* et/ou *mobile_class* et comme valeur la class CSS que vous souhaitez. Sur le Dashboard, une Vue, un Design, ou une page Equipements en Mobile, cette tuile aura alors la class CSS que vous avez définit.
+
+Cela permet ensuite, en customisation avancée, de définir des règles CSS sur cette tuile, ou toutes les tuiles qui auront cette class CSS !
+
 ## Plugin Mode coloré
 
 Si vous souhaitez ne pas avoir toutes les icônes de l'interface colorées, il vous suffit de décocher l'option *icônes widgets colorées* dans les réglages.
