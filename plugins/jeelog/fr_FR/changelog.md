@@ -16,6 +16,8 @@ description: Plugin de journalisation d’activité
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeelog/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-jeelog/commits/stableV4)
 
+### 27/11/2020
+- Ajout de la possibilité de mettre des paramètres optionnel sur la tuile. Par exemple, mobile_class -> col2
 
 ### 03/03/2020
 - Traduction du plugin en anglais (Jeedom V4).
