@@ -37,8 +37,10 @@ Voici un exemple dans Firefox. En cliquant sur l'icône en haut à gauche, puis 
 
 ### Remarque
 
-Depuis la version 4.1 de Jeedom, vous pouvez ajouter une classe en Desktop et/ou Mobile sur une équipement.
-Pour cela, allez sur la page de votre équipement, configuration avancée, onglet Affichage. Ajoutez une Paramètre Optionnel sur la Tuile avec comme nom *dashboard_class* et/ou *mobile_class* et comme valeur la class CSS que vous souhaitez. Sur le Dashboard, une Vue, un Design, ou une page Equipements en Mobile, cette tuile aura alors la class CSS que vous avez définit.
+Depuis la version 4.1 de Jeedom, vous pouvez ajouter une classe CSS en Desktop et/ou Mobile sur un équipement.
+Pour cela, allez sur la page de votre équipement, configuration avancée, onglet Affichage. Ajoutez un Paramètre Optionnel sur la Tuile avec comme nom *dashboard_class* et/ou *mobile_class* et comme valeur la classe CSS que vous souhaitez.
+
+Sur le Dashboard, une Vue, un Design, ou une page Equipements en Mobile, cette tuile aura alors la classe CSS que vous avez définit.
 
 Cela permet ensuite, en customisation avancée, de définir des règles CSS sur cette tuile, ou toutes les tuiles qui auront cette class CSS !
 
