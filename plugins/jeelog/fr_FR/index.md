@@ -78,6 +78,8 @@ Créer un équipement jeeLog avec un fichier de log permet d'afficher ce fichier
 
 Le plugin est bien sûr utilisable sur des vues et designs.
 
+Sur la WebApp, un équipement est par défaut sur une seule colonne. Il peut être préférable d'afficher les équipements Jeelog sur deux colonnes. Pour cela, allez dans la configuration avancée de l'équipement, onglet  affichage, ajoutez un paramètre optionnel **mobile_class** **col2**
+
 
 ## Changelog
 
