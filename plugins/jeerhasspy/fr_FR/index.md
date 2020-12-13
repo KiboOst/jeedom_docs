@@ -213,6 +213,7 @@ Sur chaque device Rhasspy, il y a cinq commandes:
 - **dynamic Speak** : Permet d'énoncer un texte construit dynamiquement.
 - **Ask** : Permet d'utiliser la fonction **Ask** de Jeedom.
 - **setVolume** : Permet de régler le volume de sortie (TTS) entre 0 et 1.
+- **repeatTTS** : Répère la dernière phrase émise (TTS).
 - **ledOn** : Permet d'allumer les LEDs.
 - **ledOff** : Permet d'éteindre les LEDs.
 
