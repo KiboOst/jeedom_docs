@@ -19,10 +19,10 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
 ### 13/12/2020
-- Nouvelle commande `repeatTTS`. Necessite de réimporter l'assistant dans le plugin.
+- Nouvelle commande `repeatTTS`. *Necessite de réimporter l'assistant dans le plugin.*
 
 ### 26/11/2020
-- Nouvelle commande `SetVolume`. Necessite Rhasspy 2.5.8 et de réimporter l'assistant dans le plugin.
+- Nouvelle commande `SetVolume`. *Necessite Rhasspy 2.5.8 et de réimporter l'assistant dans le plugin.*
 
 ### 30/05/2020
 - Support du TTS simultané sur plusieurs devices (site1,site2).
@@ -31,8 +31,8 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - **Attention**: Le plugin supporte maintenant Rhasspy v2.5 minimum !
 - Ajouter un satellite : récupération automatique du siteId et vérifications.
 - New : Deux nouvelles commandes sur les devices Rhasspy:
-	- ledOn : Allume les LEDs
-	- ledOff : Etaint les LEDs
+	- `ledOn` : Allume les LEDs
+	- `ledOff` : Etaint les LEDs
 	Nécessite [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki)
 	*Il faut réimporter l'assistant pour créer ces nouvelles commandes*
 
@@ -53,7 +53,7 @@ Ils sont crée automatiquement suite à une demande sur chaque satellite.<br />
 Il faut paramétrer manuellement le profile de chaque satellite : voir [doc](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy/fr_FR/#configuration-rhasspy)
 
 ### 19/01/2020
-- Bug fix : Commande Ask.
+- Bug fix : Commande `Ask`.
 
 ### 16/01/2020
 - New : Vue d'ensemble des Intentions.
