@@ -212,10 +212,11 @@ Sur chaque device Rhasspy, il y a cinq commandes:
 - **Speak** : Permet d'énoncer un texte.
 - **dynamic Speak** : Permet d'énoncer un texte construit dynamiquement.
 - **Ask** : Permet d'utiliser la fonction **Ask** de Jeedom.
+- **setVolume** : Permet de régler le volume de sortie (TTS) entre 0 et 1.
 - **ledOn** : Permet d'allumer les LEDs.
 - **ledOff** : Permet d'éteindre les LEDs.
 
-Ces deux dernières commandes necessitent [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki).
+Ces deux dernières commandes nécessitent [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki).
 
 ### Commande *dynamic Speak*
 
