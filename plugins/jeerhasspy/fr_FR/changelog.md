@@ -18,6 +18,9 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeerhasspy/commits/beta)
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
+### 09/02/2021
+- Affichage tableau Core v4.2 (beta)
+
 ### 13/12/2020
 - Nouvelle commande `repeatTTS`. *Necessite de réimporter l'assistant dans le plugin.*
 
