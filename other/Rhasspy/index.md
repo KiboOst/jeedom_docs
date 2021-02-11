@@ -24,11 +24,13 @@ Once installed and setup, you can define all intents, slots and interact everyda
 The official documentation is rather complete and enough to set it up and running so I won't rewrite it, but focus on tips and add-on tools.
 
 Before going further, you should ever know these:
+
 - [Official documentation](https://rhasspy.readthedocs.io/en/latest/)
 - [Official community](https://community.rhasspy.org/)
 - [Official repository](https://github.com/rhasspy)
 
 Rhasspy also have its own plugin for **Jeedom** smart-home solution
+
 - [jeeRhasspy documentation](https://kiboost.github.io/jeedom_docs/plugins/jeerhasspy/fr_FR/)
 - [jeeRhasspy on the market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=3869)
 
@@ -88,40 +90,6 @@ sudo reboot
 
 > [seed wiki](http://wiki.seeedstudio.com/Raspberry_Pi/)
 
-### PicoTTS
-
-<details>
-<summary>Rpi 4 Buster:</summary>
-
-```bash
-wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb
-wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb
-sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb
-```
-
-</details>
-
-<details>
-<summary>Rpi 0 buster:</summary>
-
-```bash
-wget http://archive.raspberrypi.org/debian/pool/main/s/svox/libttspico-utils_1.0+git20130326-3+rpi1_armhf.deb
-wget http://archive.raspberrypi.org/debian/pool/main/s/svox/libttspico0_1.0+git20130326-3+rpi1_armhf.deb
-sudo apt-get install -f ./libttspico0_1.0+git20130326-3+rpi1_armhf.deb ./libttspico-utils_1.0+git20130326-3+rpi1_armhf.deb
-```
-
-</details>
-
-<details>
-<summary>Testing:</summary>
-
-```bash
-pico2wave -l fr-FR -w test.wav "Bonjour Rhasspy"
-aplay test.wav
-```
-
-</details>
-
 ### MQTT
 
 ```bash
@@ -129,20 +97,7 @@ sudo apt install -y mosquitto mosquitto-clients
 sudo systemctl enable mosquitto.service
 ```
 
-### Kaldi
-
-Kaldi is a lot better at speech recognition than pocketspinx. But it comes by default with an heavy language model which make it slower.<br />
-You can install lighter models from here (get the TDNN-250):<br />
-Models: [zamia-speech ASR models](https://github.com/gooofy/zamia-speech#asr-models)<br />
-French models: [zamia-speech releases](https://github.com/pguyot/zamia-speech/releases/tag/20190930)
-
-Replace these files in `{profile_dir}/kaldi/model/model` folder and retrain Rhasspy!
-
-> cmvn_opts<br />
-> den.fst<br />
-> final.mdl<br />
-> normalization.fst<br />
-> tree<br />
+For MQTT debugging I would highly recommend portable [MQTT Explorer](http://mqtt-explorer.com/)
 
 ### Docker
 *rhasspy can run as a Docker container, which is extremely simple to run without setup!*
@@ -156,83 +111,27 @@ sudo usermod -a -G docker $USER
 - Start named rhasspy instance:
 ```bash
 docker run -d -p 12101:12101 \
-      --name rhasspy-server \
+      --name rhasspy \
       --restart unless-stopped \
       -v "$HOME/.config/rhasspy/profiles:/profiles" \
+      -v "/etc/localtime:/etc/localtime:ro" \
       --device /dev/snd:/dev/snd \
-      synesthesiam/rhasspy-server:latest \
+      rhasspy/rhasspy \
       --user-profiles /profiles \
       --profile fr
 ```
-- Start an instance: `docker start rhasspy-server`<br />
-- Stop an instance: `docker stop rhasspy-server`<br />
-- Update the container: `docker pull synesthesiam/rhasspy-server:latest`<br />
-- Remove current container: `docker rm rhasspy-server`
+- Start an instance: `docker start rhasspy`<br />
+- Stop an instance: `docker stop rhasspy`<br />
+- Update the container: `docker pull rhasspy/rhasspy:latest`<br />
+- Remove current container: `docker rm rhasspy`
+- Remove all containers and images: `docker system prune -a`<br />
 
-### Virtual environement as a service
-
-If you start rhasspy as venv with an ssh command, it won't live forever, which is what we need for an assistant.
-
-So you have to setup the venv as a service, and activate the service at startup. So you can unplug the pi, plug it and had rhasspy running without any manipulation.
-
-Create the systemd service file:
-
-```bash
-sudo nano /etc/systemd/system/rhasspy.service
-
-```
-
-Edit this file with your settings, like --profile manguage, --host IP and --user-profiles path. Then paste in `/etc/systemd/system/rhasspy.service` file.
-
-<details>
-<summary>rhasspy.service file</summary>
-
-```bash
-[Unit]
-Description=Rhasspy
-After=syslog.target network.target
-
-[Service]
-Type=simple
-WorkingDirectory=/home/pi/rhasspy
-ExecStart=/bin/bash -lc './run-venv.sh --profile fr --host 192.168.0.140 --user-profiles /home/pi/.config/rhasspy/profiles'
-
-RestartSec=1
-Restart=on-failure
-
-StandardOutput=syslog
-StandardError=syslog
-
-SyslogIdentifier=rhasspy
-
-[Install]
-WantedBy=multi-user.target
-```
-
-</details>
-
-Then simply run these to set, enable, then start the service:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable rhasspy
-sudo systemctl start rhasspy
-
-```
-
-If you need to debug it:
-
-```bash
-journalctl -u rhasspy.service
-
-```
 
 ## Custom tools
 
 - [HermesLedControl](HermesLedControl)
 - [Rhasspy-BatchTester](RhasspyBatchTester)
 - [Rhasspy-Logger](RhasspyLogger)
-- [Snowboy-CustomMaker](SnowboyCustomMaker)
 - [PyJeedom and intent handling with scenarios](JeedomPyHandling)
 
 

@@ -51,7 +51,7 @@ sudo systemctl start hermesledcontrol
 
 ### ReSpeaker button
 
-HLC allow to map some function on button pressed.
+HLC allow to map some function on button pressed. For this, edit your pattern file in `hermesLedControl_v2.0.x/ledPatterns/yourPattern.py`
 
 <details>
 <summary>Example toggling rhasspy wakeword:</summary>
@@ -65,34 +65,36 @@ from subprocess import call
 		self.muted = False
 
 	def idle(self, *args): #continuous blue breathing
-		if self._debug: print('---idle---')
 		self.off()
-
+		self._animation.set()
 		middleLed = int(self._numLeds/2)
 		if self.muted:
-			self._controller.setLed(middleLed, 85, 0, 0, 100)
+			self._controller.setLed(middleLed, 85, 0, 0, 75)
 		else:
-			self._controller.setLed(middleLed, 0, 85, 0, 100)
+			self._controller.setLed(middleLed, 0, 85, 0, 75)
 		self._controller.show()
 
 	def onButton1(self, *args):
-		if self._debug: print('##_onButton1')
 		#mute hotword detection:
 		self._animation.clear()
 		self.off()
 		if self.muted:
 			self.muted = False
-			call('sudo curl -d "on" http://%s:12101/api/listen-for-wake'%self.host, shell=True)
+			topic = "hermes/hotword/toggleOn"
 		else:
 			self.muted = True
-			call('sudo curl -d "off" http://%s:12101/api/listen-for-wake'%self.host, shell=True)
+			topic = "hermes/hotword/toggleOff"
+
+		payload = '{"siteId": "'+self._controller._mainClass._me+'", "reason": ""}'
+		self._controller._mainClass._mqttClient.publish(topic, payload)
+
 		self.off()
 		self._controller.idle()
 ```
 
 </details>
 
-Pressing the button will toggle wakeword service, and set *self.muted* variable accordingly so idle LEDS will show three leds breathing or only the middle one if muted.
+Pressing the button will toggle wakeword service, and set *self.muted* variable accordingly so idle LEDS will show middle led green or middle led red if muted.
 
 ### Turn LEDs on/off
 
