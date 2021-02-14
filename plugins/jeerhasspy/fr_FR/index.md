@@ -11,11 +11,7 @@ description: Plugin pour le support de l'assistant vocal Rhasspy dans Jeedom
 *→ [Rhasspy Assistant Tips n Tricks](https://kiboost.github.io/jeedom_docs/other/Rhasspy/)*
 
 Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.github.io/rhasspy-voltron/) dans Jeedom.
-Vous devez au préalable avoir un système Rhasspy fonctionnel !
-
-> Attention
->
-> JeeRhasspy supporte désormais l'assistant **Rhasspy en version 2.5 minimum**.
+Vous devez au préalable avoir un assistant Rhasspy fonctionnel, en version 2.5 minimum.
 
 [Changelog](changelog.md)<br />
 
@@ -169,20 +165,20 @@ Le premier bloc SI sera commun à la plupart de ce type de scénario : On veut s
 		}
 	],
 	"text": "allume les lumière de la cuisine",
-	"wakeId": "snowboy\/hey_brigitte.pmdl",
+	"wakeId": "someoneHere",
 	"siteId": "salon"
 }
 ```
 
 </details>
 
-Le plugin sait donc de qu'elle intention il s'agit, et lance alors le scénario correspondant avec les tags suivant :
+Le plugin sait donc de quelle intention il s'agit, et lance alors le scénario correspondant avec les tags suivant :
 
 ```
-Start : Lancement provoque. Tags : {"#intent#":"lightsTurnOnJeedom","#confidence#":"1","#wakeword#":"snowboy\/hey_brigitte.pmdl","#query#":"allume les lumière de la cuisine","#siteId#":"salon","#house_room#":"cuisine"}
+Start : Lancement provoque. Tags : {"#intent#":"lightsTurnOnJeedom","#confidence#":"1","#wakeword#":"someoneHere","#query#":"allume les lumière de la cuisine","#siteId#":"salon","#house_room#":"cuisine"}
 ```
 
-Donc si on pas de tag(house_room), car on peut simplement lui demander d'allumer la lumière sans préciser où, on a deux solutions :
+Donc si a on pas de tag(house_room), car on peut simplement lui demander d'allumer la lumière sans préciser où, on a deux solutions :
 - Soit le siteId n'est pas renseigné dans Rhasspy, donc on donne le nom de notre device de base (maître) Rhasspy, ici dans le *salon*.
 - Soit le siteId est renseigné, et on l'utilise.
 Et si on a le tag(house_room), on l'utilise.
@@ -191,7 +187,7 @@ On a donc maintenant tag(rhasspy_room) qui correspond à la pièce souhaitée.
 Le deuxième bloc SI n'est pas obligatoire. Vous pouvez lancer le même scénario pour plusieurs intents, et il sert donc à filtrer l'intent souhaité.
 Par exemple si on veux allumer ou éteindre une lumière.
 
-Finalement, on vérifie de quelle lumière il s'agit : `SI tag(rhasspy_room) matches "/cuisine\|maison/"`
+Finalement, on vérifie de quelle lumière il s'agit : `SI tag(rhasspy_room) matches "/cuisine|maison/"`
 
 En matchant cuisine ou maison, on pourra aussi demander :
 
@@ -201,23 +197,33 @@ On peut aussi différencier *en bas*, *en haut* pour pouvoir demander :
 
 > Allume les lumières en bas
 
-Avec `SI tag(rhasspy_room) matches "/cuisine\|maison\|en bas/"`
+Avec `SI tag(rhasspy_room) matches "/cuisine|maison|en bas/"`
 
 Et ainsi de suite ...
 
 ## Commandes
 
-Sur chaque device Rhasspy, il y a cinq commandes:
+Sur chaque device Rhasspy, il y a sept commandes:
 
 - **Speak** : Permet d'énoncer un texte.
 - **dynamic Speak** : Permet d'énoncer un texte construit dynamiquement.
 - **Ask** : Permet d'utiliser la fonction **Ask** de Jeedom.
 - **setVolume** : Permet de régler le volume de sortie (TTS) entre 0 et 1.
-- **repeatTTS** : Répère la dernière phrase émise (TTS).
+- **repeatTTS** : Répète la dernière phrase émise (TTS).
 - **ledOn** : Permet d'allumer les LEDs.
 - **ledOff** : Permet d'éteindre les LEDs.
 
 Ces deux dernières commandes nécessitent [HermesLedControl](https://github.com/project-alice-assistant/HermesLedControl/wiki).
+
+### TTS
+
+Les commandes *Speak* et *dynamic Speak* disponibles sur le Master possèdent un champ **siteId:lang** permettant de faire parler un satellite, et dans une langue au choix. Quelques exemples :
+
+{% include lightbox.html src="jeerhasspy/images/speak_options.jpg" data="jeerhasspy" title="Speak Options" imgstyle="width:550px;display: block;margin: 0 auto;" %}
+
+- salle, studio : Le texte sera prononcé simultanément par ces deux devices Rhasspy.
+- :en : Le texte sera prononcé en anglais.
+- studio:es : Le texte sera prononcé sur le satellite *studio*, en espagnol.
 
 ### Commande *dynamic Speak*
 
@@ -225,7 +231,7 @@ Cette commande permet de construire un texte dynamique en fonction d'information
 
 {% include lightbox.html src="jeerhasspy/images/dynspeak.jpg" data="jeerhasspy" title="dynamic Speak" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
-Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très *waf*.
+Par exemple, vous voulez demander à Rhasspy si le volet est ouvert. L'information dans Jeedom étant le pourcentage d'ouverture, ou 0 / 1, la réponse ne sera pas très *waf* (Wife Acceptance Factor).
 
 Vous pourriez faire plusieurs blocs SI pour testant chaque possibilité et renvoyer le bon texte, mais çà complexifie énormément les scénarios.
 
@@ -293,4 +299,6 @@ Jeedom changera alors automatiquement le nom de la commande avec le siteId, et l
 
 {% include lightbox.html src="jeerhasspy/images/dynamic_ask.jpg" data="jeerhasspy" title="Commande Ask dynamique" imgstyle="width:550px;display: block;margin: 0 auto;" %}
 
+
+Les autres commandes sont des commandes simples qui ne nécessitent pas vraiment d'explications ;-)
 
