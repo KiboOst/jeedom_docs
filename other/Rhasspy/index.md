@@ -186,7 +186,7 @@ pcm.equal {
 
 Now, reboot the Pi (sudo reboot), and set up the equalizer:
 
-`sudo alsamixer -D equal`
+`alsamixer -D equal`
 
 Once you are done, store the settings so they get reloaded at startup:
 
