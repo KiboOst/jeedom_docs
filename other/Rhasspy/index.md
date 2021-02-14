@@ -126,7 +126,7 @@ docker run -d -p 12101:12101 \
 - Remove current container: `docker rm rhasspy`
 - Remove all containers and images: `docker system prune -a`<br />
 
-### ALSA Plugin equal with Docker
+### ALSA Plugin equal with Docker : The Equalizer
 
 **plugin-equal** is an equalizer plugin for Alsa that allow you to asjust playback tone. Here, it will allow us to adjust TTS voice tone. On portable/bluetooth speakers, fashion is actually on extra bass. This provide a totally unatural sound. Sometimes, the TTS is even hard to understand !
 
@@ -223,7 +223,6 @@ In rhasspy settings, just use aplay with Default Device, and all should work !
 
 ## Custom tools
 
-- [ALSA Plugin equal]
 - [HermesLedControl](HermesLedControl)
 - [Rhasspy-BatchTester](RhasspyBatchTester)
 - [Rhasspy-Logger](RhasspyLogger)
