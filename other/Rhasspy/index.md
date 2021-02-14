@@ -192,7 +192,9 @@ Once you are done, store the settings so they get reloaded at startup:
 
 `sudo alsactl store`
 
-Now, your Pi is ok and will use plugin-equal with your settings !
+Now, your Pi is ok and will use plugin-equal with your settings ! You can test it with:
+
+`speaker-test -c1 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav`
 
 But, Inside a Docker container, the *system* doesn't have access to all host system files, and here Rhasspy will miss the plugin librairies. So now, we will start Rhasspy Docker container like this:
 
