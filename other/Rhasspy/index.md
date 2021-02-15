@@ -198,6 +198,9 @@ Now, your Pi is ok and will use plugin-equal with your settings ! You can test i
 
 But, Inside a Docker container, the *system* doesn't have access to all host system files, and here Rhasspy will miss the plugin librairies. So now, we will start Rhasspy Docker container like this:
 
+<details>
+<summary>docker run</summary>
+
 ```
 docker run -d -p 12101:12101 \
 	--name rhasspy \
@@ -213,6 +216,37 @@ docker run -d -p 12101:12101 \
 	--user-profiles /profiles \
 	--profile fr
 ```
+
+</details>
+
+And if you run it with docker-compose:
+
+<details>
+<summary>docker-compose.yml</summary>
+
+```
+rhasspy:
+    image: "rhasspy/rhasspy"
+    container_name: rhasspy
+    restart: unless-stopped
+    volumes:
+        - "$HOME/.config/rhasspy/profiles:/profiles"
+        - "/etc/localtime:/etc/localtime:ro"
+        - "/etc/asound.conf:/etc/asound.conf:ro"
+        - "/usr/lib/arm-linux-gnueabihf/alsa-lib:/usr/lib/arm-linux-gnueabihf/alsa-lib:ro"
+        - "/usr/lib/ladspa:/usr/lib/ladspa:ro"
+        - type: bind
+          source: $HOME/.alsaequal.bin
+          target: /home/pi/.alsaequal.bin
+          read_only: true
+    ports:
+        - "12101:12101"
+    devices:
+        - "/dev/snd:/dev/snd"
+    command: --user-profiles /profiles --profile fr
+```
+
+</details>
 
 I added four volumes:
 - Link to /etc/asound.conf.
