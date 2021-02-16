@@ -12,6 +12,8 @@ description: Some unofficial doc and tools for Rhasspy Assistant.
 [Common commands](#common-commands)<br />
 [3rdparty installations](#rdparty-installations)<br />
 [Custom tools](#custom-tools)<br />
+[Docker Compose](#docker-compose)<br />
+[ALSA Plugin equal with Docker : The Equalizer](#alsa-plugin-equal-with-docker--the-equalizer)<br />
 
 ## Introduction
 
@@ -100,15 +102,19 @@ sudo systemctl enable mosquitto.service
 For MQTT debugging I would highly recommend portable [MQTT Explorer](http://mqtt-explorer.com/)
 
 ### Docker
+
 *rhasspy can run as a Docker container, which is extremely simple to run without setup!*
 
 - Install Docker:
+
 ```
 curl -sSL https://get.docker.com | sh
 sudo usermod -a -G docker $USER
 ```
+
 - List running instances: `docker ps`<br />
 - Start named rhasspy instance:
+
 ```bash
 docker run -d -p 12101:12101 \
       --name rhasspy \
@@ -120,11 +126,39 @@ docker run -d -p 12101:12101 \
       --user-profiles /profiles \
       --profile fr
 ```
+
 - Start an instance: `docker start rhasspy`<br />
 - Stop an instance: `docker stop rhasspy`<br />
 - Update the container: `docker pull rhasspy/rhasspy:latest`<br />
 - Remove current container: `docker rm rhasspy`
 - Remove all containers and images: `docker system prune -a`<br />
+
+### Docker Compose
+
+Docker-compose allow you to set a docker-compose.yml file with all docker settings into, and just run simple commands.
+
+- Installing:
+
+```
+sudo pip3 -v install docker-compose
+sudo reboot
+```
+
+- Shortcut:
+
+Typing docker-compose cmd everytime can be a bit awkward ... So here you to use dcp instead:
+
+`sudo nano ~/.bashrc`  and add this at the end of the file:
+`alias dcp='docker-compose "$@"'`
+
+So now, you can use:
+
+```
+dcp build
+dcp pull
+dcp up -d
+dcp down -v
+```
 
 ### ALSA Plugin equal with Docker : The Equalizer
 
@@ -255,38 +289,11 @@ I added four volumes:
 
 In rhasspy settings, just use aplay with Default Device, and all should work !
 
-### Docker Compose
-
-So now, you may ask how about using Docker-compose ?
-
-Docker-compose allow you to set a docker-compose.yml file with all docker settings into, and just run simple commands.
-
-- Installing:
-
-`sudo pip3 -v install docker-compose`
-
-- Shortcut:
-
-Typing docker-compose cmd everytime can be a bit awkward ... So here you to use dcp instead:
-
-`sudo nano ~/.bashrc`  and add this at the end of the file:
-`alias dcp='docker-compose "$@"'`
-
-So now, you can use:
-
-```
-dcp build
-dcp pull
-dcp up -d
-dcp down -v
-```
-
-
 ## Custom tools
 
 - [HermesLedControl](HermesLedControl)
 - [Rhasspy-BatchTester](RhasspyBatchTester)
 - [Rhasspy-Logger](RhasspyLogger)
-- [PyJeedom and intent handling with scenarios](JeedomPyHandling)
+- [Python Rhasspy apps with Jeedom and scenario intent](JeedomPyHandling)
 
 

@@ -1,6 +1,6 @@
 ---
 title: Rhasspy Assistant Tips n Tricks
-description: PyJeedom and intent handling with scenarios for Rhasspy Assistant.
+description: Python Rhasspy apps with Jeedom and scenario intent.
 ---
 
 <img align="right" src="../images/rhasspyLogoLong.png" width="160" style="top: 15px">
