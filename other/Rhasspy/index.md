@@ -43,8 +43,9 @@ A few common used ssh commands.
 
 ### Startup commands
 
-You can set commands run at Raspberry startup. Just edit /etc/rc.local file and add some commands.
-`sudo nano /etc/rc.local`
+You can set commands run at Raspberry startup.
+
+Just edit /etc/rc.local file and add some commands: `sudo nano /etc/rc.local`
 
 - Set volume level (*-c 0 is your sound-card identifier*):
 
@@ -62,6 +63,25 @@ sudo iwconfig wlan0 power off
 ```
 
 You can debug the execution of rc.local like this: `journalctl -u rc-local`
+
+### Disable wifi and/or bluetooth
+
+If you use cable network (RJ45) for your Pi, better disable wifi and bluetooth:
+
+`sudo nano /boot/config.txt`
+
+Add or uncomment these two lines:
+
+```
+dtoverlay=disable-wifi
+dtoverlay=disable-bt
+```
+
+### Disable Pi default soundcard
+
+`sudo nano /boot/config.txt`
+
+Add `dtparam=audio=off`
 
 ## 3rdparty installations
 
