@@ -255,6 +255,33 @@ I added four volumes:
 
 In rhasspy settings, just use aplay with Default Device, and all should work !
 
+### Docker Compose
+
+So now, you may ask how about using Docker-compose ?
+
+Docker-compose allow you to set a docker-compose.yml file with all docker settings into, and just run simple commands.
+
+- Installing:
+
+`sudo pip3 -v install docker-compose`
+
+- Shortcut:
+
+Typing docker-compose cmd everytime can be a bit awkward ... So here you to use dcp instead:
+
+`sudo nano ~/.bashrc`  and add this at the end of the file:
+`alias dcp='docker-compose "$@"'`
+
+So now, you can use:
+
+```
+dcp build
+dcp pull
+dcp up -d
+dcp down -v
+```
+
+
 ## Custom tools
 
 - [HermesLedControl](HermesLedControl)
