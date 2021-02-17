@@ -11,9 +11,10 @@ description: Some unofficial doc and tools for Rhasspy Assistant.
 
 [Common commands](#common-commands)<br />
 [3rdparty installations](#rdparty-installations)<br />
-[Custom tools](#custom-tools)<br />
 [Docker Compose](#docker-compose)<br />
 [ALSA Plugin equal with Docker : The Equalizer](#alsa-plugin-equal-with-docker--the-equalizer)<br />
+[Custom tools](#custom-tools)<br />
+
 
 ## Introduction
 
