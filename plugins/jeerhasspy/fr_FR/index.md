@@ -309,3 +309,31 @@ Jeedom changera alors automatiquement le nom de la commande avec le siteId, et l
 
 Les autres commandes sont des commandes simples qui ne nécessitent pas vraiment d'explications ;-)
 
+### Scripting
+
+Si vous souhaitez retrouver un device Rhasspy avec un plugin script ou dans un bloc code de scénario, voici la manière la plus simple et sûr de le retrouver :
+
+- Le device maître :
+
+```php
+$eqLogic = eqLogic::byLogicalId('TTS-'.config::byKey('masterSiteId', 'jeerhasspy'), 'jeerhasspy');
+```
+
+- Un satellite (fonctionne aussi pour le maître) :
+
+```php
+$_siteId = 'satName';
+$eqLogic = eqLogic::byLogicalId('TTS-'.$_siteId, 'jeerhasspy');
+```
+
+Comme la commande *speak* du maître permet de faire parler un satellite, un petit exemple simple :
+
+```
+$eqLogic = eqLogic::byLogicalId('TTS-'.config::byKey('masterSiteId', 'jeerhasspy'), 'jeerhasspy');
+$cmd = $eqLogic->getCmd('action', 'speak');
+$options = array(
+		'title'=>'monSatellite:es',
+		'message'=>'Como esta ?'
+		);
+$cmd->execCmd($options);
+```
