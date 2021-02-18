@@ -19,8 +19,9 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
 ### 18/02/2021 (beta)
-- *Necessite de réimporter l'assistant dans le plugin.*
-- On peut maintenant renommer les devices Rhasspy (Dashboard, mode édition).
+- **Nécessite de réimporter l'assistant dans le plugin.**
+- **La commande SetVolume des devices rhasspy est maintenant de 0 à 100.**
+- On peut maintenant renommer les devices Rhasspy (Dashboard, mode édition, ou résumé domotique).
 - On peut maintenant changer l'objet parent des devices Rhasspy dans un autre objet (Glisser/Déposer résumé domotique).
 - On peut maintenant renommer l'objet Rhasspy-Intents.
 - Attention à ne pas supprimer l'objet Rhasspy-Intents, ni déplacer les Intent qui sont dedans !
@@ -29,10 +30,12 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - Affichage tableau Core v4.2 (beta)
 
 ### 13/12/2020
-- Nouvelle commande `repeatTTS`. *Necessite de réimporter l'assistant dans le plugin.*
+- **Nécessite de réimporter l'assistant dans le plugin.**
+- Nouvelle commande `repeatTTS`.
 
 ### 26/11/2020
-- Nouvelle commande `SetVolume`. *Necessite Rhasspy 2.5.8 et de réimporter l'assistant dans le plugin.*
+- **Nécessite de réimporter l'assistant dans le plugin.**
+- Nouvelle commande `SetVolume`.
 
 ### 30/05/2020
 - Support du TTS simultané sur plusieurs devices (site1,site2).
@@ -84,14 +87,12 @@ Il faut paramétrer manuellement le profile de chaque satellite : voir [doc](htt
 *Il faut éditer votre profile rhasspy pour bénéficier de cette fonction, voir [Documentation](index.md).*
 
 ### 28/12/2019
+- **Nécessite de réimporter l'assistant dans le plugin.**
 - New : commande *ask* voir [Documentation](index.md).
 
-*Il faut réimporter l'assistant pour créer la commande sur le device Rhasspy*
-
 ### 22/12/2019
+- **Nécessite de réimporter l'assistant dans le plugin.**
 - New : commande *dynamic Speak* sur les devices Rhasspy.
-
-*Il faut réimporter l'assistant pour créer la commande sur le device Rhasspy*
 
 ### 20/12/2019
 - Première version (Beta).

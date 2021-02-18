@@ -77,7 +77,7 @@ Pour le maître (master) et chaque satellite, vous disposez sous son icône de p
 > - Renseigner un nom dans le champ **siteId**
 
 Pour afficher un device Rhasspy sur votre dashboard, ou sur un design, vous pouvez :
-- Le renommer, par le mode édition du Dashboard. Et si besoin réordonner ses commandes et changer ses widgets.
+- Le renommer, par le mode édition du Dashboard ou le résumé domotique. Et si besoin réordonner ses commandes et changer ses widgets.
 - Le changer d'objet parent, par le glisser/déposer dans le résumé domotique.
 
 > Attention
