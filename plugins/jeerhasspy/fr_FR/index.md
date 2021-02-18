@@ -76,9 +76,12 @@ Pour le maître (master) et chaque satellite, vous disposez sous son icône de p
 > - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
 > - Renseigner un nom dans le champ **siteId**
 
+Le plugin jeeRhasspy, à l'inverse de la plupart des plugins Jeedom, ne propose pas de configuration des équipements ni des commandes. En effet, les Intents sont des équipements très particuliers, sans commandes. Malgré tout :
+
 Pour afficher un device Rhasspy sur votre dashboard, ou sur un design, vous pouvez :
 - Le renommer, par le mode édition du Dashboard ou le résumé domotique. Et si besoin réordonner ses commandes et changer ses widgets.
 - Le changer d'objet parent, par le glisser/déposer dans le résumé domotique.
+- Accéder à sa configuration avancée ou celle de ses commandes, par le résumé domotique.
 
 > Attention
 > Vous pouvez renommer l'objet Rhasspy-Intents, mais il ne faut surtout pas le supprimer, ni déplacer les Intent qui sont dedans !
