@@ -76,6 +76,13 @@ Pour le maître (master) et chaque satellite, vous disposez sous son icône de p
 > - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
 > - Renseigner un nom dans le champ **siteId**
 
+Pour afficher un device Rhasspy sur votre dashboard, ou sur un design, vous pouvez :
+- Le renommer, par le mode édition du Dashboard. Et si besoin réordonner ses commandes et changer ses widgets.
+- Le changer d'objet parent, par le glisser/déposer dans le résumé domotique.
+
+> Attention
+> Vous pouvez renommer l'objet Rhasspy-Intents, mais il ne faut surtout pas le supprimer, ni déplacer les Intent qui sont dedans !
+
 ## Configuration Rhasspy
 
 Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez modifier son profile.
