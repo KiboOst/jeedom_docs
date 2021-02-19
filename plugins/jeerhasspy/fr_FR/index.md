@@ -322,6 +322,7 @@ Si vous souhaitez retrouver un device Rhasspy avec un plugin script ou dans un b
 $eqLogic = eqLogic::byLogicalId('TTS-'.config::byKey('masterSiteId', 'jeerhasspy'), 'jeerhasspy');
 ```
 
+
 - Un satellite (fonctionne aussi pour le maître) :
 
 ```php
@@ -329,9 +330,10 @@ $_siteId = 'satName';
 $eqLogic = eqLogic::byLogicalId('TTS-'.$_siteId, 'jeerhasspy');
 ```
 
+
 Comme la commande *speak* du maître permet de faire parler un satellite, un petit exemple simple :
 
-```
+```php
 $eqLogic = eqLogic::byLogicalId('TTS-'.config::byKey('masterSiteId', 'jeerhasspy'), 'jeerhasspy');
 $cmd = $eqLogic->getCmd('action', 'speak');
 $options = array(
