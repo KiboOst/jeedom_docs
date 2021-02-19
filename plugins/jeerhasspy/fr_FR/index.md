@@ -20,6 +20,7 @@ Vous devez au préalable avoir un assistant Rhasspy fonctionnel, en version 2.5 
 [Configuration Rhasspy](#configuration-rhasspy)<br />
 [Callback Scénario](#callback-scnario)<br />
 [Commandes](#commandes)<br />
+[Scripting](#scripting)<br />
 
 ## Configuration du plugin JeeRhasspy
 
@@ -322,7 +323,7 @@ Si vous souhaitez retrouver un device Rhasspy avec un plugin script ou dans un b
 $eqLogic = eqLogic::byLogicalId('TTS-'.config::byKey('masterSiteId', 'jeerhasspy'), 'jeerhasspy');
 ```
 
-
+<br />
 - Un satellite (fonctionne aussi pour le maître) :
 
 ```php
@@ -330,7 +331,7 @@ $_siteId = 'satName';
 $eqLogic = eqLogic::byLogicalId('TTS-'.$_siteId, 'jeerhasspy');
 ```
 
-
+<br />
 Comme la commande *speak* du maître permet de faire parler un satellite, un petit exemple simple :
 
 ```php
