@@ -18,16 +18,24 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeerhasspy/commits/beta)
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
+### 20/02/2021 (beta)
+- Réécriture complète de la gestion interne des Intents. Ceux-ci ne sont plus enregistrés comme des *équipements* mais comme des *jeerhasspy_intent* à part entière, avec leur classe et leur table en DB.
+- Migration des Intentions en DB à l'update du plugin.
+- Suppression de l'objet Rhasspy-Intents, qui n'a plus lieu d'être !
+- Les Devices rhasspy seront donc sans objet parents. Vous pouvez changer l'objet parent par le résumé domotique (Glisser/Déposer).
+
+- Passage en stable de la beta du 18/02
+
 ### 18/02/2021 (beta)
 - **Nécessite de réimporter l'assistant dans le plugin.**
 - **La commande SetVolume des devices rhasspy est maintenant de 0 à 100.**
 - On peut maintenant renommer les devices Rhasspy (Dashboard, mode édition, ou résumé domotique).
-- On peut maintenant changer l'objet parent des devices Rhasspy dans un autre objet (Glisser/Déposer résumé domotique).
+- On peut maintenant changer l'objet parent des devices Rhasspy (Glisser/Déposer résumé domotique).
 - On peut maintenant renommer l'objet Rhasspy-Intents.
 - Attention à ne pas supprimer l'objet Rhasspy-Intents, ni déplacer les Intent qui sont dedans !
 
-### 09/02/2021
-- Affichage tableau Core v4.2 (beta)
+### 09/02/2021 (beta)
+- Affichage tableau Core v4.2
 
 ### 13/12/2020
 - **Nécessite de réimporter l'assistant dans le plugin.**
