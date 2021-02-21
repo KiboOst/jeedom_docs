@@ -20,6 +20,7 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 ### 21/02/2021 (beta)
 - On peut maintenant cliquer sur l'icône d'un device rhasspy pour éditer ses paramètres (Nom, Objet parent, Catégorie) et accéder à sa configuration avancée.
+- Support des entities multiple. Si on demande d'allumer un slot house_room dans le salon et dans la cuisine, le tag #house_room# sera alors *salon,cuisine*.
 
 
 ### 20/02/2021 (beta)
