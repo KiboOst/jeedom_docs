@@ -77,13 +77,6 @@ Pour le maître (master) et chaque satellite, vous disposez sous son icône de p
 > - Sur l'interface de Rhasspy, aller sur l'onglet **Settings**
 > - Renseigner un nom dans le champ **siteId**
 
-Le plugin jeeRhasspy, à l'inverse de la plupart des plugins Jeedom, ne propose pas de configuration des équipements ni des commandes.
-
-Pour afficher un device Rhasspy sur votre dashboard, ou sur un design, vous pouvez :
-- Le changer d'objet parent, par le glisser/déposer dans le résumé domotique.
-- Le renommer, par le mode édition du Dashboard ou le résumé domotique. Et si besoin réordonner ses commandes et changer ses widgets.
-- Accéder à sa configuration avancée ou celle de ses commandes, par le résumé domotique ou par le moteur de recherche de Jeedom.
-
 ## Configuration Rhasspy
 
 Pour que Rhasspy envoie les événements souhaités à Jeedom, vous devez modifier son profile.

@@ -18,6 +18,10 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeerhasspy/commits/beta)
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
+### 21/02/2021 (beta)
+- On peut maintenant cliquer sur l'icône d'un device rhasspy pour éditer ses paramètres (Nom, Objet parent, Catégorie) et accéder à sa configuration avancée.
+
+
 ### 20/02/2021 (beta)
 - Réécriture complète de la gestion interne des Intents. Ceux-ci ne sont plus enregistrés comme des *équipements* mais comme des *jeerhasspy_intent* à part entière, avec leur classe et leur table en DB.
 - Migration des Intentions en DB à l'update du plugin.
