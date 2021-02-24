@@ -66,6 +66,10 @@ La v4 de Jeedom est une réécriture complète de son design et de la façon don
 
 #### Les couleurs de catégories d'équipement
 Voici les couleurs de catégories de la v3. Ce n'est qu'un exemple, puisque bien sûr les couleurs de catégories des thèmes Light et Dark sont différentes, pour s'intégrer au mieux à chaque thème dans son ensemble.
+
+<details>
+<summary>CSS catégories</summary>
+
 ```css
 :root {
   --cat-security-color: 155, 75, 70;
@@ -78,8 +82,15 @@ Voici les couleurs de catégories de la v3. Ce n'est qu'un exemple, puisque bien
   --cat-scenario-color: 127, 140, 141;
 }
 ```
+
+</details>
+
+
 #### Les couleurs de blocs de scénarios
 Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléatoirement mais par type de bloc. La correspondances avec la v3 n'est donc pas possible, et je suis plus pour s'adapter que pour l'immobilisme dans le passé, mais voici par exemple celle du thème v4 Dark. A noter qu'en V3 il était totalement impossible de changer ces couleurs :wink:.
+
+<details>
+<summary>CSS blocs</summary>
 
 ```css
 :root {
@@ -95,6 +106,9 @@ Avec la v4, les couleurs des blocs de scénarios ne sont plus attribuées aléat
   --scBlocSep: rgb(35,35,35);
 }
 ```
+
+</details>
+
 ## Autre exemples
 
 Parce que l'équipe se doit de faire des choix, et qu'ils peuvent ne pas correspondre à tout le monde dans les dizaines de milliers d'utilisateurs, voici quelques exemples que vous pouvez appliquer sur votre Jeedom :sweat_smile:.
@@ -185,6 +199,10 @@ body {
 ```
 
 <br/>• Spécial développeurs et beta-testeurs : Toujours afficher le badge d'update :
+
+<details>
+<summary>CSS badge d'update</summary>
+
 ```css
 #span_nbUpdate[style*="display : none"] {
   display: block !important;
@@ -205,6 +223,8 @@ body {
   border-radius: var(--border-radius) !important;
 }
 ```
+
+</details>
 
 
 ### Affichage des logs
@@ -230,6 +250,10 @@ Et pour inclure les logs de scénarios:
 
 Les scénarios sont affichés sur les *designs* de la même façon que sur le *Dashboard*, sous forme de tuile. On peux leur donner un visuel beaucoup plus compact:
 {% include lightbox.html src="../jeedomV4Tips/Interface/images/scenario_design.jpg" data="interface" title="Scénario compact" imgstyle="width:508px;display: block;margin: 0 auto;" %}
+
+<details>
+<summary>CSS scénarios sur un design</summary>
+
 ```css
 /* scenario display design */
 [data-page="plan"] .scenario-widget.scenario {
@@ -259,6 +283,58 @@ Les scénarios sont affichés sur les *designs* de la même façon que sur le *D
   color: var(--sc-lightTxt-color) !important;
 }
 ```
+
+</details>
+
+<details>
+<summary>CSS scénarios sur un design : v4.2</summary>
+
+```css
+/* scenario display design v4.2 */
+[data-page="plan"] .scenario-widget.scenario {
+  min-width: 230px;
+  max-width: unset;
+  height: 32px!important;
+  background-color: rgba(var(--cat-scenario-color), var(--opacity)) !important;
+}
+[data-page="plan"] .scenario-widget.scenario > div > center > a {
+  position: absolute;
+  top: -1px;
+  left: 5px;
+  height: 22px;
+  padding: 3px;
+}
+[data-page="plan"] .scenario-widget.scenario a[data-state="start"] { left: 40px; }
+[data-page="plan"] .scenario-widget.scenario a.scenario_ViewLog { left: 75px; }
+[data-page="plan"] div.scenario-widget.scenario center.widget-name {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  background: transparent !important;
+  border: none !important;
+
+}
+[data-page="plan"] div.scenario-widget.scenario center.widget-name > a {
+  color: var(--linkHoverLight-color) !important;
+}
+[data-page="plan"] .scenario-widget.scenario .iconCmd i {
+  position: absolute;
+  top: -1px;
+  right: 5px;
+  font-size: 16px !important;
+  color: var(--sc-lightTxt-color) !important;
+}
+[data-page="plan"] .scenario-widget.scenario .timeCmd {
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  color: var(--linkHover-color) !important;
+  background: transparent !important;
+}
+```
+
+</details>
+
 
 ## Couleur d'arrière plan des designs
 
