@@ -31,6 +31,7 @@ Before going further, you should ever know these:
 - [Official documentation](https://rhasspy.readthedocs.io/en/latest/)
 - [Official community](https://community.rhasspy.org/)
 - [Official repository](https://github.com/rhasspy)
+- [Awesome Rhasspy](https://github.com/koenvervloesem/awesome-rhasspy)
 
 Rhasspy also have its own plugin for **Jeedom** smart-home solution
 
