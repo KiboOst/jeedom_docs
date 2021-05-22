@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 22/05/2021
+- Beta: Changement de système d'authentification par Comap (Aws Cognito).
+
 ### 09/02/2021
 - Affichage tableau Core v4.2 (beta)
 
