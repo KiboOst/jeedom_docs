@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 24/05/2021
+- Beta: Depuis la tuile du thermostat, les boutons -1 et +1 affichent maintenant un popup pour régler la température souhaitée et la durée.
+
 ### 22/05/2021
 - Beta: Changement de système d'authentification par Comap (Aws Cognito).
 
