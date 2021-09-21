@@ -244,6 +244,13 @@ Ce qui nous permet d’appeler la fonction getConfigByKey() dans un scénario:
 
 {% include lightbox.html src="../jeedomV4Tips/CodesScenario/images/user_getConfigByKey.jpg" data="codes" title="getConfigByKey" imgstyle="width:800px;display: block;margin: 0 auto;" %}
 
+Ou dans un bloc code:
+
+```php
+require_once dirname(__FILE__) . '/../../data/php/user.function.class.php';
+$var = userFunction::getConfigByKey('info::latitude');
+```
+
 ## pyJeedom
 
 Si vous êtes un habitué du Python, le module pyJeedom permet d'accéder aux fonctions de l'api jsonrpc en python : [pyJeedom](https://github.com/KiboOst/pyJeedom)
