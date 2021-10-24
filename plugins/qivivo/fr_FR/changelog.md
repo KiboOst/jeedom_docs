@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 24/10/2021
+- Beta: Support de courbe sur les tuiles Thermostat et Module de zone (Core v4.2).
+
 ### 24/05/2021
 - Beta: Depuis la tuile du thermostat, les boutons -1 et +1 affichent maintenant un popup pour régler la température souhaitée et la durée.
 
