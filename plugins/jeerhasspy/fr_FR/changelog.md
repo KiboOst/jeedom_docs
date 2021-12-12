@@ -18,12 +18,17 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeerhasspy/commits/beta)
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
-### 21/02/2021 (beta)
+### 12/12/2021
+- Compatibilité *event* Core 4.2
+
+*Il faut refaire la configuration des devices Rhasspy depuis le plugin (bouton orange sur chaque device)*
+
+### 21/02/2021
 - On peut maintenant cliquer sur l'icône d'un device rhasspy pour éditer ses paramètres (Nom, Objet parent, Catégorie) et accéder à sa configuration avancée.
 - Support des entities multiple. Si on demande d'allumer un slot house_room dans le salon et dans la cuisine, le tag #house_room# sera alors *salon,cuisine*.
 
 
-### 20/02/2021 (beta)
+### 20/02/2021
 - Réécriture complète de la gestion interne des Intents. Ceux-ci ne sont plus enregistrés comme des *équipements* mais comme des *jeerhasspy_intent* à part entière, avec leur classe et leur table en DB.
 - Migration des Intentions en DB à l'update du plugin.
 - Suppression de l'objet Rhasspy-Intents, qui n'a plus lieu d'être !
@@ -31,7 +36,7 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 
 - Passage en stable de la beta du 18/02
 
-### 18/02/2021 (beta)
+### 18/02/2021
 - **Nécessite de réimporter l'assistant dans le plugin.**
 - **La commande SetVolume des devices rhasspy est maintenant de 0 à 100.**
 - On peut maintenant renommer les devices Rhasspy (Dashboard, mode édition, ou résumé domotique).
@@ -39,7 +44,7 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - On peut maintenant renommer l'objet Rhasspy-Intents.
 - Attention à ne pas supprimer l'objet Rhasspy-Intents, ni déplacer les Intent qui sont dedans !
 
-### 09/02/2021 (beta)
+### 09/02/2021
 - Affichage tableau Core v4.2
 
 ### 13/12/2020
