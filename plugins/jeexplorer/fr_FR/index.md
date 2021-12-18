@@ -11,6 +11,10 @@ description: Explorateur / éditeur de fichiers pour Jeedom
 
 Explorateur / éditeur de fichiers pour Jeedom.
 
+```diff
+! IMPORTANT ! JeeXplorer a été intégré au Core v4.2 et ne sera donc plus maintenu.
+```
+
 <div class="alert">
 Attention :
   Comme tout explorateur de fichiers, celui-ci vous permet d'accéder et d'éditer tous les fichiers présent dans le répertoire racine de Jeedom.
