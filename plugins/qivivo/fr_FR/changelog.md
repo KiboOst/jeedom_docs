@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 21/10/2022
+- Beta: Support de l'affichage dynamique des valeurs info (Core v4.3).
+
 ### 24/10/2021
 - Beta: Support de courbe sur les tuiles Thermostat et Module de zone (Core v4.2).
 
