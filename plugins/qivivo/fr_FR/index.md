@@ -11,13 +11,13 @@ description: Intégration du Thermostat Qivivo.
 
 Intégration du Thermostat [Qivivo / Comap.](https://www.comapsmarthome.com/fr/)
 
-[Configuration](#configuration)
-[Utilisation](#utilisation)
-[Actions](#actions)
-[Programmes](#programmes)
-[Historique](#historique)
-[Remarques](#remarques)
-[Changelog](changelog.md)
+[Configuration](#configuration)<br />
+[Utilisation](#utilisation)<br />
+[Actions](#actions)<br />
+[Programmes](#programmes)<br />
+[Historique](#historique)<br />
+[Remarques](#remarques)<br />
+[Changelog](changelog.md)<br />
 
 
 ## Configuration
