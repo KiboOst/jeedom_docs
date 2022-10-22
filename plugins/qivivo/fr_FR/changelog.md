@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 22/10/2022
+- Beta: Support de plusieurs logements.
+
 ### 21/10/2022
 - Beta: Support de l'affichage dynamique des valeurs info (Core v4.3).
 
