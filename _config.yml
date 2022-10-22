@@ -16,4 +16,7 @@ plugins:
   - jemoji
   - jekyll-seo-tag
 
-markdown: CommonMarkGhPages
+# Markdown Settings
+markdown: CommonMark
+commonmark:
+  options: ["SMART", "FOOTNOTES", "UNSAFE"]
