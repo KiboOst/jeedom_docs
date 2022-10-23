@@ -130,7 +130,6 @@ config::save('functionality::cron15::enable', 1, 'qivivo');
 Si vous rencontrez des problèmes, l'équipement *passerelle* possède une commande action *debug*. Vous pouvez cliquer sur *Tester*, ce qui générera un log qivivo_debug. Vous pouvez l'envoyer à kiboost->free.fr (ou mp sur le forum Jeedom) avec:
 - La description du problème.
 - Une description de votre installation Qivivo avec si possible des screens du site Qivivo.
-- Si vous êtes familier ou non du plugin outildev, pour pouvoir vous envoyer des correctifs de test plus facilement.
 - Si vous avez accès aux plugins beta.
 
 
