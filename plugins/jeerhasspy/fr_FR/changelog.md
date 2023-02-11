@@ -18,10 +18,15 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeerhasspy/commits/beta)
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
-### 12/12/2021
-- Compatibilité *event* Core 4.2
+### 11/02/2023
+- Bug fix ouverture de la modale d'un équipement.
+- Fin du support Core pré 4.2.
 
-*Il faut refaire la configuration des devices Rhasspy depuis le plugin (bouton orange sur chaque device)*
+
+### 12/12/2021
+- Compatibilité *event* Core 4.2.
+
+*Il faut refaire la configuration des devices Rhasspy depuis le plugin (bouton orange sur chaque device)*.
 
 ### 21/02/2021
 - On peut maintenant cliquer sur l'icône d'un device rhasspy pour éditer ses paramètres (Nom, Objet parent, Catégorie) et accéder à sa configuration avancée.
