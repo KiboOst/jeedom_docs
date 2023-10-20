@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 20/10/2023 (beta)
+- Bug fix consigne et températures personnalisées.
+
 ### 11/02/2023
 - Bug fix.
 - Fin du support Core pré 4.2.
