@@ -16,6 +16,9 @@ description: Plugin de journalisation d’activité
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeelog/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-jeelog/commits/stableV4)
 
+### 11/10/2014
+- Fix php8
+
 ### 09/02/2021
 - Affichage tableau Core v4.2 (beta)
 
