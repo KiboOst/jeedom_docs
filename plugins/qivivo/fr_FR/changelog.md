@@ -18,6 +18,9 @@ Intégration du Thermostat [Qivivo.](https://www.qivivo.com/fr/)
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-qivivo/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-qivivo/commits/stableV4)
 
+### 29/10/2026
+- Fix Jeedom 4.6.x Debian12 php8
+
 ### 20/10/2023 (beta)
 - Bug fix consigne et températures personnalisées.
 

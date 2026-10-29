@@ -16,6 +16,9 @@ description: Plugin de journalisation d’activité
 - [Commits Github Beta](https://github.com/KiboOst/jeedom-jeelog/commits/beta)
 - [Commits Github Stable V4](https://github.com/KiboOst/jeedom-jeelog/commits/stableV4)
 
+### 29/10/2026
+- Fix Jeedom 4.6.x Debian12 php8
+
 ### 11/10/2014
 - Fix php8
 
