@@ -19,6 +19,10 @@ Plugin pour le support de l'assistant vocal [Rhasspy](https://rhasspy.readthedoc
 - [Commits Github Stable](https://github.com/KiboOst/jeedom-jeerhasspy/commits/master)
 
 ### 29/10/2026
+- Require Jeedom 4.4.
+- Fix eqlogic UI on plugin page.
+
+### 29/10/2026
 - Fix Jeedom 4.6.x Debian12 php8
 
 ### 11/02/2023
